@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://jxnd16fsfrgl"]
+
+[ext_resource type="Script" path="res://scripts/mock_scene.gd" id="1_ujmvs"]
+[ext_resource type="PackedScene" uid="uid://c12yf3vwako47" path="res://scenes/GenericItem.tscn" id="2_x7mms"]
+
+[node name="MockScene" type="Node2D"]
+position = Vector2(153, 150)
+script = ExtResource("1_ujmvs")
+
+[node name="MumWardrobe" parent="." instance=ExtResource("2_x7mms")]
+position = Vector2(535, 178)
+
+[node name="SecurityBox" parent="MumWardrobe" instance=ExtResource("2_x7mms")]
+position = Vector2(95, -4)
+scale = Vector2(0.364499, 0.44403)

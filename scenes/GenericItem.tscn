@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c12yf3vwako47"]
+[gd_scene load_steps=2 format=3 uid="uid://c12yf3vwako47"]
 
-[ext_resource type="Texture2D" uid="uid://c4gn7qwtc5c10" path="res://assets/interactive objects/drawer_closed.png" id="1_3vxv2"]
 [ext_resource type="Script" path="res://scripts/GenericItem.gd" id="2_ce0e8"]
 
 [node name="GenericItem" type="Sprite2D"]
 position = Vector2(506, 297)
-texture = ExtResource("1_3vxv2")
 script = ExtResource("2_ce0e8")
 metadata/_edit_group_ = true
 
