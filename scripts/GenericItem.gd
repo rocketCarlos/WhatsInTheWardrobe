@@ -1,5 +1,10 @@
 extends Sprite2D
 
+'''
+BUG TO FIX: object stays selected after closing it if the mouse ends up being outside the collision 
+shape after clicking in it
+'''
+
 #region scene nodes
 @onready var highlight = $Highlight
 @onready var hitbox = $Hitbox
