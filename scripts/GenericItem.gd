@@ -11,9 +11,11 @@ extends Sprite2D
 #region attributes
 # Indicates the current sprite displayed. 0 == closed, 1 == open. Setting current_sprite to 0 or 1 
 # automatically makes the object show the corresponding sprite and collision shape
+var just_changed_sprites = false
 var current_sprite:
 	set(which):
 		current_sprite = which
+		just_changed_sprites = true
 		
 		if current_sprite == 0:
 			texture = sprite_closed
@@ -91,8 +93,9 @@ func _ready() -> void:
 	current_sprite = 0
 	
 	disabled = false
-	if not parent == null:
+	if parent != null:
 		invisible = true
+		z_index += 1
 	else:
 		invisible = false
 
@@ -114,11 +117,15 @@ func _on_area_2d_mouse_entered() -> void:
 
 
 func _on_area_2d_mouse_exited() -> void:
-	highlight.hide()
-	mouse_in_collider = false
-	
-	# tell parent to enable interactions
-	if not parent == null:
-		parent.disabled = false
+	if not just_changed_sprites: # to avoid blink due to reactivating collision shapes
+
+		highlight.hide()
+		mouse_in_collider = false
+		
+		# tell parent to enable interactions
+		if not parent == null:
+			parent.disabled = false
+	else:
+		just_changed_sprites = false
 		
 #endregion
