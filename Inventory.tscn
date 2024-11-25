@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://hfl2rebjgsti"]
+
+[node name="Inventory" type="Sprite2D"]

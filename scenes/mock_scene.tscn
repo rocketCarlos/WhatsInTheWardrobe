@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://jxnd16fsfrgl"]
 
 [ext_resource type="Script" path="res://scripts/mock_scene.gd" id="1_ujmvs"]
-[ext_resource type="PackedScene" uid="uid://c12yf3vwako47" path="res://scenes/GenericItem.tscn" id="2_x7mms"]
+[ext_resource type="PackedScene" uid="uid://c12yf3vwako47" path="res://scenes/GenericContainer.tscn" id="2_x7mms"]
 [ext_resource type="Texture2D" uid="uid://ckvk8a6ugpfas" path="res://assets/interactive objects/mom_wardrobe.png" id="3_t2hap"]
 [ext_resource type="Texture2D" uid="uid://cqof86uu4uvm1" path="res://assets/interactive objects/mom_wardrobe_opened.png" id="4_tnkrj"]
 [ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="5_qa50j"]

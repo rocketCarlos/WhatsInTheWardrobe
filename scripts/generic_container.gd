@@ -2,7 +2,7 @@ extends Sprite2D
 
 '''
 BUG TO FIX: object stays selected after closing it if the mouse ends up being outside the collision 
-shape after clicking in it
+shape after clicking in it. (this is due to the just_changed_sprites logic)
 '''
 
 #region scene nodes
@@ -100,6 +100,7 @@ func _ready() -> void:
 	disabled = false
 	if parent != null:
 		invisible = true
+		# if the node is a child, make it appear above its parent
 		z_index += 1
 	else:
 		invisible = false
