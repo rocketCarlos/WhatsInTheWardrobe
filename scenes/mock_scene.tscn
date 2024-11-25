@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jxnd16fsfrgl"]
+[gd_scene load_steps=10 format=3 uid="uid://jxnd16fsfrgl"]
 
 [ext_resource type="Script" path="res://scripts/mock_scene.gd" id="1_ujmvs"]
 [ext_resource type="PackedScene" uid="uid://c12yf3vwako47" path="res://scenes/GenericContainer.tscn" id="2_x7mms"]
@@ -6,13 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://cqof86uu4uvm1" path="res://assets/interactive objects/mom_wardrobe_opened.png" id="4_tnkrj"]
 [ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="5_qa50j"]
 [ext_resource type="Texture2D" uid="uid://br3h8eye7um55" path="res://assets/interactive objects/drawer2_opened.png" id="6_6q1gb"]
+[ext_resource type="PackedScene" uid="uid://m0wkxnenryyi" path="res://scenes/GenericItem.tscn" id="7_5f1dn"]
+[ext_resource type="PackedScene" uid="uid://hfl2rebjgsti" path="res://scenes/Inventory.tscn" id="8_2b2il"]
+[ext_resource type="PackedScene" uid="uid://dnniak5pgg003" path="res://scenes/Slot.tscn" id="9_vkbk3"]
 
 [node name="MockScene" type="Node2D"]
-position = Vector2(153, 150)
+position = Vector2(143, 153)
 script = ExtResource("1_ujmvs")
 
 [node name="MumWardrobe" parent="." node_paths=PackedStringArray("children") instance=ExtResource("2_x7mms")]
-position = Vector2(535, 178)
+position = Vector2(1285, 146)
 sprite_closed = ExtResource("3_t2hap")
 sprite_open = ExtResource("4_tnkrj")
 children = [NodePath("SecurityBox")]
@@ -23,3 +26,23 @@ scale = Vector2(0.364499, 0.44403)
 sprite_closed = ExtResource("5_qa50j")
 sprite_open = ExtResource("6_6q1gb")
 parent = NodePath("..")
+
+[node name="Inventory" parent="." instance=ExtResource("8_2b2il")]
+position = Vector2(429, 447)
+
+[node name="GenericItem" parent="." node_paths=PackedStringArray("original_slot") instance=ExtResource("7_5f1dn")]
+position = Vector2(466, 183)
+original_slot = NodePath("../Slot")
+
+[node name="GenericItem2" parent="." node_paths=PackedStringArray("original_slot") instance=ExtResource("7_5f1dn")]
+position = Vector2(88, 184)
+original_slot = NodePath("../Slot2")
+
+[node name="GenericItem3" parent="." instance=ExtResource("7_5f1dn")]
+position = Vector2(852, 196)
+
+[node name="Slot" parent="." instance=ExtResource("9_vkbk3")]
+position = Vector2(189, 17)
+
+[node name="Slot2" parent="." instance=ExtResource("9_vkbk3")]
+position = Vector2(562, 3)

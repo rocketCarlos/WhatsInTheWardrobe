@@ -14,6 +14,10 @@ config/name="WhatsInTheWardrobe"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+EventBus="*res://utils/event_bus.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

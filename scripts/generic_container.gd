@@ -1,6 +1,13 @@
 extends Sprite2D
 
 '''
+GenericContainer is the base for every container in the game that opens, closes and optionally 
+contains other objects inside. The array of children and the reference to the parent is used to 
+enable and disable wether it is possible to interact with the container depending on which object
+should "have the focus"
+'''
+
+'''
 BUGS TO FIX: 
 	- object stays selected after closing it if the mouse ends up being outside the collision 
 	shape after clicking in it. (this is due to the just_changed_sprites logic)
