@@ -1,8 +1,11 @@
 extends Sprite2D
 
 '''
-BUG TO FIX: object stays selected after closing it if the mouse ends up being outside the collision 
-shape after clicking in it. (this is due to the just_changed_sprites logic)
+BUGS TO FIX: 
+	- object stays selected after closing it if the mouse ends up being outside the collision 
+	shape after clicking in it. (this is due to the just_changed_sprites logic)
+	- When hovering over an object for the first time, it stays selected after taking the mouse out
+	due to just_changed_sprites_logic
 '''
 
 #region scene nodes
@@ -16,7 +19,7 @@ shape after clicking in it. (this is due to the just_changed_sprites logic)
 #region attributes
 # Indicates the current sprite displayed. 0 == closed, 1 == open. Setting current_sprite to 0 or 1 
 # automatically makes the object show the corresponding sprite and collision shape
-var just_changed_sprites = false
+var just_changed_sprites
 var current_sprite:
 	set(which):
 		current_sprite = which
@@ -96,6 +99,7 @@ var invisible:
 func _ready() -> void:
 	mouse_in_collider = false
 	current_sprite = 0
+	just_changed_sprites = false
 	
 	disabled = false
 	if parent != null:
