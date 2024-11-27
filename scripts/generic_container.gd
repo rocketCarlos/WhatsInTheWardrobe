@@ -12,7 +12,7 @@ BUGS TO FIX:
 	- object stays selected after closing it if the mouse ends up being outside the collision 
 	shape after clicking in it. (this is due to the just_changed_sprites logic)
 	- When hovering over an object for the first time, it stays selected after taking the mouse out
-	due to just_changed_sprites_logic
+	due to just_changed_sprites_logic (sometimes the bug does not appear??)
 '''
 
 #region scene nodes

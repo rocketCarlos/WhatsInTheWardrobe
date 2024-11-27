@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/generic_container.gd" id="2_ce0e8"]
 
 [node name="GenericContainer" type="Sprite2D"]
+z_index = 1
 position = Vector2(506, 297)
 script = ExtResource("2_ce0e8")
 metadata/_edit_group_ = true

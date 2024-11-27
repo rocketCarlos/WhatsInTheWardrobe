@@ -17,6 +17,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 EventBus="*res://utils/event_bus.gd"
+Inventory="*res://scenes/Inventory.tscn"
 
 [display]
 

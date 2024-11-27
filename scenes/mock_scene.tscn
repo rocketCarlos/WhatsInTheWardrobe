@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://jxnd16fsfrgl"]
+[gd_scene load_steps=10 format=3 uid="uid://jxnd16fsfrgl"]
 
 [ext_resource type="Script" path="res://scripts/mock_scene.gd" id="1_ujmvs"]
 [ext_resource type="PackedScene" uid="uid://c12yf3vwako47" path="res://scenes/GenericContainer.tscn" id="2_x7mms"]
@@ -7,16 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="5_qa50j"]
 [ext_resource type="Texture2D" uid="uid://br3h8eye7um55" path="res://assets/interactive objects/drawer2_opened.png" id="6_6q1gb"]
 [ext_resource type="PackedScene" uid="uid://m0wkxnenryyi" path="res://scenes/GenericItem.tscn" id="7_5f1dn"]
-[ext_resource type="PackedScene" uid="uid://hfl2rebjgsti" path="res://scenes/Inventory.tscn" id="8_2b2il"]
 [ext_resource type="PackedScene" uid="uid://dnniak5pgg003" path="res://scenes/Slot.tscn" id="9_vkbk3"]
 [ext_resource type="Texture2D" uid="uid://d2bii667p8s3" path="res://assets/interactive objects/kitchen/knife.png" id="10_pop0y"]
 
 [node name="MockScene" type="Node2D"]
 position = Vector2(143, 153)
 script = ExtResource("1_ujmvs")
-
-[node name="Inventory" parent="." instance=ExtResource("8_2b2il")]
-position = Vector2(429, 447)
 
 [node name="MumWardrobe" parent="." node_paths=PackedStringArray("children") instance=ExtResource("2_x7mms")]
 position = Vector2(140, 268)
