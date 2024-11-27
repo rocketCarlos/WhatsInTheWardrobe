@@ -1,13 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://m0wkxnenryyi"]
+[gd_scene load_steps=2 format=3 uid="uid://m0wkxnenryyi"]
 
 [ext_resource type="Script" path="res://scripts/generic_item.gd" id="1_yy886"]
-[ext_resource type="Texture2D" uid="uid://d2bii667p8s3" path="res://assets/interactive objects/kitchen/knife.png" id="2_gqmau"]
 
 [node name="GenericItem" type="Sprite2D"]
 z_index = 2
 position = Vector2(538, 281)
 script = ExtResource("1_yy886")
-sprite = ExtResource("2_gqmau")
 metadata/_edit_group_ = true
 
 [node name="Highlight" type="Sprite2D" parent="."]

@@ -3,7 +3,7 @@ extends Sprite2D
 '''
 GenericContainer is the base for every container in the game that opens, closes and optionally 
 contains other objects inside. The array of children and the reference to the parent is used to 
-enable and disable wether it is possible to interact with the container depending on which object
+enable and disable whether it is possible to interact with the container depending on which object
 should "have the focus"
 '''
 
@@ -86,6 +86,7 @@ var mouse_in_collider
 # used when the mouse is already selecting an son of this object
 var disabled:
 	set(value):
+		disabled = value
 		if current_sprite == 0:
 			hitbox_shape_closed.set_deferred(&"disabled", value)
 		else:
@@ -96,6 +97,7 @@ var disabled:
 # used when this object is inside another object that is closed
 var invisible:
 	set(value):
+		invisible = value
 		disabled = value
 		visible = not value
 

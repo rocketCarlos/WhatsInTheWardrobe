@@ -6,7 +6,8 @@ enum ROOMS {
 	ENTRANCE,
 	CORRIDOR,
 	MUMS,
-	KIDS
+	KIDS,
+	ANY
 }
 
 var selectedItem = null: 
