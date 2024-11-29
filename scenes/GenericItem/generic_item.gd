@@ -33,7 +33,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	# manage item interactions
+	if Input.is_action_just_pressed("Interact") and mouse_in_collider:
+		if not in_inventory: # request going to the inventory
+			var response = ItemManager.to_inventory(self)
+			
+			if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
+				in_inventory = true
+				position = response.position
+		else: # already in inventory, manage selections
+			if ItemManager.selected_item == self: # item is already selected, unselect
+				ItemManager.selected_item = null
+				highlight.hide()
+			else: # item is not selected, select self
+				if ItemManager.selected_item:
+					ItemManager.selected_item.highlight.hide()
+				ItemManager.selected_item = self
+				highlight.show()
 
 #endregion
 
@@ -57,7 +73,8 @@ func _on_hitbox_mouse_entered() -> void:
 
 
 func _on_hitbox_mouse_exited() -> void:
-	highlight.hide()
+	if ItemManager.selected_item != self: # if item is selected, it is always highlighted
+		highlight.hide()
 	mouse_in_collider = false
 		
 	

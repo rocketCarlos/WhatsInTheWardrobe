@@ -7,15 +7,3 @@
 script = ExtResource("1_pinau")
 
 [node name="Inventory" parent="." instance=ExtResource("2_71x0o")]
-
-[node name="Corridor" type="Node" parent="."]
-
-[node name="Entrance" type="Node" parent="."]
-
-[node name="Kids" type="Node" parent="."]
-
-[node name="Kitchen" type="Node" parent="."]
-
-[node name="Living" type="Node" parent="."]
-
-[node name="Mums" type="Node" parent="."]
