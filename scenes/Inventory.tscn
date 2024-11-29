@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://hfl2rebjgsti"]
+
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="2_qbf5g"]
+
+[node name="Inventory" type="Sprite2D"]
+position = Vector2(569, 596)
+scale = Vector2(2.44301, 1)
+script = ExtResource("2_qbf5g")
+item_positions = Array[Vector2]([Vector2(15, 42), Vector2(67, 32), Vector2(45, 12), Vector2(23, 56), Vector2(48, 84)])

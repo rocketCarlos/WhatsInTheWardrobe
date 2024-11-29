@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://jxnd16fsfrgl"]
+
+[ext_resource type="Script" path="res://scripts/mock_scene.gd" id="1_ujmvs"]
+[ext_resource type="PackedScene" uid="uid://c12yf3vwako47" path="res://scenes/GenericItem.tscn" id="2_x7mms"]
+[ext_resource type="Texture2D" uid="uid://ckvk8a6ugpfas" path="res://assets/interactive objects/mom_wardrobe.png" id="3_t2hap"]
+[ext_resource type="Texture2D" uid="uid://cqof86uu4uvm1" path="res://assets/interactive objects/mom_wardrobe_opened.png" id="4_tnkrj"]
+[ext_resource type="Texture2D" uid="uid://c4gn7qwtc5c10" path="res://assets/interactive objects/drawer_closed.png" id="5_8ocm6"]
+[ext_resource type="Texture2D" uid="uid://c6nbw6tbj7hdo" path="res://assets/interactive objects/drawer_opened.png" id="6_lswp5"]
+
+[node name="MockScene" type="Node2D"]
+position = Vector2(153, 150)
+script = ExtResource("1_ujmvs")
+
+[node name="MumWardrobe" parent="." instance=ExtResource("2_x7mms")]
+position = Vector2(535, 178)
+sprite_closed = ExtResource("3_t2hap")
+sprite_open = ExtResource("4_tnkrj")
+
+[node name="SecurityBox" parent="MumWardrobe" instance=ExtResource("2_x7mms")]
+position = Vector2(95, -4)
+scale = Vector2(0.364499, 0.44403)
+sprite_closed = ExtResource("5_8ocm6")
+sprite_open = ExtResource("6_lswp5")

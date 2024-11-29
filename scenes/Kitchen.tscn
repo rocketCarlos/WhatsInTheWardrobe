@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cupptk5cv2i1r"]
+
+[ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_swcoh"]
+[ext_resource type="PackedScene" uid="uid://c12yf3vwako47" path="res://scenes/GenericContainer.tscn" id="2_xisrt"]
+[ext_resource type="Texture2D" uid="uid://br3h8eye7um55" path="res://assets/interactive objects/drawer2_opened.png" id="3_gt5wo"]
+[ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="4_mqq18"]
+[ext_resource type="PackedScene" uid="uid://dnniak5pgg003" path="res://scenes/Slot.tscn" id="5_w6smj"]
+[ext_resource type="PackedScene" uid="uid://m0wkxnenryyi" path="res://scenes/GenericItem.tscn" id="6_7chas"]
+[ext_resource type="Texture2D" uid="uid://d2bii667p8s3" path="res://assets/interactive objects/kitchen/knife.png" id="7_150fv"]
+
+[node name="Kitchen" type="Sprite2D"]
+texture = ExtResource("1_swcoh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Drawer1" parent="." node_paths=PackedStringArray("children") instance=ExtResource("2_xisrt")]
+position = Vector2(-389, 329)
+scale = Vector2(0.775, 0.775)
+sprite_closed = ExtResource("4_mqq18")
+sprite_open = ExtResource("3_gt5wo")
+children = [NodePath("Slot")]
+
+[node name="Slot" parent="Drawer1" node_paths=PackedStringArray("parent", "child") instance=ExtResource("5_w6smj")]
+position = Vector2(-77.4193, -19.3548)
+parent = NodePath("..")
+child = NodePath("../../Knife1")
+
+[node name="Knife1" parent="." node_paths=PackedStringArray("original_slot") instance=ExtResource("6_7chas")]
+position = Vector2(-450, 314)
+rotation = 1.5708
+scale = Vector2(0.304358, 0.304358)
+sprite = ExtResource("7_150fv")
+original_slot = NodePath("../Drawer1/Slot")
+
+[node name="Drawer2" parent="." instance=ExtResource("2_xisrt")]
+position = Vector2(149, 340)
+scale = Vector2(0.635, 0.635)
