@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgd4v1a62u6yo"
-path="res://.godot/imported/weekly_planner.png-6112d2479a343675d459ea94b449ea5f.ctex"
+uid="uid://djplcjfg54h0b"
+path="res://.godot/imported/clock.png-d7b3e1cc85d79f8852e41e92e3a7d694.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/weekly_planner.png"
-dest_files=["res://.godot/imported/weekly_planner.png-6112d2479a343675d459ea94b449ea5f.ctex"]
+source_file="res://assets/interactive objects/clock/clock.png"
+dest_files=["res://.godot/imported/clock.png-d7b3e1cc85d79f8852e41e92e3a7d694.ctex"]
 
 [params]
 

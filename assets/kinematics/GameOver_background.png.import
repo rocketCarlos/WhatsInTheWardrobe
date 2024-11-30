@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgd4v1a62u6yo"
-path="res://.godot/imported/weekly_planner.png-6112d2479a343675d459ea94b449ea5f.ctex"
+uid="uid://dxpo8t18sdjt1"
+path="res://.godot/imported/GameOver_background.png-0b32c56fc649998bbc7adeb2217f8f65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/weekly_planner.png"
-dest_files=["res://.godot/imported/weekly_planner.png-6112d2479a343675d459ea94b449ea5f.ctex"]
+source_file="res://assets/kinematics/GameOver_background.png"
+dest_files=["res://.godot/imported/GameOver_background.png-0b32c56fc649998bbc7adeb2217f8f65.ctex"]
 
 [params]
 
