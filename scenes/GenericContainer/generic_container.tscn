@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhhcj2lu1qtoc"]
+
+[ext_resource type="Script" path="res://scenes/GenericContainer/generic_container.gd" id="1_5js1k"]
+[ext_resource type="Texture2D" uid="uid://c4gn7qwtc5c10" path="res://assets/interactive objects/drawer_closed.png" id="1_aicsv"]
+[ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="3_xi1dh"]
+[ext_resource type="Texture2D" uid="uid://br3h8eye7um55" path="res://assets/interactive objects/drawer2_opened.png" id="4_y2it0"]
+
+[node name="GenericContainer" type="Sprite2D"]
+position = Vector2(607, 432)
+texture = ExtResource("1_aicsv")
+script = ExtResource("1_5js1k")
+sprite_closed = ExtResource("3_xi1dh")
+sprite_open = ExtResource("4_y2it0")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(100, 100, 100, 1)
+z_index = -1
+scale = Vector2(1.05, 1.05)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="ShapeClosed" type="CollisionShape2D" parent="Hitbox"]
+
+[node name="ShapeOpen" type="CollisionShape2D" parent="Hitbox"]
+
+[connection signal="mouse_shape_entered" from="Hitbox" to="." method="_on_hitbox_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Hitbox" to="." method="_on_hitbox_mouse_shape_exited"]

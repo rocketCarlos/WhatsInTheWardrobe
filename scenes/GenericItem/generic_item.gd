@@ -95,9 +95,9 @@ func _on_hitbox_mouse_entered() -> void:
 
 
 func _on_hitbox_mouse_exited() -> void:
-	if ItemManager.selected_item != self: # if item is selected, it is always highlighted
-		highlight.hide()
 	mouse_in_collider = false
-		
+	# if item is selected, it is always highlighted
+	if ItemManager.selected_item != self: 
+		highlight.hide()
 	
 #endregion
