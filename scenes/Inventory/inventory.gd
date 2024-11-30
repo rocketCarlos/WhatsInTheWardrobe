@@ -45,11 +45,11 @@ func restart() -> void:
 func _ready() -> void:
 	restart()
 	# add slot positions
-	inventory_positions.push_back(slot_1.position)
-	inventory_positions.push_back(slot_2.position)
-	inventory_positions.push_back(slot_3.position)
-	inventory_positions.push_back(slot_4.position)
-	inventory_positions.push_back(slot_5.position)
+	inventory_positions.push_back(slot_1.global_position)
+	inventory_positions.push_back(slot_2.global_position)
+	inventory_positions.push_back(slot_3.global_position)
+	inventory_positions.push_back(slot_4.global_position)
+	inventory_positions.push_back(slot_5.global_position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,12 +67,18 @@ func to_inventory(item: Node) -> Dictionary:
 		inventory_items[stored] = item
 		var position = inventory_positions[stored]
 		stored += 1
-		return { "status": ItemManager.INVENTORY_STATUS.ACCEPTED, "position": position }
+		return { "status": ItemManager.INVENTORY_STATUS.ACCEPTED, "position": position, "idx": stored-1 }
 	else: # there is no room for the item
 		return { "status": ItemManager.INVENTORY_STATUS.REJECTED, "position": null }
+		
+func retrieve_item(idx: int) -> void:
+	inventory_items[idx] = null
 	
-#endregion
-
-#region signal functions
-
+	# rearrange items
+	for i in range(idx+1, stored):
+		inventory_items[i].update_inventory(inventory_positions[i-1], i-1)
+		inventory_items[i-1] = inventory_items[i]
+		
+	stored -= 1
+	
 #endregion

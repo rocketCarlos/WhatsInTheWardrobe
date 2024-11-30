@@ -17,18 +17,23 @@ by the end of the day to pass to the next day.
 #region attributes
 var mouse_in_collider : bool
 var in_inventory : bool
+# the index used by the item in the inventory
+var inventory_index: int
 var current_slot : Node
-var original_slot : Node
-
+@export var original_slot : Node
 #endregion 
 
 #region ready, process and restart
 # function called when the game is restarted to set up all parameters to their initial values
 func restart() -> void:
-	pass
+	mouse_in_collider = false
+	in_inventory = false
+	
+	current_slot = original_slot
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	restart()
 	_init_textures()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,7 +45,10 @@ func _process(delta: float) -> void:
 			
 			if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
 				in_inventory = true
-				position = response.position
+				global_position = response.position
+				inventory_index = response.idx
+				if current_slot:
+					current_slot.retrieve_item()
 		else: # already in inventory, manage selections
 			if ItemManager.selected_item == self: # item is already selected, unselect
 				ItemManager.selected_item = null
@@ -64,6 +72,20 @@ func _init_textures() -> void:
 	hitbox_shape.shape = collider
 	highlight.texture = texture
 
+#endregion
+
+#region slot and inventory interactions
+# function called when the object is required to go to a slot
+func go_to_slot(slot: Node) -> void:
+	in_inventory = false
+	current_slot = slot
+	global_position = slot.global_position
+
+# called by the inventory when it is rearranged
+func update_inventory(pos: Vector2, idx: int) -> void:
+	global_position = pos
+	inventory_index = idx
+	
 #endregion
 
 #region signal functions
