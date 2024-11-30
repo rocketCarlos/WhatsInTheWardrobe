@@ -19,9 +19,23 @@ var mouse_in_collider : bool
 var in_inventory : bool
 # the index used by the item in the inventory
 var inventory_index: int
-var current_slot : Node
+
+# when current_slot is set:
+# - item's position will match slot's position
+# - item's room will match slot's room
+# - item is reparented
+# NOTE: only if new slot is not null
+var current_slot : Node:
+	set(slot):
+		current_slot = slot
+		if slot: # if slot is not null
+			global_position = slot.global_position
+			room = slot.room
+			ItemManager.reparent_item(self)
+		
+		
 @export var original_slot : Node
-@export var room: ItemManager.ROOMS = ItemManager.ROOMS.NONE
+var room: ItemManager.ROOMS = ItemManager.ROOMS.NONE
 #endregion 
 
 #region ready, process and restart
@@ -29,14 +43,13 @@ var current_slot : Node
 func restart() -> void:
 	mouse_in_collider = false
 	in_inventory = false
-	
+	inventory_index = -1
 	current_slot = original_slot
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	restart()
 	_init_textures()
-	ItemManager.reparent_item(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,16 +59,17 @@ func _process(delta: float) -> void:
 			# IF THERE IS A SELECTED ITEM, A NEW ITEM CAN'T GO INTO THE INVENTORY
 			if ItemManager.selected_item == null:
 				var response = ItemManager.to_inventory(self)
-				
 				if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
 					in_inventory = true
 					global_position = response.position
 					inventory_index = response.idx
 					if current_slot:
 						current_slot.retrieve_item()
+						current_slot = null
 			else: # if interacting with an item while having a selected item, unselect that item
 				ItemManager.selected_item.highlight.hide()
 				ItemManager.selected_item = null
+				
 		else: # already in inventory, manage selections
 			if ItemManager.selected_item == self: # item is already selected, unselect
 				ItemManager.selected_item = null
@@ -85,8 +99,8 @@ func _init_textures() -> void:
 # function called when the object is required to go to a slot
 func go_to_slot(slot: Node) -> void:
 	in_inventory = false
+	inventory_index = -1
 	current_slot = slot
-	global_position = slot.global_position
 
 # called by the inventory when it is rearranged
 func update_inventory(pos: Vector2, idx: int) -> void:

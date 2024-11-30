@@ -19,6 +19,8 @@ if all the items are placed in their original slot
 var mouse_in_collider : bool
 # reference to the node that this slot contains
 var item: Node
+
+@export var room: ItemManager.ROOMS = ItemManager.ROOMS.NONE
 #endregion
 
 

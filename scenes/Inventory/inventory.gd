@@ -70,7 +70,8 @@ func to_inventory(item: Node) -> Dictionary:
 		return { "status": ItemManager.INVENTORY_STATUS.ACCEPTED, "position": position, "idx": stored-1 }
 	else: # there is no room for the item
 		return { "status": ItemManager.INVENTORY_STATUS.REJECTED, "position": null }
-		
+
+# called by the item manager when an item goes from the inventory to a slot
 func retrieve_item(idx: int) -> void:
 	inventory_items[idx] = null
 	

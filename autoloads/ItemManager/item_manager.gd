@@ -71,8 +71,8 @@ func to_inventory(item: Node) -> Dictionary:
 # called by slots when they're clicked while an item is selected
 # selected item ends up going from the inventory to the slot
 func request_item(slot: Node) -> void:
-	selected_item.go_to_slot(slot)
 	_inventory.retrieve_item(selected_item.inventory_index)
+	selected_item.go_to_slot(slot)
 	selected_item = null
 
 #endregion

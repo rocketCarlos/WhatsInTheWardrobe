@@ -10,18 +10,28 @@
 
 [node name="Slot" parent="." instance=ExtResource("2_834jm")]
 position = Vector2(141, 104)
-
-[node name="GenericItem" parent="." instance=ExtResource("1_oymsc")]
-position = Vector2(503, 104)
-rotation = 1.08734
-scale = Vector2(0.373016, 0.315094)
-room = 1
-
-[node name="GenericItem2" parent="." instance=ExtResource("1_oymsc")]
-position = Vector2(350, 147)
 room = 0
 
+[node name="GenericItem" parent="Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+position = Vector2(362, -6.10352e-05)
+rotation = 1.08734
+scale = Vector2(0.373016, 0.315094)
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(839, 92)
+room = 2
+
+[node name="GenericItem2" parent="Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+position = Vector2(-489, 55)
+original_slot = NodePath("..")
+
+[node name="Slot3" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(852, 207)
+room = 4
+
 [node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
+visible = false
 position = Vector2(389.171, 491.019)
 scale = Vector2(0.77414, 0.671498)
 texture = ExtResource("4_r4q3r")
