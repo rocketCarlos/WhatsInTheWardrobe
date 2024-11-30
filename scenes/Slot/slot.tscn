@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs57ycjr101r3"]
+
+[ext_resource type="Script" path="res://scenes/Slot/slot.gd" id="1_yt1gv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whccf"]
+radius = 12.0416
+
+[node name="Slot" type="Node2D"]
+z_index = 1
+script = ExtResource("1_yt1gv")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+self_modulate = Color(100, 100, 0, 0.384)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_whccf")
+
+[connection signal="mouse_entered" from="Hitbox" to="." method="_on_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="_on_hitbox_mouse_exited"]

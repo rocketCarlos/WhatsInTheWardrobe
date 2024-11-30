@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfsatt0oldpee"]
+
+[ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="1_oymsc"]
+[ext_resource type="PackedScene" uid="uid://cs57ycjr101r3" path="res://scenes/Slot/slot.tscn" id="2_834jm"]
+[ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="3_psku0"]
+[ext_resource type="Texture2D" uid="uid://6gy84niqdygv" path="res://assets/interactive objects/kitchen/spatula.png" id="3_ua3tu"]
+[ext_resource type="Texture2D" uid="uid://br3h8eye7um55" path="res://assets/interactive objects/drawer2_opened.png" id="4_r4q3r"]
+[ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="5_ghukh"]
+[ext_resource type="Texture2D" uid="uid://cj3hcn7g320g8" path="res://assets/interactive objects/kitchen/big_knife.png" id="7_73ycw"]
+
+[node name="MockScene" type="Node2D"]
+
+[node name="Slot" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(945, 236)
+
+[node name="Spatula" parent="Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+rotation = 1.08734
+scale = Vector2(0.373016, 0.315094)
+texture = ExtResource("3_ua3tu")
+original_slot = NodePath("..")
+
+[node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
+position = Vector2(427, 192)
+scale = Vector2(0.77414, 0.671498)
+texture = ExtResource("4_r4q3r")
+sprite_closed = ExtResource("5_ghukh")
+sprite_open = ExtResource("4_r4q3r")
+children = [NodePath("Slot3"), NodePath("GenericContainer2")]
+
+[node name="Slot3" parent="GenericContainer" node_paths=PackedStringArray("parent") instance=ExtResource("2_834jm")]
+position = Vector2(-116.258, 80.4172)
+scale = Vector2(1.29176, 1.48921)
+parent = NodePath("..")
+
+[node name="GenericContainer2" parent="GenericContainer" node_paths=PackedStringArray("parent", "children") instance=ExtResource("3_psku0")]
+position = Vector2(0.424866, -59.0385)
+scale = Vector2(0.913681, 0.451485)
+texture = ExtResource("5_ghukh")
+sprite_closed = ExtResource("5_ghukh")
+sprite_open = ExtResource("4_r4q3r")
+parent = NodePath("..")
+children = [NodePath("Slot2")]
+
+[node name="Slot2" parent="GenericContainer/GenericContainer2" node_paths=PackedStringArray("parent") instance=ExtResource("2_834jm")]
+position = Vector2(150.569, 51.5385)
+scale = Vector2(1.41379, 3.29846)
+parent = NodePath("..")
+
+[node name="Knife" parent="GenericContainer/GenericContainer2/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+rotation = 0.783653
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_73ycw")
+original_slot = NodePath("..")
