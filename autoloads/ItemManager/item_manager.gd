@@ -13,12 +13,7 @@ original rooms.
 
 #region scene nodes
 @onready var _inventory = $Inventory
-@onready var corridor = $Corridor
-@onready var entrance = $Entrance
-@onready var kids = $Kids
-@onready var kitchen = $Kitchen
-@onready var living = $Living
-@onready var mums = $Mums
+@export var inventory_full_notification: PackedScene
 #endregion
 
 #region globals
@@ -35,6 +30,10 @@ enum INVENTORY_STATUS {
 # function called by items to request being transferred into the inventory
 func to_inventory(item: Node) -> Dictionary:
 	return _inventory.to_inventory(item)
+
+# called when the inventory is full to display an error message
+func inventory_full() -> void:
+	add_child(inventory_full_notification.instantiate())
 	
 #endregion
 

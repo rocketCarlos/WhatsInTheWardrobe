@@ -19,6 +19,56 @@ scale = Vector2(0.373016, 0.315094)
 texture = ExtResource("3_ua3tu")
 original_slot = NodePath("..")
 
+[node name="Slot2" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(989, 366)
+metadata/_edit_group_ = true
+
+[node name="Spatula" parent="Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+rotation = 1.08734
+scale = Vector2(0.373016, 0.315094)
+texture = ExtResource("3_ua3tu")
+original_slot = NodePath("..")
+
+[node name="Slot3" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(761, 391)
+metadata/_edit_group_ = true
+
+[node name="Spatula" parent="Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+rotation = 1.08734
+scale = Vector2(0.373016, 0.315094)
+texture = ExtResource("3_ua3tu")
+original_slot = NodePath("..")
+
+[node name="Slot4" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(789, 250)
+metadata/_edit_group_ = true
+
+[node name="Spatula" parent="Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+rotation = 1.08734
+scale = Vector2(0.373016, 0.315094)
+texture = ExtResource("3_ua3tu")
+original_slot = NodePath("..")
+
+[node name="Slot5" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(942, 125)
+metadata/_edit_group_ = true
+
+[node name="Spatula" parent="Slot5" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+rotation = 1.08734
+scale = Vector2(0.373016, 0.315094)
+texture = ExtResource("3_ua3tu")
+original_slot = NodePath("..")
+
+[node name="Slot6" parent="." instance=ExtResource("2_834jm")]
+position = Vector2(818, 103)
+metadata/_edit_group_ = true
+
+[node name="Spatula" parent="Slot6" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+rotation = 1.08734
+scale = Vector2(0.373016, 0.315094)
+texture = ExtResource("3_ua3tu")
+original_slot = NodePath("..")
+
 [node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
 position = Vector2(427, 192)
 scale = Vector2(0.77414, 0.671498)
@@ -35,7 +85,7 @@ parent = NodePath("..")
 [node name="GenericContainer2" parent="GenericContainer" node_paths=PackedStringArray("parent", "children") instance=ExtResource("3_psku0")]
 position = Vector2(0.424866, -59.0385)
 scale = Vector2(0.913681, 0.451485)
-texture = ExtResource("5_ghukh")
+texture = ExtResource("4_r4q3r")
 sprite_closed = ExtResource("5_ghukh")
 sprite_open = ExtResource("4_r4q3r")
 parent = NodePath("..")

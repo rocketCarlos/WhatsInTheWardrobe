@@ -105,7 +105,6 @@ func _process(delta: float) -> void:
 	
 #endregion
 
-
 #region signal functions
 # ShapeClosed-> 0 ShapeOpen-> 1 because they are set in that order in the scene tree
 
