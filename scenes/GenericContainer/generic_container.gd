@@ -24,9 +24,15 @@ var open : bool:
 		if open:
 			texture = sprite_open
 			highlight.texture = sprite_open
+			# when open, children are visible
+			for child in children:
+				child.show()
 		else:
 			texture = sprite_closed
 			highlight.texture = sprite_closed
+			# when closed, children are not visible
+			for child in children:
+				child.hide()
 
 # variables that indicate if the cursor is inside any of the two collision shapes
 var mouse_in_open : bool
@@ -54,6 +60,18 @@ var mouse_in_closed : bool
 		await ready
 		hitbox_shape_open.shape = collider
 
+# Container's parent when it comes to placement in the room.
+# Used for managing interaction and visibility
+@export var parent: Node
+# Container's children when it comes to placement in the room. 
+# I.e., the objects that this container contains
+@export var children: Array[Node]
+# When true, the object ignores all interactions i.e. hitbox is disabled
+var disabled : bool:
+	set(value):
+		disabled = value
+		hitbox_shape_open.set_deferred(&"disabled", disabled)
+		hitbox_shape_closed.set_deferred(&"disabled", disabled)
 #endregion
 
 #region ready, process and restart
@@ -67,7 +85,10 @@ func restart() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	restart()
-
+	
+	# if this node has a parent, show this node above its parent
+	if parent:
+		z_index += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -76,8 +97,11 @@ func _process(delta: float) -> void:
 		if (open and mouse_in_open) or (not open and mouse_in_closed):
 			open = not open
 			# if switched to close, check if mouse is there to keep the highlight
+			# and to enable parent again
 			if not open and not mouse_in_closed:
 				highlight.hide()
+				if parent:
+					parent.disabled = false
 	
 #endregion
 
@@ -90,17 +114,25 @@ func _on_hitbox_mouse_shape_entered(shape_idx: int) -> void:
 		mouse_in_closed = true
 	else:
 		mouse_in_open = true
-	
+	# when the mouse is inside the current satate associated shape, show highlight
 	if int(open) == shape_idx:
 		highlight.show()
+		# when highlight is show, user can interact with the container. Therefore, this container's
+		# parent must be disabled
+		if parent:
+			parent.disabled = true
 
 func _on_hitbox_mouse_shape_exited(shape_idx: int) -> void:
 	if shape_idx == 0:
 		mouse_in_closed = false
 	else:
 		mouse_in_open = false
-	
+	# when the mouse leaves the current satate associated shape, hide highlight
 	if int(open) == shape_idx:
 		highlight.hide()
+		# when highlight is not shown, user can't interact with the container. Therefore,
+		# this container's parent must be enabled
+		if parent:
+			parent.disabled = false
 	
 #endregion
