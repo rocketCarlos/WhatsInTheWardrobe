@@ -32,6 +32,8 @@ var current_slot : Node:
 			global_position = slot.global_position
 			parent = slot.parent
 			reparent(slot)
+		else:
+			parent = null
 		
 # the slot where the item is originally placed
 @export var original_slot : Node
@@ -64,6 +66,9 @@ func _process(delta: float) -> void:
 			if ItemManager.selected_item == null:
 				var response = ItemManager.to_inventory(self)
 				if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
+					#if item had a parent, enable it again
+					if parent:
+						parent.disabled = false
 					in_inventory = true
 					reparent(ItemManager)
 					global_position = response.position
@@ -130,8 +135,8 @@ func _on_hitbox_mouse_exited() -> void:
 	if ItemManager.selected_item != self: 
 		highlight.hide()
 	
-	# enable parent if not in inventory
-	if not in_inventory and parent:
+	# enable parent
+	if parent:
 		parent.disabled = false
 	
 #endregion

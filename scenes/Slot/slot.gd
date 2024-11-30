@@ -61,18 +61,23 @@ func _on_hitbox_mouse_entered() -> void:
 	
 	# if the slot has no item, it can accept items
 	if not item:
-		# if there's a selected item, show a highlight to indicate an action
+		# if there's a selected item, show a highlight to indicate an action and disable parent
 		if ItemManager.selected_item:
 			highlight.texture = ItemManager.selected_item.texture
 			highlight.rotation = ItemManager.selected_item.rotation
 			highlight.scale = ItemManager.selected_item.scale
+			if parent:
+				parent.disabled = true
 		else:
 			highlight.texture = null
 		
  
 func _on_hitbox_mouse_exited() -> void:
 	mouse_in_collider = false
-	
 	highlight.texture = null
+	
+	# if mouse leaving, slot had no item and there was a selected item, enable parent again
+	if not item and ItemManager.selected_item and parent:
+		parent.disabled = false
 
 #endregion

@@ -131,8 +131,8 @@ func _on_hitbox_mouse_shape_exited(shape_idx: int) -> void:
 	if int(open) == shape_idx:
 		highlight.hide()
 		# when highlight is not shown, user can't interact with the container. Therefore,
-		# this container's parent must be enabled
-		if parent:
+		# this container's parent must be enabled UNLESS DISABLED BY CHILDREN
+		if parent and not disabled:
 			parent.disabled = false
 	
 #endregion
