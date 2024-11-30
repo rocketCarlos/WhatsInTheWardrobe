@@ -22,20 +22,21 @@ var inventory_index: int
 
 # when current_slot is set:
 # - item's position will match slot's position
-# - item's room will match slot's room
 # - item is reparented
+# - item's parent matches slot's parent
 # NOTE: only if new slot is not null
 var current_slot : Node:
 	set(slot):
 		current_slot = slot
 		if slot: # if slot is not null
 			global_position = slot.global_position
-			room = slot.room
-			ItemManager.reparent_item(self)
+			parent = slot.parent
+			reparent(slot)
 		
-		
+# the slot where the item is originally placed
 @export var original_slot : Node
-var room: ItemManager.ROOMS = ItemManager.ROOMS.NONE
+# item's parent in terms of placement in the room
+var parent: Node
 #endregion 
 
 #region ready, process and restart
@@ -50,6 +51,9 @@ func restart() -> void:
 func _ready() -> void:
 	restart()
 	_init_textures()
+	# if this node has a parent, show this node above its parent
+	if parent:
+		z_index += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -61,6 +65,7 @@ func _process(delta: float) -> void:
 				var response = ItemManager.to_inventory(self)
 				if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
 					in_inventory = true
+					reparent(ItemManager)
 					global_position = response.position
 					inventory_index = response.idx
 					if current_slot:
@@ -113,6 +118,10 @@ func update_inventory(pos: Vector2, idx: int) -> void:
 func _on_hitbox_mouse_entered() -> void:
 	highlight.show()
 	mouse_in_collider = true
+	
+	# disable parent if not in inventory
+	if not in_inventory and parent:
+		parent.disabled = true
 
 
 func _on_hitbox_mouse_exited() -> void:
@@ -120,5 +129,9 @@ func _on_hitbox_mouse_exited() -> void:
 	# if item is selected, it is always highlighted
 	if ItemManager.selected_item != self: 
 		highlight.hide()
+	
+	# enable parent if not in inventory
+	if not in_inventory and parent:
+		parent.disabled = false
 	
 #endregion

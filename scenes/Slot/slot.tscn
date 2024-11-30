@@ -6,6 +6,7 @@
 radius = 12.0416
 
 [node name="Slot" type="Node2D"]
+z_index = 1
 script = ExtResource("1_yt1gv")
 
 [node name="Highlight" type="Sprite2D" parent="."]

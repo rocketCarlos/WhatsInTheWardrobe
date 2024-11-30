@@ -19,8 +19,9 @@ if all the items are placed in their original slot
 var mouse_in_collider : bool
 # reference to the node that this slot contains
 var item: Node
-
-@export var room: ItemManager.ROOMS = ItemManager.ROOMS.NONE
+# slot's parent when it comes to placement in the room.
+# Used for managing interaction and visibility
+@export var parent: Node
 #endregion
 
 

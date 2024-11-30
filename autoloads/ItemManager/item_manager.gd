@@ -22,37 +22,8 @@ original rooms.
 #endregion
 
 #region globals
-enum ROOMS {
-	LIVING,
-	KITCHEN,
-	ENTRANCE,
-	CORRIDOR,
-	MUMS,
-	KIDS,
-	NONE
-}
-
 # reference to the item that is currently selected
 var selected_item: Node = null
-#endregion
-
-#region item management
-func reparent_item(item: Node) -> void:
-	match item.room:
-		ROOMS.LIVING:
-			item.call_deferred(&"reparent", living)
-		ROOMS.KITCHEN:
-			item.call_deferred(&"reparent", kitchen)
-		ROOMS.ENTRANCE:
-			item.call_deferred(&"reparent", entrance)
-		ROOMS.CORRIDOR:
-			item.call_deferred(&"reparent", corridor)
-		ROOMS.MUMS:
-			item.call_deferred(&"reparent", mums)
-		ROOMS.KIDS:
-			item.call_deferred(&"reparent", kids)
-		ROOMS.NONE:
-			push_error(item, "'S ROOM IS NOT SET")
 #endregion
 
 #region inventory interaction

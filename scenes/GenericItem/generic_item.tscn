@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb6p32llodf5c"]
+[gd_scene load_steps=2 format=3 uid="uid://bb6p32llodf5c"]
 
 [ext_resource type="Script" path="res://scenes/GenericItem/generic_item.gd" id="1_b8hli"]
-[ext_resource type="Texture2D" uid="uid://5ikypwjunnin" path="res://assets/interactive objects/kitchen/fork.png" id="1_mey8t"]
 
 [node name="GenericItem" type="Sprite2D"]
-position = Vector2(550, 283)
-texture = ExtResource("1_mey8t")
 script = ExtResource("1_b8hli")
 
 [node name="Highlight" type="Sprite2D" parent="."]

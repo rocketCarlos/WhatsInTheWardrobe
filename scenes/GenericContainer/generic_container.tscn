@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/GenericContainer/generic_container.gd" id="1_5js1k"]
 
 [node name="GenericContainer" type="Sprite2D"]
-position = Vector2(607, 432)
 script = ExtResource("1_5js1k")
 
 [node name="Highlight" type="Sprite2D" parent="."]
