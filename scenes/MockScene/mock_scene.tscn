@@ -15,9 +15,11 @@ position = Vector2(141, 104)
 position = Vector2(503, 104)
 rotation = 1.08734
 scale = Vector2(0.373016, 0.315094)
+room = 1
 
 [node name="GenericItem2" parent="." instance=ExtResource("1_oymsc")]
 position = Vector2(350, 147)
+room = 0
 
 [node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
 position = Vector2(389.171, 491.019)

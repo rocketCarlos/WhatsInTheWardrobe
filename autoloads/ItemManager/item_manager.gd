@@ -13,6 +13,12 @@ original rooms.
 
 #region scene nodes
 @onready var _inventory = $Inventory
+@onready var corridor = $Corridor
+@onready var entrance = $Entrance
+@onready var kids = $Kids
+@onready var kitchen = $Kitchen
+@onready var living = $Living
+@onready var mums = $Mums
 #endregion
 
 #region globals
@@ -28,6 +34,25 @@ enum ROOMS {
 
 # reference to the item that is currently selected
 var selected_item: Node = null
+#endregion
+
+#region item management
+func reparent_item(item: Node) -> void:
+	match item.room:
+		ROOMS.LIVING:
+			item.call_deferred(&"reparent", living)
+		ROOMS.KITCHEN:
+			item.call_deferred(&"reparent", kitchen)
+		ROOMS.ENTRANCE:
+			item.call_deferred(&"reparent", entrance)
+		ROOMS.CORRIDOR:
+			item.call_deferred(&"reparent", corridor)
+		ROOMS.MUMS:
+			item.call_deferred(&"reparent", mums)
+		ROOMS.KIDS:
+			item.call_deferred(&"reparent", kids)
+		ROOMS.NONE:
+			push_error(item, "'S ROOM IS NOT SET")
 #endregion
 
 #region inventory interaction

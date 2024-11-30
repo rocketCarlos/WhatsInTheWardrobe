@@ -21,6 +21,7 @@ var in_inventory : bool
 var inventory_index: int
 var current_slot : Node
 @export var original_slot : Node
+@export var room: ItemManager.ROOMS = ItemManager.ROOMS.NONE
 #endregion 
 
 #region ready, process and restart
@@ -35,20 +36,26 @@ func restart() -> void:
 func _ready() -> void:
 	restart()
 	_init_textures()
+	ItemManager.reparent_item(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# manage item interactions
 	if Input.is_action_just_pressed("Interact") and mouse_in_collider:
 		if not in_inventory: # request going to the inventory
-			var response = ItemManager.to_inventory(self)
-			
-			if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
-				in_inventory = true
-				global_position = response.position
-				inventory_index = response.idx
-				if current_slot:
-					current_slot.retrieve_item()
+			# IF THERE IS A SELECTED ITEM, A NEW ITEM CAN'T GO INTO THE INVENTORY
+			if ItemManager.selected_item == null:
+				var response = ItemManager.to_inventory(self)
+				
+				if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
+					in_inventory = true
+					global_position = response.position
+					inventory_index = response.idx
+					if current_slot:
+						current_slot.retrieve_item()
+			else: # if interacting with an item while having a selected item, unselect that item
+				ItemManager.selected_item.highlight.hide()
+				ItemManager.selected_item = null
 		else: # already in inventory, manage selections
 			if ItemManager.selected_item == self: # item is already selected, unselect
 				ItemManager.selected_item = null
