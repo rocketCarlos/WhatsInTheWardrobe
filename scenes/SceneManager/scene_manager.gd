@@ -13,18 +13,20 @@ Node that manages rooms
 @onready var kitchen = $Kitchen
 @onready var living = $Living
 @onready var moms = $Moms
+@onready var day_timer = $DayTimer
 #endregion
 
 #region attributes
-var current_scene
+var current_scene: Node
 #endregion
 
 func _ready() -> void:
 	Globals.scene_manager = self
 	current_scene = kids 
 	current_scene.show()
+	day_timer.start(Globals.day_durations[Globals.current_day])
 
-
+# called by doors to switch from room to room
 func switch_room(room: Globals.ROOMS) -> void:
 	current_scene.hide()
 	match room:
@@ -50,3 +52,23 @@ func switch_room(room: Globals.ROOMS) -> void:
 			push_error("Door has no defined connection room!")
 			current_scene.show()
 			
+
+# when the day ends, checks whether the player lost or won that day
+# and inform the main controller
+func _on_day_timer_timeout() -> void:
+	Globals.main.day_ended(check_ending())
+
+
+func check_ending() -> Dictionary:
+	return { "dayPassed": true, "detectedItem": "" }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

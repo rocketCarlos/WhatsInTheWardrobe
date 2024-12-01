@@ -3,7 +3,7 @@ extends Node
 '''
 ItemManager
 
-Autoloaded scene that serves as a global interface for other nodes to communicate with the 
+Scene that serves as a global interface for other nodes to communicate with the 
 inventory system and as a storage for item nodes while the game is running.
 
 When creating a new room (i.e. kitchen, entrance, etc) items are placed as children of that scene,
@@ -59,3 +59,7 @@ func request_item(slot: Node) -> void:
 	selected_item = null
 
 #endregion
+
+
+func _ready() -> void:
+	Globals.item_manager = self

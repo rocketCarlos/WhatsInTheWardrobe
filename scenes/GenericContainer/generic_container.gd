@@ -102,10 +102,10 @@ func _process(delta: float) -> void:
 				open = false
 			else: # switching from closed to open
 				if required_item: # container needs a key
-					if ItemManager.selected_item and ItemManager.selected_item.name == required_item: # key is selected
+					if Globals.item_manager.selected_item and Globals.item_manager.selected_item.name == required_item: # key is selected
 						open = true
 					else: # key is not selected
-						ItemManager.container_locked()
+						Globals.item_manager.container_locked()
 				else: # container does not need a key
 					open = true
 			

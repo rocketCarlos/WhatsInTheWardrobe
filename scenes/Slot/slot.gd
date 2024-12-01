@@ -41,9 +41,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Interact") and mouse_in_collider:
 		# if the slot has no item and it is clicked, request an item (if tere's any selected)
-		if not item and ItemManager.selected_item:
-			item = ItemManager.selected_item
-			ItemManager.request_item(self)
+		if not item and Globals.item_manager.selected_item:
+			item = Globals.item_manager.selected_item
+			Globals.item_manager.request_item(self)
 			highlight.texture = null
 
 #endregion
@@ -62,10 +62,10 @@ func _on_hitbox_mouse_entered() -> void:
 	# if the slot has no item, it can accept items
 	if not item:
 		# if there's a selected item, show a highlight to indicate an action and disable parent
-		if ItemManager.selected_item:
-			highlight.texture = ItemManager.selected_item.texture
-			highlight.rotation = ItemManager.selected_item.rotation
-			highlight.scale = ItemManager.selected_item.scale
+		if Globals.item_manager.selected_item:
+			highlight.texture = Globals.item_manager.selected_item.texture
+			highlight.rotation = Globals.item_manager.selected_item.rotation
+			highlight.scale = Globals.item_manager.selected_item.scale
 			if parent:
 				parent.disabled = true
 		else:
@@ -77,7 +77,7 @@ func _on_hitbox_mouse_exited() -> void:
 	highlight.texture = null
 	
 	# if mouse leaving, slot had no item and there was a selected item, enable parent again
-	if not item and ItemManager.selected_item and parent:
+	if not item and Globals.item_manager.selected_item and parent:
 		parent.disabled = false
 
 #endregion
