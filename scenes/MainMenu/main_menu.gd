@@ -37,7 +37,7 @@ func _on_play_button_up() -> void:
 	quit.disabled = true
 
 func _on_credits_button_up() -> void:
-	pass # Replace with function body.
+	Globals.main.show_card(Globals.CARDS.CREDITS)
 
 
 func _on_quit_button_up() -> void:

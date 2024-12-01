@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://b51pucytjhree"]
+
+[ext_resource type="Texture2D" uid="uid://dxfgerymj5hct" path="res://assets/cutscenes/GameOver/GameOver_bedroom/GameOver_bedroom_2.png" id="1_3mwm7"]
+[ext_resource type="Texture2D" uid="uid://o2pv5bxsxsju" path="res://assets/cutscenes/GameOver/GameOver_objects/GameOver_objects_2.png" id="2_37u3w"]
+[ext_resource type="Texture2D" uid="uid://d25qju18ofnmg" path="res://assets/images/security_box_passwords.png" id="2_pjk3g"]
+[ext_resource type="Texture2D" uid="uid://cihviwvremmsl" path="res://assets/cutscenes/DayPassed/DayPassed_2.png" id="3_52fg7"]
+[ext_resource type="Script" path="res://scenes/Card/card.gd" id="4_sycby"]
+[ext_resource type="Texture2D" uid="uid://dgd4v1a62u6yo" path="res://assets/images/weekly_planner.png" id="4_y5iey"]
+[ext_resource type="Texture2D" uid="uid://dweqdk7fwfeju" path="res://assets/buttons/continue_arrow.png" id="5_s7832"]
+[ext_resource type="Texture2D" uid="uid://dl8r2i5ub6w32" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_1.png" id="5_xq4e4"]
+[ext_resource type="Texture2D" uid="uid://tift5lmmrshk" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_2.png" id="6_tpah4"]
+[ext_resource type="Texture2D" uid="uid://kvemgwdjj4un" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_3.png" id="7_h0ci0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpg8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3mwm7")
+}],
+"loop": true,
+"name": &"busted_bedroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pjk3g")
+}],
+"loop": true,
+"name": &"busted_container",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_37u3w")
+}],
+"loop": true,
+"name": &"busted_item",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y5iey")
+}],
+"loop": true,
+"name": &"credits",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xq4e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tpah4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h0ci0")
+}],
+"loop": false,
+"name": &"grandma",
+"speed": 0.25
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_52fg7")
+}],
+"loop": true,
+"name": &"passed",
+"speed": 5.0
+}]
+
+[node name="Card" type="AnimatedSprite2D"]
+z_index = 25
+position = Vector2(575.5, 323.5)
+scale = Vector2(0.599479, 0.599074)
+sprite_frames = SubResource("SpriteFrames_kpg8x")
+animation = &"grandma"
+autoplay = "grandma"
+script = ExtResource("4_sycby")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 774.839
+offset_top = -499.938
+offset_right = 1286.84
+offset_bottom = 12.0619
+scale = Vector2(0.29, 0.29)
+texture_normal = ExtResource("5_s7832")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

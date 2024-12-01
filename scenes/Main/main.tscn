@@ -1,8 +1,39 @@
-[gd_scene load_steps=9 format=3 uid="uid://be5canebkj4u"]
+[gd_scene load_steps=10 format=3 uid="uid://be5canebkj4u"]
 
 [ext_resource type="Script" path="res://scenes/Main/main.gd" id="1_68s6r"]
 [ext_resource type="PackedScene" uid="uid://beo6jx2hl01b8" path="res://scenes/SceneManager/scene_manager.tscn" id="2_xtluj"]
+[ext_resource type="PackedScene" uid="uid://b51pucytjhree" path="res://scenes/Card/card.tscn" id="3_qiqw4"]
 [ext_resource type="PackedScene" uid="uid://dvl4jnqdoaspy" path="res://scenes/MainMenu/main_menu.tscn" id="3_r8873"]
+
+[sub_resource type="Animation" id="Animation_0hrql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pw0a6"]
+resource_name = "grandma_cutscene"
 
 [sub_resource type="Animation" id="Animation_s5e1k"]
 resource_name = "initial_cutscene"
@@ -32,33 +63,6 @@ tracks/1/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_0hrql"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MainMenu:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MainMenu:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="Animation" id="Animation_7fx4j"]
 resource_name = "start_game"
 tracks/0/type = "value"
@@ -86,9 +90,6 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_pw0a6"]
-resource_name = "grandma_cutscene"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tta6"]
 _data = {
 "RESET": SubResource("Animation_0hrql"),
@@ -100,6 +101,7 @@ _data = {
 [node name="Main" type="Node"]
 script = ExtResource("1_68s6r")
 scene_manager = ExtResource("2_xtluj")
+card = ExtResource("3_qiqw4")
 
 [node name="MainMenu" parent="." instance=ExtResource("3_r8873")]
 visible = false

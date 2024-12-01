@@ -1,15 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfsatt0oldpee"]
+[gd_scene load_steps=10 format=3 uid="uid://dfsatt0oldpee"]
 
 [ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="1_oymsc"]
+[ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_xkuf5"]
 [ext_resource type="PackedScene" uid="uid://cs57ycjr101r3" path="res://scenes/Slot/slot.tscn" id="2_834jm"]
 [ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="3_psku0"]
 [ext_resource type="Texture2D" uid="uid://6gy84niqdygv" path="res://assets/interactive objects/kitchen/spatula.png" id="3_ua3tu"]
-[ext_resource type="Texture2D" uid="uid://br3h8eye7um55" path="res://assets/interactive objects/drawer2_opened.png" id="4_r4q3r"]
-[ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="5_ghukh"]
+[ext_resource type="Texture2D" uid="uid://c35ccjwkecjt" path="res://assets/interactive objects/cupboards/drawer2_opened.png" id="4_r4q3r"]
+[ext_resource type="Texture2D" uid="uid://b5jxaagrhxbab" path="res://assets/interactive objects/cupboards/drawer2_closed.png" id="5_ghukh"]
 [ext_resource type="Texture2D" uid="uid://cj3hcn7g320g8" path="res://assets/interactive objects/kitchen/big_knife.png" id="7_73ycw"]
 [ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="8_42t5l"]
 
-[node name="MockScene" type="Node2D"]
+[node name="MockScene" type="Sprite2D"]
+position = Vector2(578.5, 325)
+scale = Vector2(0.597396, 0.592593)
+texture = ExtResource("1_xkuf5")
 
 [node name="Slot" parent="." instance=ExtResource("2_834jm")]
 position = Vector2(945, 236)
@@ -71,8 +75,8 @@ texture = ExtResource("3_ua3tu")
 original_slot = NodePath("..")
 
 [node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
-position = Vector2(427, 192)
-scale = Vector2(0.77414, 0.671498)
+position = Vector2(-388.95, 330.59)
+scale = Vector2(0.850475, 0.815968)
 texture = ExtResource("4_r4q3r")
 sprite_closed = ExtResource("5_ghukh")
 sprite_open = ExtResource("4_r4q3r")
@@ -105,5 +109,5 @@ texture = ExtResource("7_73ycw")
 original_slot = NodePath("..")
 
 [node name="Door" parent="." instance=ExtResource("8_42t5l")]
-position = Vector2(51, 244)
-scale = Vector2(1.66, 4.06)
+position = Vector2(-909.782, 298.688)
+scale = Vector2(1.66, 12.42)

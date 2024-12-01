@@ -14,7 +14,11 @@ Main scene that controlls the game
 #region attributes
 @export var scene_manager: PackedScene
 # a reference to the instantiated scene_manager
-var instance_reference: Node
+var scene_manager_reference: Node
+
+@export var card: PackedScene
+# a reference to the instantiated card
+var card_reference: Node
 #endregion
 
 #region ready and process
@@ -34,38 +38,66 @@ func _process(delta: float) -> void:
 # starts the game by instantiating the scene_manager
 func play() -> void:
 	animation_player.play(&"start_game")
-	instance_reference = scene_manager.instantiate()
-	add_child(instance_reference)
+	scene_manager_reference = scene_manager.instantiate()
+	add_child(scene_manager_reference)
 
 # checks the result of the ended day and loads the next one
 func day_ended(result: Dictionary) -> void:
 	print("main says: day has ended ", result)
 	# delete the previous scene manager
-	instance_reference.queue_free()
+	scene_manager_reference.queue_free()
 	
 	if Globals.current_day == 2: # after day 2, grandma comes
-		#TODO: show grandma scene
+		show_card(Globals.CARDS.GRANDMA)
+		await card_reference.tree_exiting
 		# reintantiate last day
-		instance_reference = scene_manager.instantiate()
-		add_child(instance_reference)
+		scene_manager_reference = scene_manager.instantiate()
+		call_deferred(&"add_child", scene_manager_reference)
 		#TODO: transition to rooms
 	elif result.dayPassed:
 		Globals.current_day += 1
-		#TODO: show passed card
+		show_card(Globals.CARDS.PASSED)
+		await card_reference.tree_exiting
 		# instantiate next day
-		instance_reference = scene_manager.instantiate()
-		add_child(instance_reference)
+		scene_manager_reference = scene_manager.instantiate()
+		call_deferred(&"add_child", scene_manager_reference)
 		#TODO: transition to rooms
-	else: 
-		if result.detectedItem == "container":
-			#TODO: show busted bc of container card
-			pass
-		else:
-			#TODO: show busted bc of item card
-			pass
+	else: # day not passed
+		if result.detectedItem == "container": # a container was left open
+			show_card(Globals.CARDS.BUSTED_CONTAINER)
+		else: # an item was moved from its original position
+			show_card(Globals.CARDS.BUSTED_ITEM)
 			
+		await card_reference.tree_exiting
 		# reinstantiate that day
-		instance_reference = scene_manager.instantiate()
-		add_child(instance_reference)
+		scene_manager_reference = scene_manager.instantiate()
+		call_deferred(&"add_child", scene_manager_reference)
 		#TODO: transition to rooms
+#endregion
+
+#region cards
+# called when showing a card
+func show_card(card_type: Globals.CARDS) -> void:
+	card_reference = card.instantiate()
+	add_child(card_reference)
+	
+	match card_type:
+		Globals.CARDS.CREDITS:
+			card_reference.animation = &"credits"
+		Globals.CARDS.BUSTED_CONTAINER:
+			card_reference.animation = &"busted_container"
+		Globals.CARDS.BUSTED_ITEM:
+			card_reference.animation = &"busted_item"
+		Globals.CARDS.BUSTED_ROOM:
+			card_reference.animation = &"busted_bedroom"
+		Globals.CARDS.PASSED:
+			card_reference.animation = &"passed"
+		Globals.CARDS.GRANDMA:
+			card_reference.animation = &"grandma"
+		_:
+			push_error("INVALID CARD TYPE")
+
+# called when closing a card
+func card_closed() -> void:
+	card_reference.queue_free()
 #endregion
