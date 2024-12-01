@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://autoloads/ItemManager/item_manager.gd" id="1_pinau"]
 [ext_resource type="PackedScene" uid="uid://cgng0j4iyy1t0" path="res://scenes/Inventory/inventory.tscn" id="2_71x0o"]
-[ext_resource type="PackedScene" uid="uid://boo1pp4dxsnig" path="res://scenes/InventoryFull/inventory_full.tscn" id="3_r2ndf"]
+[ext_resource type="PackedScene" uid="uid://boo1pp4dxsnig" path="res://scenes/MessageService/message_service.tscn" id="3_r2ndf"]
 
 [node name="ItemManager" type="Node"]
 script = ExtResource("1_pinau")
-inventory_full_notification = ExtResource("3_r2ndf")
+message_service = ExtResource("3_r2ndf")
 
 [node name="Inventory" parent="." instance=ExtResource("2_71x0o")]

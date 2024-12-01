@@ -13,12 +13,15 @@ original rooms.
 
 #region scene nodes
 @onready var _inventory = $Inventory
-@export var inventory_full_notification: PackedScene
+@export var message_service: PackedScene
 #endregion
 
 #region globals
 # reference to the item that is currently selected
 var selected_item: Node = null
+
+var msg_inventory_full = "The inventory is full! Place an item somewhere before picking up another"
+var msg_locked = "You'll need a key to open this..."
 #endregion
 
 #region inventory interaction
@@ -31,10 +34,20 @@ enum INVENTORY_STATUS {
 func to_inventory(item: Node) -> Dictionary:
 	return _inventory.to_inventory(item)
 
+#endregion
+
+#region messages
 # called when the inventory is full to display an error message
 func inventory_full() -> void:
-	add_child(inventory_full_notification.instantiate())
+	var msg = message_service.instantiate()
+	add_child(msg)
+	msg.play_animation(msg_inventory_full, 5.5)
 	
+func container_locked() -> void:
+	var msg = message_service.instantiate()
+	add_child(msg)
+	msg.play_animation(msg_locked, 4)
+
 #endregion
 
 #region slot interaction

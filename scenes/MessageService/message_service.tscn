@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://boo1pp4dxsnig"]
 
-[ext_resource type="FontFile" uid="uid://b5867v5unxs27" path="res://assets/font/dreaming-outloud-regular.otf" id="1_qxeuo"]
-[ext_resource type="Script" path="res://scenes/InventoryFull/inventory_full.gd" id="2_3vw5i"]
+[ext_resource type="FontFile" uid="uid://b5867v5unxs27" path="res://assets/font/dreaming-outloud-regular.otf" id="1_4kbmj"]
+[ext_resource type="Script" path="res://scenes/MessageService/message_service.gd" id="2_kb8cj"]
 
-[node name="InventoryFull" type="Label"]
+[node name="MessageService" type="Label"]
 z_index = 10
 anchors_preset = 8
 anchor_left = 0.5
@@ -19,7 +19,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("1_qxeuo")
+theme_override_fonts/font = ExtResource("1_4kbmj")
 theme_override_font_sizes/font_size = 25
 text = "The inventory is full! Place an item somewhere before picking up another"
 horizontal_alignment = 1
@@ -27,10 +27,8 @@ vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 1
-script = ExtResource("2_3vw5i")
+script = ExtResource("2_kb8cj")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

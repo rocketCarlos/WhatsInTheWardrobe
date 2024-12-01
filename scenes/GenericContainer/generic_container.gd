@@ -72,6 +72,9 @@ var disabled : bool:
 		disabled = value
 		hitbox_shape_open.set_deferred(&"disabled", disabled)
 		hitbox_shape_closed.set_deferred(&"disabled", disabled)
+		
+# if set, the container will require that item to be selected to open the cointainer
+@export var required_item: Node
 #endregion
 
 #region ready, process and restart
@@ -95,7 +98,17 @@ func _process(delta: float) -> void:
 	# toggles between open and closed sprites 
 	if Input.is_action_just_pressed("Interact"):
 		if (open and mouse_in_open) or (not open and mouse_in_closed):
-			open = not open
+			if open: # switching from open to closed
+				open = false
+			else: # switching from closed to open
+				if required_item: # container needs a key
+					if ItemManager.selected_item == required_item: # key is selected
+						open = true
+					else: # key is not selected
+						ItemManager.container_locked()
+				else: # container does not need a key
+					open = true
+			
 			# if switched to close, check if mouse is there to keep the highlight
 			# and to enable parent again
 			if not open and not mouse_in_closed:

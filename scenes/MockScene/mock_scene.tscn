@@ -82,7 +82,7 @@ position = Vector2(-116.258, 80.4172)
 scale = Vector2(1.29176, 1.48921)
 parent = NodePath("..")
 
-[node name="GenericContainer2" parent="GenericContainer" node_paths=PackedStringArray("parent", "children") instance=ExtResource("3_psku0")]
+[node name="GenericContainer2" parent="GenericContainer" node_paths=PackedStringArray("parent", "children", "required_item") instance=ExtResource("3_psku0")]
 position = Vector2(0.424866, -59.0385)
 scale = Vector2(0.913681, 0.451485)
 texture = ExtResource("4_r4q3r")
@@ -90,6 +90,7 @@ sprite_closed = ExtResource("5_ghukh")
 sprite_open = ExtResource("4_r4q3r")
 parent = NodePath("..")
 children = [NodePath("Slot2")]
+required_item = NodePath("../../Slot2/Spatula")
 
 [node name="Slot2" parent="GenericContainer/GenericContainer2" node_paths=PackedStringArray("parent") instance=ExtResource("2_834jm")]
 position = Vector2(150.569, 51.5385)
