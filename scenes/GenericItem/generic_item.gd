@@ -64,31 +64,31 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Interact") and mouse_in_collider:
 		if not in_inventory: # request going to the inventory
 			# IF THERE IS A SELECTED ITEM, A NEW ITEM CAN'T GO INTO THE INVENTORY
-			if ItemManager.selected_item == null:
-				var response = ItemManager.to_inventory(self)
-				if response.status == ItemManager.INVENTORY_STATUS.ACCEPTED: # there's room
+			if Globals.item_manager.selected_item == null:
+				var response = Globals.item_manager.to_inventory(self)
+				if response.status == Globals.item_manager.INVENTORY_STATUS.ACCEPTED: # there's room
 					#if item had a parent, enable it again
 					if parent:
 						parent.disabled = false
 					in_inventory = true
-					reparent(ItemManager)
+					reparent(Globals.item_manager)
 					global_position = response.position
 					inventory_index = response.idx
 					if current_slot:
 						current_slot.retrieve_item()
 						current_slot = null
 			else: # if interacting with an item while having a selected item, unselect that item
-				ItemManager.selected_item.highlight.hide()
-				ItemManager.selected_item = null
+				Globals.item_manager.selected_item.highlight.hide()
+				Globals.item_manager.selected_item = null
 				
 		else: # already in inventory, manage selections
-			if ItemManager.selected_item == self: # item is already selected, unselect
-				ItemManager.selected_item = null
+			if Globals.item_manager.selected_item == self: # item is already selected, unselect
+				Globals.item_manager.selected_item = null
 				highlight.hide()
 			else: # item is not selected, select self
-				if ItemManager.selected_item:
-					ItemManager.selected_item.highlight.hide()
-				ItemManager.selected_item = self
+				if Globals.item_manager.selected_item:
+					Globals.item_manager.selected_item.highlight.hide()
+				Globals.item_manager.selected_item = self
 				highlight.show()
 
 #endregion
@@ -133,7 +133,7 @@ func _on_hitbox_mouse_entered() -> void:
 func _on_hitbox_mouse_exited() -> void:
 	mouse_in_collider = false
 	# if item is selected, it is always highlighted
-	if ItemManager.selected_item != self: 
+	if Globals.item_manager.selected_item != self: 
 		highlight.hide()
 	
 	# enable parent

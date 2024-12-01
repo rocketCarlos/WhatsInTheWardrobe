@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvl4jnqdoaspy"]
+[gd_scene load_steps=6 format=3 uid="uid://dvl4jnqdoaspy"]
 
 [ext_resource type="Texture2D" uid="uid://dgcaktew7de6d" path="res://assets/rooms/hallway2_broken_jar.png" id="1_vlq1a"]
 [ext_resource type="Texture2D" uid="uid://ddg0oerjyutpb" path="res://assets/interactive objects/drawer2_closed.png" id="2_3tk0i"]
+[ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="2_pr8fu"]
 [ext_resource type="Texture2D" uid="uid://br3h8eye7um55" path="res://assets/interactive objects/drawer2_opened.png" id="3_8m75d"]
 [ext_resource type="Texture2D" uid="uid://ccmh5do0trmdp" path="res://assets/interactive objects/security_box_closed.png" id="4_v1pa7"]
 
@@ -9,10 +10,25 @@
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_vlq1a")
+script = ExtResource("2_pr8fu")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Play" type="TextureButton" parent="."]
+offset_left = -68.3334
+offset_top = -270.0
+offset_right = 300.666
+offset_bottom = -2.0
 texture_normal = ExtResource("2_3tk0i")
 texture_pressed = ExtResource("3_8m75d")
 texture_hover = ExtResource("4_v1pa7")
+
+[node name="Credits" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Quit" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_up" from="Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="Quit" to="." method="_on_quit_button_up"]
