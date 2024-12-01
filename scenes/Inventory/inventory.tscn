@@ -1,21 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgng0j4iyy1t0"]
+[gd_scene load_steps=3 format=3 uid="uid://cgng0j4iyy1t0"]
 
 [ext_resource type="Script" path="res://scenes/Inventory/inventory.gd" id="1_eh2o4"]
+[ext_resource type="Texture2D" uid="uid://hf5hirqexev6" path="res://assets/images/inventory.png" id="2_qan06"]
 
 [node name="Inventory" type="Node2D"]
+z_index = -5
 script = ExtResource("1_eh2o4")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.612488, 0.871094, 0.846849, 1)
+position = Vector2(576, 609.5)
+scale = Vector2(0.322492, 0.125184)
+texture = ExtResource("2_qan06")
+
 [node name="Slot1" type="Node2D" parent="."]
-position = Vector2(192, 600)
+position = Vector2(104, 611)
 
 [node name="Slot2" type="Node2D" parent="."]
-position = Vector2(384, 600)
+position = Vector2(349, 611)
 
 [node name="Slot3" type="Node2D" parent="."]
-position = Vector2(576, 600)
+position = Vector2(575, 611)
 
 [node name="Slot4" type="Node2D" parent="."]
-position = Vector2(768, 600)
+position = Vector2(818, 611)
 
 [node name="Slot5" type="Node2D" parent="."]
-position = Vector2(960, 600)
+position = Vector2(1040, 611)

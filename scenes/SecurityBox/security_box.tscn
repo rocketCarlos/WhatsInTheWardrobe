@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ythlgiua6jbq"]
+
+[ext_resource type="Script" path="res://scenes/SecurityBox/security_box.gd" id="1_7hk54"]
+
+[node name="SecurityBox" type="Sprite2D"]
+script = ExtResource("1_7hk54")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="ShapeClosed" type="CollisionShape2D" parent="Hitbox"]
+
+[node name="ShapeOpen" type="CollisionShape2D" parent="Hitbox"]

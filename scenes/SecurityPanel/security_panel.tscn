@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://culbta7qssjk6"]
+
+[ext_resource type="Texture2D" uid="uid://d25qju18ofnmg" path="res://assets/images/security_box_passwords.png" id="1_0jd2l"]
+[ext_resource type="Script" path="res://scenes/SecurityPanel/security_panel.gd" id="2_1d171"]
+[ext_resource type="Texture2D" uid="uid://blq6nah82yfrx" path="res://assets/buttons/arrow.png" id="3_0kdwg"]
+
+[node name="SecurityPanel" type="Sprite2D"]
+position = Vector2(575.5, 323.5)
+scale = Vector2(0.599479, 0.599074)
+texture = ExtResource("1_0jd2l")
+script = ExtResource("2_1d171")
+
+[node name="ArrowUp1" type="TextureButton" parent="."]
+offset_left = 19.244
+offset_top = -200.501
+offset_right = 531.244
+offset_bottom = 311.499
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
+
+[node name="ArrowUp2" type="TextureButton" parent="."]
+offset_left = 219.48
+offset_top = -200.501
+offset_right = 731.48
+offset_bottom = 311.499
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
+
+[node name="ArrowUp3" type="TextureButton" parent="."]
+offset_left = 421.63
+offset_top = -200.501
+offset_right = 933.63
+offset_bottom = 311.499
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
+
+[node name="ArrowUp4" type="TextureButton" parent="."]
+offset_left = 618.57
+offset_top = -200.501
+offset_right = 1130.57
+offset_bottom = 311.499
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
+
+[node name="ArrowUp5" type="TextureButton" parent="."]
+offset_left = 19.244
+offset_top = 68.98
+offset_right = 531.244
+offset_bottom = 580.98
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
+
+[node name="ArrowUp6" type="TextureButton" parent="."]
+offset_left = 219.48
+offset_top = 68.98
+offset_right = 731.48
+offset_bottom = 580.98
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
+
+[node name="ArrowUp7" type="TextureButton" parent="."]
+offset_left = 421.63
+offset_top = 68.98
+offset_right = 933.63
+offset_bottom = 580.98
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
+
+[node name="ArrowUp8" type="TextureButton" parent="."]
+offset_left = 618.575
+offset_top = 68.98
+offset_right = 1130.57
+offset_bottom = 580.98
+rotation = 3.14159
+scale = Vector2(0.135, 0.091)
+texture_normal = ExtResource("3_0kdwg")
