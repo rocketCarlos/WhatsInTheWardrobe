@@ -3,12 +3,20 @@
 [ext_resource type="Script" path="res://scenes/SecurityBox/security_box.gd" id="1_7hk54"]
 
 [node name="SecurityBox" type="Sprite2D"]
+z_index = 1
 script = ExtResource("1_7hk54")
 
 [node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(100, 100, 100, 1)
+z_index = -1
+scale = Vector2(1.05, 1.05)
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="ShapeClosed" type="CollisionShape2D" parent="Hitbox"]
 
 [node name="ShapeOpen" type="CollisionShape2D" parent="Hitbox"]
+
+[connection signal="mouse_shape_entered" from="Hitbox" to="." method="_on_hitbox_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Hitbox" to="." method="_on_hitbox_mouse_shape_exited"]

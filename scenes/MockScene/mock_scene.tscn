@@ -1,15 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfsatt0oldpee"]
+[gd_scene load_steps=16 format=3 uid="uid://dfsatt0oldpee"]
 
 [ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="1_oymsc"]
 [ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_xkuf5"]
 [ext_resource type="PackedScene" uid="uid://cs57ycjr101r3" path="res://scenes/Slot/slot.tscn" id="2_834jm"]
 [ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="3_psku0"]
-[ext_resource type="Texture2D" path="res://assets/interactive objects/kitchen/spatula.png" id="3_ua3tu"]
-[ext_resource type="Texture2D" uid="uid://blh5dajxavo3a" path="res://assets/interactive objects/moms/clothes.png" id="4_hhbkk"]
+[ext_resource type="Texture2D" uid="uid://b8ig82h2efkxl" path="res://assets/interactive objects/kitchen/pot.png" id="4_hnldv"]
 [ext_resource type="Texture2D" uid="uid://c35ccjwkecjt" path="res://assets/interactive objects/cupboards/drawer2_opened.png" id="4_r4q3r"]
 [ext_resource type="Texture2D" uid="uid://b5jxaagrhxbab" path="res://assets/interactive objects/cupboards/drawer2_closed.png" id="5_ghukh"]
-[ext_resource type="Texture2D" path="res://assets/interactive objects/kitchen/big_knife.png" id="7_73ycw"]
+[ext_resource type="Texture2D" uid="uid://cn3budylji3tj" path="res://assets/interactive objects/kitchen/box.png" id="5_ykss3"]
+[ext_resource type="Texture2D" uid="uid://drcjb4jxi0hea" path="res://assets/interactive objects/kitchen/soap.png" id="6_auby8"]
+[ext_resource type="Texture2D" uid="uid://sfikqckeis12" path="res://assets/interactive objects/kitchen/sponge.png" id="7_0yk01"]
 [ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="8_42t5l"]
+[ext_resource type="PackedScene" uid="uid://ythlgiua6jbq" path="res://scenes/SecurityBox/security_box.tscn" id="12_1psss"]
+[ext_resource type="Texture2D" uid="uid://c8rrgbttacwha" path="res://assets/interactive objects/security box/security_box_opened.png" id="13_m43lk"]
+[ext_resource type="Texture2D" uid="uid://dag1caixnllac" path="res://assets/interactive objects/security box/security_box_closed.png" id="14_8q2i8"]
+[ext_resource type="Texture2D" uid="uid://bkesntmxvaqoo" path="res://assets/interactive objects/important objects/living_key.png" id="15_nglrw"]
 
 [node name="MockScene" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -21,9 +26,7 @@ position = Vector2(52.7287, -104.625)
 
 [node name="clothes" parent="Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("4_hhbkk")
-centered = false
-offset = Vector2(-137.42, 0)
+texture = ExtResource("4_hnldv")
 original_slot = NodePath("..")
 
 [node name="Slot2" parent="." instance=ExtResource("2_834jm")]
@@ -33,7 +36,7 @@ metadata/_edit_group_ = true
 [node name="Spatula" parent="Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 rotation = 1.08734
 scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("3_ua3tu")
+texture = ExtResource("5_ykss3")
 original_slot = NodePath("..")
 
 [node name="Slot3" parent="." instance=ExtResource("2_834jm")]
@@ -43,7 +46,7 @@ metadata/_edit_group_ = true
 [node name="Spatula" parent="Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 rotation = 1.08734
 scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("3_ua3tu")
+texture = ExtResource("4_hnldv")
 original_slot = NodePath("..")
 
 [node name="Slot4" parent="." instance=ExtResource("2_834jm")]
@@ -53,7 +56,7 @@ metadata/_edit_group_ = true
 [node name="SpatulaKey" parent="Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 rotation = 1.08734
 scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("3_ua3tu")
+texture = ExtResource("6_auby8")
 original_slot = NodePath("..")
 
 [node name="Slot5" parent="." instance=ExtResource("2_834jm")]
@@ -63,7 +66,7 @@ metadata/_edit_group_ = true
 [node name="Spatula" parent="Slot5" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 rotation = 1.08734
 scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("3_ua3tu")
+texture = ExtResource("7_0yk01")
 original_slot = NodePath("..")
 
 [node name="Slot6" parent="." instance=ExtResource("2_834jm")]
@@ -73,7 +76,7 @@ metadata/_edit_group_ = true
 [node name="Spatula" parent="Slot6" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 rotation = 1.08734
 scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("3_ua3tu")
+texture = ExtResource("5_ykss3")
 original_slot = NodePath("..")
 
 [node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
@@ -107,11 +110,28 @@ parent = NodePath("..")
 [node name="Knife" parent="GenericContainer/GenericContainer2/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 rotation = 0.783653
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("7_73ycw")
+texture = ExtResource("7_0yk01")
 original_slot = NodePath("..")
 
 [node name="Door" parent="." instance=ExtResource("8_42t5l")]
 position = Vector2(-909.782, 78.578)
 scale = Vector2(1.66, 6.88)
 
-[node name="GenericContainer2" parent="." instance=ExtResource("3_psku0")]
+[node name="SecurityBox" parent="." node_paths=PackedStringArray("children") instance=ExtResource("12_1psss")]
+position = Vector2(40, 213.333)
+scale = Vector2(0.733372, 0.607143)
+texture = ExtResource("13_m43lk")
+centered = false
+sprite_closed = ExtResource("14_8q2i8")
+sprite_open = ExtResource("13_m43lk")
+children = [NodePath("Slot")]
+
+[node name="Slot" parent="SecurityBox" node_paths=PackedStringArray("parent") instance=ExtResource("2_834jm")]
+position = Vector2(345.436, 280)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="GenericItem" parent="SecurityBox/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+scale = Vector2(0.0802845, 0.0926115)
+texture = ExtResource("15_nglrw")
+original_slot = NodePath("..")

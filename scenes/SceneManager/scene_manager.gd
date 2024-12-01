@@ -7,13 +7,14 @@ Node that manages rooms
 '''
 
 #region scene nodes
-@onready var corridor = $Corridor
-@onready var entrance = $Entrance
-@onready var kids = $Kids
-@onready var kitchen = $Kitchen
-@onready var living = $Living
-@onready var moms = $Moms
+@onready var corridor = $Rooms/Corridor
+@onready var entrance = $Rooms/Entrance
+@onready var kids = $Rooms/Kids
+@onready var kitchen = $Rooms/Kitchen
+@onready var living = $Rooms/Living
+@onready var moms = $Rooms/Moms
 @onready var day_timer = $DayTimer
+@onready var rooms = $Rooms
 #endregion
 
 #region attributes

@@ -7,24 +7,25 @@
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_06xxf")
 
-[node name="Corridor" parent="." instance=ExtResource("2_44h6k")]
-visible = false
-position = Vector2(576, 285)
-scale = Vector2(0.6, 0.527778)
+[node name="Rooms" type="Node2D" parent="."]
+scale = Vector2(1, 0.881)
 
-[node name="Entrance" parent="." instance=ExtResource("2_44h6k")]
+[node name="Corridor" parent="Rooms" instance=ExtResource("2_44h6k")]
 visible = false
 
-[node name="Kids" parent="." instance=ExtResource("2_44h6k")]
+[node name="Entrance" parent="Rooms" instance=ExtResource("2_44h6k")]
 visible = false
 
-[node name="Kitchen" parent="." instance=ExtResource("2_44h6k")]
+[node name="Kids" parent="Rooms" instance=ExtResource("2_44h6k")]
 visible = false
 
-[node name="Living" parent="." instance=ExtResource("2_44h6k")]
+[node name="Kitchen" parent="Rooms" instance=ExtResource("2_44h6k")]
 visible = false
 
-[node name="Moms" parent="." instance=ExtResource("2_44h6k")]
+[node name="Living" parent="Rooms" instance=ExtResource("2_44h6k")]
+visible = false
+
+[node name="Moms" parent="Rooms" instance=ExtResource("2_44h6k")]
 visible = false
 
 [node name="DayTimer" type="Timer" parent="."]

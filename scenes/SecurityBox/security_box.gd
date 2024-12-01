@@ -79,7 +79,10 @@ func restart() -> void:
 	open = false
 	mouse_in_open = false
 	mouse_in_closed = false
-	
+	highlight.centered = centered
+	highlight.offset = offset
+	if centered == false:
+		hitbox.position += Vector2(sprite_closed.get_width()/2, sprite_closed.get_height()/2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

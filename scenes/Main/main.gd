@@ -19,6 +19,10 @@ var scene_manager_reference: Node
 @export var card: PackedScene
 # a reference to the instantiated card
 var card_reference: Node
+
+# reference to the security box
+var box_reference
+@export var security_panel: PackedScene
 #endregion
 
 #region ready and process
@@ -100,4 +104,21 @@ func show_card(card_type: Globals.CARDS) -> void:
 # called when closing a card
 func card_closed() -> void:
 	card_reference.queue_free()
+#endregion
+
+#region security_box
+# called when user zooms into the security box
+func show_security_box(box: Node) -> void:
+	box_reference = box
+	scene_manager_reference.rooms.hide()
+	call_deferred(&"add_child", security_panel.instantiate())
+	
+# called when the security code is correct
+func security_open() -> void:
+	box_reference.open = true
+	scene_manager_reference.rooms.show()
+
+# called when the user leaves the close up look of the security box
+func security_cancel() -> void:
+	scene_manager_reference.rooms.show()
 #endregion

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://be5canebkj4u"]
+[gd_scene load_steps=11 format=3 uid="uid://be5canebkj4u"]
 
 [ext_resource type="Script" path="res://scenes/Main/main.gd" id="1_68s6r"]
 [ext_resource type="PackedScene" uid="uid://beo6jx2hl01b8" path="res://scenes/SceneManager/scene_manager.tscn" id="2_xtluj"]
 [ext_resource type="PackedScene" uid="uid://b51pucytjhree" path="res://scenes/Card/card.tscn" id="3_qiqw4"]
 [ext_resource type="PackedScene" uid="uid://dvl4jnqdoaspy" path="res://scenes/MainMenu/main_menu.tscn" id="3_r8873"]
+[ext_resource type="PackedScene" uid="uid://culbta7qssjk6" path="res://scenes/SecurityPanel/security_panel.tscn" id="4_kkbs6"]
 
 [sub_resource type="Animation" id="Animation_0hrql"]
 length = 0.001
@@ -102,6 +103,7 @@ _data = {
 script = ExtResource("1_68s6r")
 scene_manager = ExtResource("2_xtluj")
 card = ExtResource("3_qiqw4")
+security_panel = ExtResource("4_kkbs6")
 
 [node name="MainMenu" parent="." instance=ExtResource("3_r8873")]
 visible = false

@@ -1,83 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://culbta7qssjk6"]
+[gd_scene load_steps=5 format=3 uid="uid://culbta7qssjk6"]
 
 [ext_resource type="Texture2D" uid="uid://d25qju18ofnmg" path="res://assets/images/security_box_passwords.png" id="1_0jd2l"]
 [ext_resource type="Script" path="res://scenes/SecurityPanel/security_panel.gd" id="2_1d171"]
-[ext_resource type="Texture2D" uid="uid://blq6nah82yfrx" path="res://assets/buttons/arrow.png" id="3_0kdwg"]
+[ext_resource type="PackedScene" uid="uid://cf5k2rhaxmu44" path="res://scenes/SecurityElement/security_element.tscn" id="3_nld1e"]
+[ext_resource type="Texture2D" uid="uid://dweqdk7fwfeju" path="res://assets/buttons/continue_arrow.png" id="4_esvms"]
 
 [node name="SecurityPanel" type="Sprite2D"]
 position = Vector2(575.5, 323.5)
 scale = Vector2(0.599479, 0.599074)
 texture = ExtResource("1_0jd2l")
 script = ExtResource("2_1d171")
+combination_numbers = "7416"
+combination_shapes = "1032"
 
-[node name="ArrowUp1" type="TextureButton" parent="."]
-offset_left = 19.244
-offset_top = -200.501
-offset_right = 531.244
-offset_bottom = 311.499
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement1" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(-14.179, 116.272)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
 
-[node name="ArrowUp2" type="TextureButton" parent="."]
-offset_left = 219.48
-offset_top = -200.501
-offset_right = 731.48
-offset_bottom = 311.499
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement2" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(187.9, 116.272)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
 
-[node name="ArrowUp3" type="TextureButton" parent="."]
-offset_left = 421.63
-offset_top = -200.501
-offset_right = 933.63
-offset_bottom = 311.499
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement3" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(386.575, 116.272)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
 
-[node name="ArrowUp4" type="TextureButton" parent="."]
-offset_left = 618.57
-offset_top = -200.501
-offset_right = 1130.57
-offset_bottom = 311.499
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement4" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(589.185, 116.272)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
 
-[node name="ArrowUp5" type="TextureButton" parent="."]
-offset_left = 19.244
-offset_top = 68.98
-offset_right = 531.244
-offset_bottom = 580.98
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement5" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(-14.179, -153.803)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
+type = 1
 
-[node name="ArrowUp6" type="TextureButton" parent="."]
-offset_left = 219.48
-offset_top = 68.98
-offset_right = 731.48
-offset_bottom = 580.98
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement6" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(187.9, -153.803)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
+type = 1
 
-[node name="ArrowUp7" type="TextureButton" parent="."]
-offset_left = 421.63
-offset_top = 68.98
-offset_right = 933.63
-offset_bottom = 580.98
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement7" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(386.575, -153.803)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
+type = 1
 
-[node name="ArrowUp8" type="TextureButton" parent="."]
-offset_left = 618.575
-offset_top = 68.98
-offset_right = 1130.57
-offset_bottom = 580.98
-rotation = 3.14159
-scale = Vector2(0.135, 0.091)
-texture_normal = ExtResource("3_0kdwg")
+[node name="SecurityElement8" parent="." instance=ExtResource("3_nld1e")]
+position = Vector2(589.185, -153.803)
+scale = Vector2(0.125, 0.125)
+frame = 2
+frame_progress = 0.62097
+type = 1
+
+[node name="Exit" type="TextureButton" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 748.15
+offset_top = -531.654
+offset_right = 1260.15
+offset_bottom = -19.6538
+scale = Vector2(0.24, 0.24)
+texture_normal = ExtResource("4_esvms")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
