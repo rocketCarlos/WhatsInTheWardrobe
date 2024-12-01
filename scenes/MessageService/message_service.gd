@@ -1,5 +1,11 @@
 extends Label
 
+'''
+MessageService
+
+Used by other nodes to display messages in screen
+'''
+
 func play_animation(txt: String, duration: float):
 	$Timer.start(duration)
 	text = txt

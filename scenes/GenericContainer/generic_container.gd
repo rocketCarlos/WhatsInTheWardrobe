@@ -73,8 +73,8 @@ var disabled : bool:
 		hitbox_shape_open.set_deferred(&"disabled", disabled)
 		hitbox_shape_closed.set_deferred(&"disabled", disabled)
 		
-# if set, the container will require that item to be selected to open the cointainer
-@export var required_item: Node
+# if set, the container will require an item to be opened. This is the name of that item
+@export var required_item: String
 #endregion
 
 #region ready, process and restart
@@ -102,7 +102,7 @@ func _process(delta: float) -> void:
 				open = false
 			else: # switching from closed to open
 				if required_item: # container needs a key
-					if ItemManager.selected_item == required_item: # key is selected
+					if ItemManager.selected_item and ItemManager.selected_item.name == required_item: # key is selected
 						open = true
 					else: # key is not selected
 						ItemManager.container_locked()

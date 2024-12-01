@@ -17,6 +17,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 ItemManager="*res://autoloads/ItemManager/item_manager.tscn"
+Globals="*res://autoloads/globals.gd"
 
 [display]
 
