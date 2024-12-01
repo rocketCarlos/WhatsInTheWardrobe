@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/GenericItem/generic_item.gd" id="1_b8hli"]
 
-[node name="GenericItem" type="Sprite2D"]
+[node name="GenericItem" type="Sprite2D" groups=["items"]]
 script = ExtResource("1_b8hli")
 
 [node name="Highlight" type="Sprite2D" parent="."]

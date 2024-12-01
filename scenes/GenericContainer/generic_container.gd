@@ -104,6 +104,9 @@ func _process(delta: float) -> void:
 				if required_item: # container needs a key
 					if Globals.item_manager.selected_item and Globals.item_manager.selected_item.name == required_item: # key is selected
 						open = true
+						# unselect item
+						Globals.item_manager.selected_item.highlight.hide()
+						Globals.item_manager.selected_item = null
 					else: # key is not selected
 						Globals.item_manager.container_locked()
 				else: # container does not need a key

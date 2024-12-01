@@ -60,7 +60,24 @@ func _on_day_timer_timeout() -> void:
 
 
 func check_ending() -> Dictionary:
-	return { "dayPassed": true, "detectedItem": "" }
+	var items = get_tree().get_nodes_in_group(&"items")
+	var containers = get_tree().get_nodes_in_group(&"Containers")
+	var passed = true
+	
+	var item_name = ""
+	for item in items: # check if all items are in their original spot
+		if item.current_slot != item.original_slot:
+			passed = false
+			item_name = item.name
+			break
+	
+	for container in containers: # check if all containers are closed
+		if container.open:
+			passed = false
+			item_name = "container"
+			break
+	
+	return { "dayPassed": passed, "detectedItem": item_name }
 	
 	
 	

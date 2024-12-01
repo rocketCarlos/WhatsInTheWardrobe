@@ -23,6 +23,7 @@ func _ready() -> void:
 	Globals.main = self
 	animation_player.play(&"initial_cutscene")
 	Globals.current_day = 0
+	Input.set_custom_mouse_cursor(Globals.default_cursor)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,7 +39,7 @@ func play() -> void:
 
 # checks the result of the ended day and loads the next one
 func day_ended(result: Dictionary) -> void:
-	print("main says: day has ended")
+	print("main says: day has ended ", result)
 	# delete the previous scene manager
 	instance_reference.queue_free()
 	
@@ -56,7 +57,13 @@ func day_ended(result: Dictionary) -> void:
 		add_child(instance_reference)
 		#TODO: transition to rooms
 	else: 
-		#TODO: show busted card
+		if result.detectedItem == "container":
+			#TODO: show busted bc of container card
+			pass
+		else:
+			#TODO: show busted bc of item card
+			pass
+			
 		# reinstantiate that day
 		instance_reference = scene_manager.instantiate()
 		add_child(instance_reference)

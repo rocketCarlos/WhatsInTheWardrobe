@@ -21,8 +21,10 @@ func _process(delta: float) -> void:
 
 
 func _on_mouse_entered() -> void:
+	Input.set_custom_mouse_cursor(Globals.door_cursor)
 	mouse_in_collider = true
 
 
 func _on_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(Globals.default_cursor)
 	mouse_in_collider = false
