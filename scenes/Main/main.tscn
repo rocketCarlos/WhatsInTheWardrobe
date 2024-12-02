@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://yeutcei4nau7" path="res://assets/cutscenes/cutscenes_2.png" id="7_kmawf"]
 [ext_resource type="Texture2D" uid="uid://cj5dgrqo6irf0" path="res://assets/cutscenes/cutscenes_3.png" id="8_vylbu"]
 [ext_resource type="Texture2D" uid="uid://b6x31mk42226k" path="res://assets/cutscenes/cutscenes_4.png" id="9_j3l48"]
-[ext_resource type="Texture2D" uid="uid://h65hy42r8bsx" path="res://assets/cutscenes/cutscenes_5.png" id="10_snvh4"]
+[ext_resource type="Texture2D" uid="uid://h65hy42r8bsx" path="res://assets/buttons/cutscenes_5.png" id="10_snvh4"]
 
 [sub_resource type="Animation" id="Animation_0hrql"]
 length = 0.001

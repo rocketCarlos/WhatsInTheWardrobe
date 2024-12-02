@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cllw0ujujphgr"]
+
+[ext_resource type="Texture2D" uid="uid://drgojlmabjc5v" path="res://assets/images/calendar_21.png" id="1_4vavk"]
+[ext_resource type="Texture2D" uid="uid://dbgte3q0m6k01" path="res://assets/images/calendar_22.png" id="2_6dkbg"]
+[ext_resource type="Texture2D" uid="uid://bbxuymka1p868" path="res://assets/images/calendar_23.png" id="3_hi3sd"]
+[ext_resource type="Script" path="res://scenes/Calendar/calendar.gd" id="4_dvd1f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbaqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4vavk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6dkbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hi3sd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Calendar" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vbaqm")
+script = ExtResource("4_dvd1f")
