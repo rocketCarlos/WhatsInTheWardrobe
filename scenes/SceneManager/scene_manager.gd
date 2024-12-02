@@ -64,20 +64,26 @@ func check_ending() -> Dictionary:
 	var items = get_tree().get_nodes_in_group(&"items")
 	var containers = get_tree().get_nodes_in_group(&"Containers")
 	var passed = true
-	
 	var item_name = ""
-	for item in items: # check if all items are in their original spot
-		if item.current_slot != item.original_slot:
-			passed = false
-			item_name = item.name
-			break
 	
-	for container in containers: # check if all containers are closed
-		if container.open:
-			passed = false
-			item_name = "container"
-			break
+	if current_scene != kids: # check if the player was in the kids bedroom
+		passed = false
+		item_name = "KidsRoom"
 	
+	if passed: 
+		for container in containers: # check if all containers are closed
+			if container.open:
+				passed = false
+				item_name = "container"
+				break
+			
+	if passed:
+		for item in items: # check if all items are in their original spot
+			if item.current_slot != item.original_slot:
+				passed = false
+				item_name = item.name
+				break
+
 	return { "dayPassed": passed, "detectedItem": item_name }
 	
 	
