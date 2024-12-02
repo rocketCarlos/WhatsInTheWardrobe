@@ -15,6 +15,8 @@ centered = false
 offset = Vector2(-34.61, -149.32)
 
 [node name="SmallHand" type="Sprite2D" parent="."]
+position = Vector2(2, -1)
+rotation = -1.52716
 texture = ExtResource("3_tq3bm")
 centered = false
-offset = Vector2(-25.66, -99.445)
+offset = Vector2(-30.43, -99.445)

@@ -3,26 +3,25 @@ extends Sprite2D
 @onready var big_hand = $BigHand
 @onready var small_hand = $SmallHand
 
+var small_hand_step
+var big_hand_step
+
+func _ready() -> void:
+	var initial_hour = 9
+	var final_hour = 13 if Globals.current_day == 2 else 17
+	var total_hours = float(final_hour - initial_hour)
+	var duration_seconds = float(Globals.day_durations[Globals.current_day])
+	
+	# we want to show that total_hours hours go by in the clock in duration_seconds seconds
+	
+	var total_rotation_minutes = 2 * PI * total_hours # big hand loops once per hour
+	var total_rotation_hours = total_rotation_minutes / 12.0 # small hand makes 12th of a loop per hour
+	
+	small_hand_step = total_rotation_hours / duration_seconds
+	big_hand_step = total_rotation_minutes / duration_seconds
+	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var total_time = Globals.day_durations[Globals.current_day]
-	var time_left = Globals.scene_manager.day_timer.time_left
-
-	# interpolation starting point in seconds
-	var clock_starting_hour = 9 * 3600
-
-	var target_hour = (total_time - time_left) * clock_starting_hour / total_time
-
-	# Convertir segundos del día en horas y minutos
-	var minutos = (int(target_hour) % 3600) / 60
-	var horas = int(target_hour / 3600) % 12
-
-	# Ángulo de la manecilla de las horas (0-12 horas = 0-2π radianes)
-	small_hand.rotation  = (horas + minutos / 60) * (2 * PI / 12)
-
-	# Ángulo de la manecilla de los minutos (0-60 minutos = 0-2π radianes)
-	big_hand.rotation = minutos * (2 * PI / 60)
-
-	
-
-	
+	big_hand.rotation += big_hand_step * delta
+	small_hand.rotation += small_hand_step * delta
