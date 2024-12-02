@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfsatt0oldpee"]
+[gd_scene load_steps=18 format=3 uid="uid://dfsatt0oldpee"]
 
 [ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="1_oymsc"]
 [ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_xkuf5"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dag1caixnllac" path="res://assets/interactive objects/security box/security_box_closed.png" id="14_8q2i8"]
 [ext_resource type="Texture2D" uid="uid://bkesntmxvaqoo" path="res://assets/interactive objects/important objects/living_key.png" id="15_nglrw"]
 [ext_resource type="PackedScene" uid="uid://cllw0ujujphgr" path="res://scenes/Calendar/calendar.tscn" id="16_mlf5q"]
+[ext_resource type="PackedScene" uid="uid://2pi0o2n51n3m" path="res://scenes/Clock/clock.tscn" id="17_hy3sm"]
 
 [node name="MockScene" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -140,3 +141,7 @@ original_slot = NodePath("..")
 [node name="Calendar" parent="." instance=ExtResource("16_mlf5q")]
 position = Vector2(-588.333, 15)
 scale = Vector2(0.112641, 0.0972591)
+
+[node name="Clock" parent="." instance=ExtResource("17_hy3sm")]
+position = Vector2(880, -306.667)
+scale = Vector2(0.26, 0.26)

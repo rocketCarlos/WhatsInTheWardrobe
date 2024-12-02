@@ -95,7 +95,7 @@ z_index = 25
 position = Vector2(575.5, 323.5)
 scale = Vector2(0.599479, 0.599074)
 sprite_frames = SubResource("SpriteFrames_kpg8x")
-animation = &"credits"
+animation = &"busted_bedroom"
 script = ExtResource("4_sycby")
 
 [node name="TextureButton" type="TextureButton" parent="."]
