@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b51pucytjhree"]
+[gd_scene load_steps=14 format=3 uid="uid://b51pucytjhree"]
 
 [ext_resource type="Texture2D" uid="uid://dxfgerymj5hct" path="res://assets/cutscenes/GameOver/GameOver_bedroom/GameOver_bedroom_2.png" id="1_3mwm7"]
 [ext_resource type="Texture2D" uid="uid://o2pv5bxsxsju" path="res://assets/cutscenes/GameOver/GameOver_objects/GameOver_objects_2.png" id="2_37u3w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dl8r2i5ub6w32" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_1.png" id="5_xq4e4"]
 [ext_resource type="Texture2D" uid="uid://tift5lmmrshk" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_2.png" id="6_tpah4"]
 [ext_resource type="Texture2D" uid="uid://kvemgwdjj4un" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_3.png" id="7_h0ci0"]
+[ext_resource type="FontFile" uid="uid://b5867v5unxs27" path="res://assets/font/dreaming-outloud-regular.otf" id="11_guv2r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpg8x"]
 animations = [{
@@ -68,12 +69,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_jjeny"]
+font = ExtResource("11_guv2r")
+font_size = 103
+font_color = Color(0, 0, 0, 1)
+
 [node name="Card" type="AnimatedSprite2D"]
 z_index = 25
 position = Vector2(575.5, 323.5)
 scale = Vector2(0.599479, 0.599074)
 sprite_frames = SubResource("SpriteFrames_kpg8x")
-animation = &"grandma"
+animation = &"busted_item"
 autoplay = "grandma"
 script = ExtResource("4_sycby")
 
@@ -84,5 +90,14 @@ offset_right = 1286.84
 offset_bottom = 12.0619
 scale = Vector2(0.29, 0.29)
 texture_normal = ExtResource("5_s7832")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -471.0
+offset_top = -168.0
+offset_right = 473.0
+offset_bottom = -13.0
+label_settings = SubResource("LabelSettings_jjeny")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

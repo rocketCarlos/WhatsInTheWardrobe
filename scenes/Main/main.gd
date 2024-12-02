@@ -21,15 +21,20 @@ var scene_manager_reference: Node
 var card_reference: Node
 
 # reference to the security box
-var box_reference
+var box_reference: Node
 @export var security_panel: PackedScene
+var panel_reference: Node
+
+# the name of the item that was off its position
+var busted_item: String
 #endregion
 
 #region ready and process
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.main = self
-	animation_player.play(&"initial_cutscene")
+	if not Globals.debug:
+		animation_player.play(&"initial_cutscene")
 	Globals.current_day = 0
 	Input.set_custom_mouse_cursor(Globals.default_cursor)
 
@@ -50,7 +55,7 @@ func day_ended(result: Dictionary) -> void:
 	print("main says: day has ended ", result)
 	# delete the previous scene manager
 	scene_manager_reference.queue_free()
-	
+	# manage the next day
 	if Globals.current_day == 2: # after day 2, grandma comes
 		show_card(Globals.CARDS.GRANDMA)
 		await card_reference.tree_exiting
@@ -70,6 +75,7 @@ func day_ended(result: Dictionary) -> void:
 		if result.detectedItem == "container": # a container was left open
 			show_card(Globals.CARDS.BUSTED_CONTAINER)
 		else: # an item was moved from its original position
+			busted_item = result.detectedItem
 			show_card(Globals.CARDS.BUSTED_ITEM)
 			
 		await card_reference.tree_exiting
@@ -77,6 +83,10 @@ func day_ended(result: Dictionary) -> void:
 		scene_manager_reference = scene_manager.instantiate()
 		call_deferred(&"add_child", scene_manager_reference)
 		#TODO: transition to rooms
+		
+	if panel_reference:
+		panel_reference.queue_free()
+		panel_reference = null
 #endregion
 
 #region cards
@@ -92,6 +102,7 @@ func show_card(card_type: Globals.CARDS) -> void:
 			card_reference.animation = &"busted_container"
 		Globals.CARDS.BUSTED_ITEM:
 			card_reference.animation = &"busted_item"
+			card_reference.label.text = busted_item
 		Globals.CARDS.BUSTED_ROOM:
 			card_reference.animation = &"busted_bedroom"
 		Globals.CARDS.PASSED:
@@ -111,7 +122,8 @@ func card_closed() -> void:
 func show_security_box(box: Node) -> void:
 	box_reference = box
 	scene_manager_reference.rooms.hide()
-	call_deferred(&"add_child", security_panel.instantiate())
+	panel_reference = security_panel.instantiate()
+	call_deferred(&"add_child", panel_reference)
 	
 # called when the security code is correct
 func security_open() -> void:

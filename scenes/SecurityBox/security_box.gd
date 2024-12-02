@@ -82,7 +82,8 @@ func restart() -> void:
 	highlight.centered = centered
 	highlight.offset = offset
 	if centered == false:
-		hitbox.position += Vector2(sprite_closed.get_width()/2.0, sprite_closed.get_height()/2.0)
+		hitbox.position += Vector2(sprite_closed.get_width()/2.0 + offset.x, sprite_closed.get_height()/2.0 + offset.y)
+		
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
