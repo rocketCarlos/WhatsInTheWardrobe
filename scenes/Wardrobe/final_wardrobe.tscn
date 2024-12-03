@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://pofoslgok3xo"]
+
+[ext_resource type="Texture2D" uid="uid://bq560obo7ily6" path="res://assets/interactive objects/cupboards/mom_wardrobe_closed.png" id="1_gw8g0"]
+[ext_resource type="Script" path="res://scenes/Wardrobe/final_wardrobe.gd" id="2_5n2c7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rp6pe"]
+size = Vector2(452, 614)
+
+[node name="FinalWardrobe" type="Sprite2D"]
+z_index = 1
+texture = ExtResource("1_gw8g0")
+script = ExtResource("2_5n2c7")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(100, 100, 100, 1)
+z_index = -1
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("1_gw8g0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_rp6pe")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

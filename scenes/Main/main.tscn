@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://be5canebkj4u"]
+[gd_scene load_steps=26 format=3 uid="uid://be5canebkj4u"]
 
 [ext_resource type="Script" path="res://scenes/Main/main.gd" id="1_68s6r"]
 [ext_resource type="PackedScene" uid="uid://beo6jx2hl01b8" path="res://scenes/SceneManager/scene_manager.tscn" id="2_xtluj"]
@@ -10,6 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cj5dgrqo6irf0" path="res://assets/cutscenes/cutscenes_3.png" id="8_vylbu"]
 [ext_resource type="Texture2D" uid="uid://b6x31mk42226k" path="res://assets/cutscenes/cutscenes_4.png" id="9_j3l48"]
 [ext_resource type="Texture2D" uid="uid://h65hy42r8bsx" path="res://assets/buttons/cutscenes_5.png" id="10_snvh4"]
+[ext_resource type="Texture2D" uid="uid://by6idwywrituc" path="res://assets/cutscenes/GoodEnding/End_1.png" id="11_33d16"]
+[ext_resource type="Texture2D" uid="uid://0douut0fglba" path="res://assets/cutscenes/GoodEnding/End_2.png" id="12_ilocy"]
+[ext_resource type="Texture2D" uid="uid://btpocra6pieil" path="res://assets/cutscenes/GoodEnding/End_3.png" id="13_hjkpl"]
+[ext_resource type="Texture2D" uid="uid://cxe2e363vxaxr" path="res://assets/cutscenes/GoodEnding/End_4.png" id="14_72wmc"]
+[ext_resource type="Texture2D" uid="uid://c6ulgnb5h3o6b" path="res://assets/cutscenes/GoodEnding/End_5.png" id="15_g62ap"]
+[ext_resource type="Texture2D" uid="uid://wacq8i1366ud" path="res://assets/cutscenes/GoodEnding/End_6.png" id="16_pe1im"]
+[ext_resource type="Texture2D" uid="uid://b3ud16una32pf" path="res://assets/cutscenes/GoodEnding/End_7.png" id="17_ob86x"]
 
 [sub_resource type="Animation" id="Animation_0hrql"]
 length = 0.001
@@ -80,6 +87,51 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/FinalCutscene:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/FinalCutscene:self_modulate:r")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/FinalCutscene:self_modulate:g")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/FinalCutscene:self_modulate:b")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -200,9 +252,111 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_repxn"]
+resource_name = "final_cutscene"
+length = 35.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/FinalCutscene:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/FinalCutscene:self_modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4.75, 5, 5.25, 9.75, 10, 10.25, 14.7333, 14.9833, 15.2333, 19.7333, 19.9833, 20.2333, 24.7333, 24.9833, 25.2333, 29.7333, 29.9833, 30.2333, 34.7333, 34.9833)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/FinalCutscene:self_modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4.75, 5, 5.25, 9.75, 10, 10.25, 14.7333, 14.9833, 15.2333, 19.7333, 19.9833, 20.2333, 24.7333, 24.9833, 25.2333, 29.7333, 29.9833, 30.2333, 34.7333, 34.9833)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/FinalCutscene:self_modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4.75, 5, 5.25, 9.75, 10, 10.25, 14.7333, 14.9833, 15.2333, 19.7333, 19.9833, 20.2333, 24.7333, 24.9833, 25.2333, 29.7333, 29.9833, 30.2333, 34.7333, 34.9833)
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/FinalCutscene")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"default", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MainMenu:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(34),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainMenu:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(34, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMenu")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tta6"]
 _data = {
 "RESET": SubResource("Animation_0hrql"),
+"final_cutscene": SubResource("Animation_repxn"),
 "grandma_cutscene": SubResource("Animation_pw0a6"),
 "initial_cutscene": SubResource("Animation_s5e1k"),
 "start_game": SubResource("Animation_7fx4j")
@@ -231,6 +385,35 @@ animations = [{
 "speed": 0.2
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_we6xy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_33d16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ilocy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hjkpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_72wmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g62ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pe1im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ob86x")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.2
+}]
+
 [node name="Main" type="Node"]
 script = ExtResource("1_68s6r")
 scene_manager = ExtResource("2_xtluj")
@@ -251,3 +434,10 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_mejtg")
 autoplay = "default"
+
+[node name="FinalCutscene" type="AnimatedSprite2D" parent="AnimationPlayer"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_we6xy")

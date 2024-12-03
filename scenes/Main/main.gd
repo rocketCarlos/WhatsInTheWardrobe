@@ -89,6 +89,11 @@ func day_ended(result: Dictionary) -> void:
 	if panel_reference:
 		panel_reference.queue_free()
 		panel_reference = null
+
+func end_game() -> void:
+	scene_manager_reference.queue_free()
+	Globals.current_day = 0
+	animation_player.play(&"final_cutscene")
 #endregion
 
 #region cards

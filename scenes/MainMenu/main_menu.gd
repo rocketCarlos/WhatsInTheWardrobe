@@ -21,7 +21,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+func restart() -> void:
+	play.disabled = false
+	credits.disabled = false
+	quit.disabled = false
 
 #region signal functions
 func _on_play_button_up() -> void:

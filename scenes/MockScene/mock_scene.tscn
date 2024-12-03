@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dfsatt0oldpee"]
+[gd_scene load_steps=19 format=3 uid="uid://dfsatt0oldpee"]
 
 [ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="1_oymsc"]
 [ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_xkuf5"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bkesntmxvaqoo" path="res://assets/interactive objects/important objects/living_key.png" id="15_nglrw"]
 [ext_resource type="PackedScene" uid="uid://cllw0ujujphgr" path="res://scenes/Calendar/calendar.tscn" id="16_mlf5q"]
 [ext_resource type="PackedScene" uid="uid://2pi0o2n51n3m" path="res://scenes/Clock/clock.tscn" id="17_hy3sm"]
+[ext_resource type="PackedScene" uid="uid://pofoslgok3xo" path="res://scenes/Wardrobe/final_wardrobe.tscn" id="18_8bwng"]
 
 [node name="MockScene" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -59,26 +60,6 @@ metadata/_edit_group_ = true
 rotation = 1.08734
 scale = Vector2(0.373016, 0.315094)
 texture = ExtResource("6_auby8")
-original_slot = NodePath("..")
-
-[node name="Slot5" parent="." instance=ExtResource("2_834jm")]
-position = Vector2(942, 125)
-metadata/_edit_group_ = true
-
-[node name="Spatula" parent="Slot5" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
-rotation = 1.08734
-scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("7_0yk01")
-original_slot = NodePath("..")
-
-[node name="Slot6" parent="." instance=ExtResource("2_834jm")]
-position = Vector2(818, 103)
-metadata/_edit_group_ = true
-
-[node name="Spatula" parent="Slot6" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
-rotation = 1.08734
-scale = Vector2(0.373016, 0.315094)
-texture = ExtResource("5_ykss3")
 original_slot = NodePath("..")
 
 [node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
@@ -145,3 +126,8 @@ scale = Vector2(0.112641, 0.0972591)
 [node name="Clock" parent="." instance=ExtResource("17_hy3sm")]
 position = Vector2(880, -306.667)
 scale = Vector2(0.26, 0.26)
+
+[node name="FinalWardrobe" parent="." instance=ExtResource("18_8bwng")]
+position = Vector2(583.333, -178.333)
+scale = Vector2(0.908425, 0.475419)
+required = "Spatula"
