@@ -1,0 +1,152 @@
+[gd_scene load_steps=22 format=3 uid="uid://d4nnsm5d8fn4a"]
+
+[ext_resource type="Texture2D" uid="uid://b2pyqmxqimumq" path="res://assets/rooms/mom_bedroom.png" id="1_havb5"]
+[ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="2_3vhxk"]
+[ext_resource type="Texture2D" uid="uid://dda2vdufotxv6" path="res://assets/interactive objects/cupboards/mom_wardrobe_opened.png" id="3_lb8i4"]
+[ext_resource type="Texture2D" uid="uid://bq560obo7ily6" path="res://assets/interactive objects/cupboards/mom_wardrobe_closed.png" id="4_7kbmm"]
+[ext_resource type="Texture2D" uid="uid://c35ccjwkecjt" path="res://assets/interactive objects/cupboards/drawer2_opened.png" id="5_anphp"]
+[ext_resource type="Texture2D" uid="uid://b5jxaagrhxbab" path="res://assets/interactive objects/cupboards/drawer2_closed.png" id="6_tvcjv"]
+[ext_resource type="PackedScene" uid="uid://cs57ycjr101r3" path="res://scenes/Slot/slot.tscn" id="7_ylv55"]
+[ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="8_pvysm"]
+[ext_resource type="Texture2D" uid="uid://dky2a6cpaokdu" path="res://assets/interactive objects/moms/jewelry_box.png" id="9_i0rey"]
+[ext_resource type="PackedScene" uid="uid://ythlgiua6jbq" path="res://scenes/SecurityBox/security_box.tscn" id="10_7ujhc"]
+[ext_resource type="Texture2D" uid="uid://c8rrgbttacwha" path="res://assets/interactive objects/security box/security_box_opened.png" id="11_bhlg6"]
+[ext_resource type="Texture2D" uid="uid://dag1caixnllac" path="res://assets/interactive objects/security box/security_box_closed.png" id="12_i5pgl"]
+[ext_resource type="Texture2D" uid="uid://cfwxpt3ls1xhe" path="res://assets/interactive objects/important objects/wardrobe_key.png" id="13_akuu1"]
+[ext_resource type="Texture2D" uid="uid://blh5dajxavo3a" path="res://assets/interactive objects/moms/clothes.png" id="14_8duvf"]
+[ext_resource type="Texture2D" uid="uid://doqke3qistbvg" path="res://assets/interactive objects/moms/clothes_moved.PNG" id="15_s0nfo"]
+[ext_resource type="Texture2D" uid="uid://bb7jx87omn8r2" path="res://assets/interactive objects/moms/totebag.png" id="16_xkkcy"]
+[ext_resource type="Texture2D" uid="uid://e7neuu7scwgj" path="res://assets/interactive objects/moms/mirror.png" id="17_w5bs4"]
+[ext_resource type="Texture2D" uid="uid://bmbg6ope2r00v" path="res://assets/interactive objects/moms/shopping_bag.png" id="18_vvlme"]
+[ext_resource type="Texture2D" uid="uid://lani35epqxyu" path="res://assets/interactive objects/moms/ebook.png" id="19_sas20"]
+[ext_resource type="Texture2D" uid="uid://mn82rq43kcu5" path="res://assets/interactive objects/entrance/camera.png" id="20_xdj4v"]
+[ext_resource type="Texture2D" uid="uid://bnojj75e7xix3" path="res://assets/interactive objects/entrance/book.png" id="21_yjubo"]
+
+[node name="Moms" type="Sprite2D"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_havb5")
+
+[node name="drawer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("2_3vhxk")]
+position = Vector2(-109.167, -58.3333)
+scale = Vector2(0.620198, 0.616088)
+texture = ExtResource("3_lb8i4")
+sprite_closed = ExtResource("4_7kbmm")
+sprite_open = ExtResource("3_lb8i4")
+children = [NodePath("drawer2"), NodePath("SecurityBox"), NodePath("Clothes")]
+
+[node name="drawer2" parent="drawer" node_paths=PackedStringArray("children") instance=ExtResource("2_3vhxk")]
+position = Vector2(208.267, 340.86)
+scale = Vector2(1.0238, 1.0468)
+texture = ExtResource("5_anphp")
+sprite_closed = ExtResource("6_tvcjv")
+sprite_open = ExtResource("5_anphp")
+children = [NodePath("Slot4")]
+
+[node name="Slot4" parent="drawer/drawer2" instance=ExtResource("7_ylv55")]
+position = Vector2(-110.244, -18.09)
+metadata/_edit_group_ = true
+
+[node name="Jewelry boxx" parent="drawer/drawer2/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(1.464, -18.199)
+rotation = -0.0122173
+scale = Vector2(0.16032, 0.204504)
+texture = ExtResource("9_i0rey")
+original_slot = NodePath("..")
+
+[node name="SecurityBox" parent="drawer" node_paths=PackedStringArray("children") instance=ExtResource("10_7ujhc")]
+position = Vector2(227.078, 56.8101)
+scale = Vector2(0.533055, 0.528597)
+texture = ExtResource("11_bhlg6")
+sprite_closed = ExtResource("12_i5pgl")
+sprite_open = ExtResource("11_bhlg6")
+children = [NodePath("Slot4")]
+
+[node name="Slot4" parent="drawer/SecurityBox" instance=ExtResource("7_ylv55")]
+position = Vector2(-85.7028, 71.6488)
+metadata/_edit_group_ = true
+
+[node name="Wardrobe\'s key" parent="drawer/SecurityBox/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(-1.094, -0.663)
+rotation = -0.610865
+scale = Vector2(0.0599345, 0.0667878)
+texture = ExtResource("13_akuu1")
+original_slot = NodePath("..")
+
+[node name="Clothes" parent="drawer" instance=ExtResource("2_3vhxk")]
+position = Vector2(-262.013, -110.915)
+scale = Vector2(2.4651, 1.24921)
+texture = ExtResource("14_8duvf")
+centered = false
+offset = Vector2(0, -227.89)
+sprite_closed = ExtResource("14_8duvf")
+sprite_open = ExtResource("15_s0nfo")
+
+[node name="Slot" parent="." instance=ExtResource("7_ylv55")]
+position = Vector2(-546.667, -95)
+
+[node name="Totebag" parent="Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(-5, -13.3333)
+scale = Vector2(0.473214, 0.490066)
+texture = ExtResource("16_xkkcy")
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="." instance=ExtResource("7_ylv55")]
+position = Vector2(500, 225)
+metadata/_edit_group_ = true
+
+[node name="Mirror" parent="Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(0.232, -38.881)
+scale = Vector2(0.240048, 0.204994)
+texture = ExtResource("17_w5bs4")
+original_slot = NodePath("..")
+
+[node name="Slot3" parent="." instance=ExtResource("7_ylv55")]
+position = Vector2(-533.333, 280)
+metadata/_edit_group_ = true
+
+[node name="Shopping bag" parent="Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(3.675, -49.839)
+scale = Vector2(0.546551, 0.439713)
+texture = ExtResource("18_vvlme")
+original_slot = NodePath("..")
+
+[node name="Slot4" parent="." instance=ExtResource("7_ylv55")]
+position = Vector2(306.667, 238.333)
+metadata/_edit_group_ = true
+
+[node name="Ebook" parent="Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(6.925, -5.37)
+rotation = 0.10821
+scale = Vector2(0.313562, 0.387124)
+texture = ExtResource("19_sas20")
+original_slot = NodePath("..")
+
+[node name="drawer3" parent="." node_paths=PackedStringArray("children") instance=ExtResource("2_3vhxk")]
+position = Vector2(370, 340)
+scale = Vector2(0.569327, 0.490248)
+texture = ExtResource("5_anphp")
+sprite_closed = ExtResource("6_tvcjv")
+sprite_open = ExtResource("5_anphp")
+children = [NodePath("Slot"), NodePath("Slot2")]
+
+[node name="Slot" parent="drawer3" instance=ExtResource("7_ylv55")]
+position = Vector2(-546.667, -95)
+
+[node name="Camera" parent="drawer3/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(455.18, 53.476)
+scale = Vector2(0.269849, 0.284772)
+texture = ExtResource("20_xdj4v")
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="drawer3" instance=ExtResource("7_ylv55")]
+position = Vector2(-546.667, -95)
+
+[node name="Book" parent="drawer3/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
+position = Vector2(537.885, 186.79)
+scale = Vector2(0.177, 0.217)
+skew = 0.0174533
+texture = ExtResource("21_yjubo")
+original_slot = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
