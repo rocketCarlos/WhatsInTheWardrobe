@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdncids212fx8"]
+
+[ext_resource type="Texture2D" uid="uid://cn4va5gkvjrbt" path="res://assets/rooms/corridor.png" id="1_g8s18"]
+[ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="2_v0iv1"]
+
+[node name="Corridor" type="Sprite2D"]
+position = Vector2(575.5, 323.5)
+scale = Vector2(0.599479, 0.599074)
+texture = ExtResource("1_g8s18")
+
+[node name="Moms" parent="." instance=ExtResource("2_v0iv1")]
+position = Vector2(-506.273, -82.6276)
+scale = Vector2(6.625, 6.625)
+room_connection = 5
+
+[node name="Kids" parent="." instance=ExtResource("2_v0iv1")]
+position = Vector2(197.672, -94.3123)
+scale = Vector2(6.625, 6.625)
+room_connection = 2
+
+[node name="Entrance" parent="." instance=ExtResource("2_v0iv1")]
+position = Vector2(753.154, 348.037)
+scale = Vector2(7.725, 3.505)
+room_connection = 1
