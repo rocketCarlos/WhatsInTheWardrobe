@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://b51pucytjhree"]
+[gd_scene load_steps=19 format=3 uid="uid://b51pucytjhree"]
 
 [ext_resource type="Texture2D" uid="uid://dw7dd8rbmlsjv" path="res://assets/cutscenes/GameOver/GameOver_bedroom/GameOver_bedroom_1.png" id="1_0kise"]
 [ext_resource type="Texture2D" uid="uid://dxfgerymj5hct" path="res://assets/cutscenes/GameOver/GameOver_bedroom/GameOver_bedroom_2.png" id="1_3mwm7"]
+[ext_resource type="Texture2D" uid="uid://0douut0fglba" path="res://assets/cutscenes/GoodEnding/End_2.png" id="1_a3mbl"]
 [ext_resource type="Texture2D" uid="uid://o2pv5bxsxsju" path="res://assets/cutscenes/GameOver/GameOver_objects/GameOver_objects_2.png" id="2_37u3w"]
 [ext_resource type="Texture2D" uid="uid://cihviwvremmsl" path="res://assets/cutscenes/DayPassed/DayPassed_2.png" id="3_52fg7"]
 [ext_resource type="Texture2D" uid="uid://cik4mbdl61cvl" path="res://assets/cutscenes/GameOver/GameOver_open/GameOver_open1.png" id="3_sxw5k"]
@@ -20,6 +21,9 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_a3mbl")
+}, {
+"duration": 1.0,
 "texture": ExtResource("1_0kise")
 }, {
 "duration": 1.0,
@@ -31,6 +35,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_a3mbl")
+}, {
+"duration": 1.0,
 "texture": ExtResource("3_sxw5k")
 }, {
 "duration": 1.0,
@@ -41,6 +48,9 @@ animations = [{
 "speed": 0.25
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a3mbl")
+}, {
 "duration": 1.0,
 "texture": ExtResource("5_kvvej")
 }, {
@@ -75,6 +85,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_a3mbl")
+}, {
+"duration": 1.0,
 "texture": ExtResource("11_yixxr")
 }, {
 "duration": 1.0,
@@ -95,7 +108,7 @@ z_index = 25
 position = Vector2(575.5, 323.5)
 scale = Vector2(0.599479, 0.599074)
 sprite_frames = SubResource("SpriteFrames_kpg8x")
-animation = &"passed"
+animation = &"grandma"
 script = ExtResource("4_sycby")
 
 [node name="TextureButton" type="TextureButton" parent="."]
