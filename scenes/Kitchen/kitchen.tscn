@@ -1,0 +1,301 @@
+[gd_scene load_steps=26 format=3 uid="uid://fj25kbbpgmja"]
+
+[ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_av4o2"]
+[ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="2_rasyk"]
+[ext_resource type="PackedScene" uid="uid://2pi0o2n51n3m" path="res://scenes/Clock/clock.tscn" id="3_0of1h"]
+[ext_resource type="PackedScene" uid="uid://cllw0ujujphgr" path="res://scenes/Calendar/calendar.tscn" id="4_840aa"]
+[ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="5_l03hj"]
+[ext_resource type="Texture2D" uid="uid://c35ccjwkecjt" path="res://assets/interactive objects/cupboards/drawer2_opened.png" id="6_0khqw"]
+[ext_resource type="Texture2D" uid="uid://b5jxaagrhxbab" path="res://assets/interactive objects/cupboards/drawer2_closed.png" id="7_y303w"]
+[ext_resource type="PackedScene" uid="uid://cs57ycjr101r3" path="res://scenes/Slot/slot.tscn" id="8_qyhs0"]
+[ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="9_urtxf"]
+[ext_resource type="Texture2D" uid="uid://rvp56gilys4j" path="res://assets/interactive objects/kitchen/blender.png" id="10_10o55"]
+[ext_resource type="Texture2D" uid="uid://l5dcy62dpbb" path="res://assets/interactive objects/kitchen/bottle.png" id="11_hpg6l"]
+[ext_resource type="Texture2D" uid="uid://bbmy6ybn7n2mo" path="res://assets/interactive objects/kitchen/bowl.png" id="12_nnqgc"]
+[ext_resource type="Texture2D" uid="uid://cn3budylji3tj" path="res://assets/interactive objects/kitchen/box.png" id="13_u2kem"]
+[ext_resource type="Texture2D" uid="uid://c6yk8omuok25i" path="res://assets/interactive objects/kitchen/glass.png" id="14_25tcs"]
+[ext_resource type="Texture2D" uid="uid://dkpcd78o4o4g3" path="res://assets/interactive objects/kitchen/jar.png" id="15_6epr2"]
+[ext_resource type="Texture2D" uid="uid://o8oebkrn1kxm" path="res://assets/interactive objects/kitchen/kettle.png" id="16_kyerf"]
+[ext_resource type="Texture2D" uid="uid://ddegiai7o6ph" path="res://assets/interactive objects/kitchen/plates.png" id="17_pxn2v"]
+[ext_resource type="Texture2D" uid="uid://cesyn20axvuuv" path="res://assets/interactive objects/kitchen/measuring_cup.png" id="18_mihyo"]
+[ext_resource type="Texture2D" uid="uid://b8ig82h2efkxl" path="res://assets/interactive objects/kitchen/pot.png" id="19_ewojo"]
+[ext_resource type="Texture2D" uid="uid://dx35ga1kej62h" path="res://assets/interactive objects/kitchen/roller.png" id="20_fjv2v"]
+[ext_resource type="Texture2D" uid="uid://drcjb4jxi0hea" path="res://assets/interactive objects/kitchen/soap.png" id="21_1jrcb"]
+[ext_resource type="Texture2D" uid="uid://bkesntmxvaqoo" path="res://assets/interactive objects/important objects/living_key.png" id="22_yrt80"]
+[ext_resource type="Texture2D" uid="uid://sfikqckeis12" path="res://assets/interactive objects/kitchen/sponge.png" id="23_vyupu"]
+[ext_resource type="Texture2D" uid="uid://bnyxb3b3umrcr" path="res://assets/interactive objects/entrance/radio.png" id="24_1be34"]
+[ext_resource type="Texture2D" uid="uid://f1liq24gmgp8" path="res://assets/interactive objects/living/flowers.png" id="25_2yfri"]
+
+[node name="Kitchen" type="Sprite2D"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_av4o2")
+
+[node name="Living" parent="." instance=ExtResource("2_rasyk")]
+position = Vector2(-906.667, 43.3333)
+rotation = -0.698132
+scale = Vector2(2.395, 7.56)
+skew = 0.706858
+room_connection = 4
+
+[node name="Clock" parent="." instance=ExtResource("3_0of1h")]
+position = Vector2(876.667, -310)
+scale = Vector2(0.275204, 0.275204)
+
+[node name="Calendar" parent="." instance=ExtResource("4_840aa")]
+position = Vector2(-587.59, 14.698)
+scale = Vector2(0.11078, 0.0964579)
+
+[node name="Cupboard" parent="." instance=ExtResource("5_l03hj")]
+position = Vector2(-393.333, 331.667)
+scale = Vector2(0.903342, 0.858209)
+texture = ExtResource("6_0khqw")
+sprite_closed = ExtResource("7_y303w")
+sprite_open = ExtResource("6_0khqw")
+
+[node name="Slot" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-127.305, -19.4203)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Blender" parent="Cupboard/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -37.855)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("10_10o55")
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-59.04, -23.3043)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Green bottle" parent="Cupboard/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -30.045)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_hpg6l")
+original_slot = NodePath("..")
+
+[node name="Slot3" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-11.0701, -23.3043)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Red bottle" parent="Cupboard/Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+self_modulate = Color(1, 0.38, 0.38, 1)
+position = Vector2(0, -30.045)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_hpg6l")
+original_slot = NodePath("..")
+
+[node name="Slot4" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(119.925, 95.1594)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Bowl" parent="Cupboard/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -5.61)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("12_nnqgc")
+original_slot = NodePath("..")
+
+[node name="Slot5" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(86.7149, -21.3623)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Tray" parent="Cupboard/Slot5" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -5.61)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("13_u2kem")
+original_slot = NodePath("..")
+
+[node name="Slot6" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-134.685, 97.1014)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Glass" parent="Cupboard/Slot6" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -5.61)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("14_25tcs")
+original_slot = NodePath("..")
+
+[node name="Slot7" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-16.605, 93.2174)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Jar" parent="Cupboard/Slot7" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -9.925)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("15_6epr2")
+original_slot = NodePath("..")
+
+[node name="Slot8" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-75.645, 89.3333)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Kettle" parent="Cupboard/Slot8" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -9.925)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("16_kyerf")
+original_slot = NodePath("..")
+
+[node name="Slot9" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(36.8999, 93.2174)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Plates" parent="Cupboard/Slot9" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, 1.96)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("17_pxn2v")
+original_slot = NodePath("..")
+
+[node name="Cupboard2" parent="." instance=ExtResource("5_l03hj")]
+position = Vector2(199.583, 331.667)
+scale = Vector2(0.887534, 0.845771)
+texture = ExtResource("6_0khqw")
+sprite_closed = ExtResource("7_y303w")
+sprite_open = ExtResource("6_0khqw")
+
+[node name="Slot" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-117.836, -19.7058)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Meassuring cup" parent="Cupboard2/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -9.32)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("18_mihyo")
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-63.3779, -23.6471)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Yellow bottle" parent="Cupboard2/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+self_modulate = Color(1, 0.716667, 0, 1)
+position = Vector2(0, -30.045)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_hpg6l")
+original_slot = NodePath("..")
+
+[node name="Slot3" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-134.737, 94.5882)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Blue bottle" parent="Cupboard2/Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+self_modulate = Color(0.38, 0.69, 1, 1)
+position = Vector2(0, -30.045)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("11_hpg6l")
+original_slot = NodePath("..")
+
+[node name="Slot4" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(111.263, 96.5588)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Pot" parent="Cupboard2/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, -12.06)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("19_ewojo")
+original_slot = NodePath("..")
+
+[node name="Slot5" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(86.7149, -21.3623)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Roller" parent="Cupboard2/Slot5" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, 2.355)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("20_fjv2v")
+original_slot = NodePath("..")
+
+[node name="Slot6" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-5.16409, -21.6765)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Redish glass" parent="Cupboard2/Slot6" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+self_modulate = Color(1, 0.56, 0.56, 1)
+position = Vector2(0, -5.61)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("14_25tcs")
+original_slot = NodePath("..")
+
+[node name="Slot8" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-40.8435, 90.647)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Cleaning product" parent="Cupboard2/Slot8" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+self_modulate = Color(1, 0.637, 0.34, 1)
+position = Vector2(0, -22.695)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("21_1jrcb")
+original_slot = NodePath("..")
+
+[node name="Slot9" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(32.3931, 96.5589)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Pinkish plates" parent="Cupboard2/Slot9" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+self_modulate = Color(0.868, 0.67, 1, 1)
+position = Vector2(0, 1.96)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("17_pxn2v")
+original_slot = NodePath("..")
+
+[node name="Slot10" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
+position = Vector2(-85.9122, 98.5294)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Living\'s key" parent="Cupboard2/Slot10" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+position = Vector2(0, 1.96)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("22_yrt80")
+original_slot = NodePath("..")
+
+[node name="Slot" parent="." instance=ExtResource("8_qyhs0")]
+position = Vector2(3.33333, 105)
+metadata/_edit_group_ = true
+
+[node name="Soap" parent="Slot" instance=ExtResource("9_urtxf")]
+position = Vector2(0, -26.43)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("21_1jrcb")
+
+[node name="Slot2" parent="." instance=ExtResource("8_qyhs0")]
+position = Vector2(95, 108.333)
+metadata/_edit_group_ = true
+
+[node name="Sponge" parent="Slot2" instance=ExtResource("9_urtxf")]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("23_vyupu")
+
+[node name="Slot3" parent="." instance=ExtResource("8_qyhs0")]
+position = Vector2(-131.667, 105)
+metadata/_edit_group_ = true
+
+[node name="Cassette" parent="Slot3" instance=ExtResource("9_urtxf")]
+position = Vector2(0, -28.57)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("24_1be34")
+
+[node name="Slot4" parent="." instance=ExtResource("8_qyhs0")]
+position = Vector2(885, 301.667)
+metadata/_edit_group_ = true
+
+[node name="Orange flower pot" parent="Slot4" instance=ExtResource("9_urtxf")]
+self_modulate = Color(1, 0.74, 0.74, 1)
+position = Vector2(0, -33.24)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("25_2yfri")
