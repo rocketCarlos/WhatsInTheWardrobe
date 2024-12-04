@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=9 format=3 uid="uid://beo6jx2hl01b8"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://beo6jx2hl01b8"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scenes/SceneManager/scene_manager.gd" id="1_06xxf"]
 [ext_resource type="PackedScene" uid="uid://dfsatt0oldpee" path="res://scenes/MockScene/mock_scene.tscn" id="2_44h6k"]
@@ -6,8 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://ciaom6rcv73pr" path="res://scenes/Entrance/Entrance.tscn" id="3_tlv1e"]
 [ext_resource type="PackedScene" uid="uid://fj25kbbpgmja" path="res://scenes/Kitchen/kitchen.tscn" id="4_8oqw2"]
 [ext_resource type="PackedScene" uid="uid://wnophxxe1xci" path="res://scenes/Kids/kids.tscn" id="5_sro5s"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://bdncids212fx8" path="res://scenes/corridor.tscn" id="6_ycbb3"]
+=======
+[ext_resource type="PackedScene" uid="uid://d4nnsm5d8fn4a" path="res://scenes/Moms/moms.tscn" id="6_ah52i"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://bqf5iag4itooc" path="res://assets/music/background.mp3" id="7_frgpo"]
+[ext_resource type="PackedScene" uid="uid://cevg0uur2tnx2" path="res://scenes/Living/living.tscn" id="7_y5yb7"]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_06xxf")
@@ -30,11 +39,10 @@ visible = false
 position = Vector2(576, 324.064)
 scale = Vector2(0.6, 0.600118)
 
-[node name="Living" parent="Rooms" instance=ExtResource("2_44h6k")]
+[node name="Moms" parent="Rooms" instance=ExtResource("6_ah52i")]
 visible = false
 
-[node name="Moms" parent="Rooms" instance=ExtResource("2_44h6k")]
-visible = false
+[node name="Living" parent="Rooms" instance=ExtResource("7_y5yb7")]
 
 [node name="Corridor" parent="Rooms" instance=ExtResource("6_ycbb3")]
 visible = false

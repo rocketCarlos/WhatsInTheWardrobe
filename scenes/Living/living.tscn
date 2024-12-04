@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cevg0uur2tnx2"]
+[gd_scene load_steps=11 format=3 uid="uid://cevg0uur2tnx2"]
 
 [ext_resource type="Texture2D" uid="uid://bnt6ojg0rmtqr" path="res://assets/rooms/living.png" id="1_ihhm4"]
 [ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="2_brebv"]
@@ -8,28 +8,45 @@
 [ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="6_0ap0g"]
 [ext_resource type="Texture2D" uid="uid://c4b0yg7buk0i4" path="res://assets/interactive objects/important objects/passcode.png" id="7_0n4wy"]
 [ext_resource type="PackedScene" uid="uid://2pi0o2n51n3m" path="res://scenes/Clock/clock.tscn" id="8_istfv"]
+[ext_resource type="Texture2D" uid="uid://i3cepxt1i65r" path="res://assets/interactive objects/living/controller.png" id="8_n4dtn"]
+[ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="10_5jfcx"]
 
 [node name="Living" type="Sprite2D"]
 position = Vector2(576, 324)
 scale = Vector2(0.299479, 0.3)
 texture = ExtResource("1_ihhm4")
 
-[node name="GenericContainer" parent="." instance=ExtResource("2_brebv")]
+[node name="GenericContainer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("2_brebv")]
 position = Vector2(-1365.7, 590)
 scale = Vector2(1.51217, 1.20656)
 texture = ExtResource("3_0ub2g")
 sprite_closed = ExtResource("4_q7m1b")
 sprite_open = ExtResource("3_0ub2g")
+children = [NodePath("Slot"), NodePath("Slot2")]
 
 [node name="Slot" parent="GenericContainer" instance=ExtResource("5_pykg2")]
 position = Vector2(-103.784, -27.6267)
 metadata/_edit_group_ = true
 
-[node name="GenericItem" parent="GenericContainer/Slot" instance=ExtResource("6_0ap0g")]
+[node name="Passcode" parent="GenericContainer/Slot" instance=ExtResource("6_0ap0g")]
 position = Vector2(4.41634, -27.6267)
 scale = Vector2(0.0436082, 0.0494246)
 texture = ExtResource("7_0n4wy")
 
+[node name="Slot2" parent="GenericContainer" instance=ExtResource("5_pykg2")]
+position = Vector2(-22.0851, -22.1014)
+metadata/_edit_group_ = true
+
+[node name="TV" parent="GenericContainer/Slot2" instance=ExtResource("6_0ap0g")]
+position = Vector2(2.88775, -21.251)
+scale = Vector2(0.162946, 0.19556)
+texture = ExtResource("8_n4dtn")
+
 [node name="Clock" parent="." instance=ExtResource("8_istfv")]
 position = Vector2(-828.104, -640)
 scale = Vector2(0.575746, 0.556711)
+
+[node name="Door" parent="." instance=ExtResource("10_5jfcx")]
+position = Vector2(1682.92, -16.6667)
+scale = Vector2(6.145, 16.325)
+room_connection = 1

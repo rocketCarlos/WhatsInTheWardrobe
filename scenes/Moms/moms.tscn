@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d4nnsm5d8fn4a"]
+[gd_scene load_steps=23 format=3 uid="uid://d4nnsm5d8fn4a"]
 
 [ext_resource type="Texture2D" uid="uid://b2pyqmxqimumq" path="res://assets/rooms/mom_bedroom.png" id="1_havb5"]
 [ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="2_3vhxk"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://lani35epqxyu" path="res://assets/interactive objects/moms/ebook.png" id="19_sas20"]
 [ext_resource type="Texture2D" uid="uid://mn82rq43kcu5" path="res://assets/interactive objects/entrance/camera.png" id="20_xdj4v"]
 [ext_resource type="Texture2D" uid="uid://bnojj75e7xix3" path="res://assets/interactive objects/entrance/book.png" id="21_yjubo"]
+[ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="22_hckxy"]
 
 [node name="Moms" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -150,3 +151,8 @@ texture = ExtResource("21_yjubo")
 original_slot = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Door" parent="." instance=ExtResource("22_hckxy")]
+position = Vector2(-908.333, 48.3334)
+scale = Vector2(2.73, 8.04)
+room_connection = 0
