@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://beo6jx2hl01b8"]
+[gd_scene load_steps=7 format=3 uid="uid://beo6jx2hl01b8"]
 
 [ext_resource type="Script" path="res://scenes/SceneManager/scene_manager.gd" id="1_06xxf"]
 [ext_resource type="PackedScene" uid="uid://dfsatt0oldpee" path="res://scenes/MockScene/mock_scene.tscn" id="2_44h6k"]
 [ext_resource type="PackedScene" uid="uid://0dgnnjjisb2q" path="res://scenes/ItemManager/item_manager.tscn" id="3_3inxy"]
 [ext_resource type="PackedScene" uid="uid://ciaom6rcv73pr" path="res://scenes/Entrance/Entrance.tscn" id="3_tlv1e"]
 [ext_resource type="PackedScene" uid="uid://fj25kbbpgmja" path="res://scenes/Kitchen/kitchen.tscn" id="4_8oqw2"]
+[ext_resource type="PackedScene" uid="uid://wnophxxe1xci" path="res://scenes/Kids/kids.tscn" id="5_sro5s"]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_06xxf")
@@ -25,8 +26,9 @@ visible = false
 position = Vector2(576, 367.764)
 scale = Vector2(0.6, 0.681044)
 
-[node name="Kids" parent="Rooms" instance=ExtResource("2_44h6k")]
-visible = false
+[node name="Kids" parent="Rooms" instance=ExtResource("5_sro5s")]
+position = Vector2(576, 367.764)
+scale = Vector2(0.6, 0.681044)
 
 [node name="Living" parent="Rooms" instance=ExtResource("2_44h6k")]
 visible = false

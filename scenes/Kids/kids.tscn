@@ -1,3 +1,137 @@
-[gd_scene format=3 uid="uid://wnophxxe1xci"]
+[gd_scene load_steps=17 format=3 uid="uid://wnophxxe1xci"]
+
+[ext_resource type="Texture2D" uid="uid://d4imx1sr13ltu" path="res://assets/rooms/child_bedroom.png" id="1_66x24"]
+[ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="2_nq4jn"]
+[ext_resource type="PackedScene" uid="uid://2pi0o2n51n3m" path="res://scenes/Clock/clock.tscn" id="3_s51bh"]
+[ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="4_lo0t5"]
+[ext_resource type="Texture2D" uid="uid://c35ccjwkecjt" path="res://assets/interactive objects/cupboards/drawer2_opened.png" id="5_ps7py"]
+[ext_resource type="Texture2D" uid="uid://b5jxaagrhxbab" path="res://assets/interactive objects/cupboards/drawer2_closed.png" id="6_mtlb2"]
+[ext_resource type="PackedScene" uid="uid://cs57ycjr101r3" path="res://scenes/Slot/slot.tscn" id="7_p0w6c"]
+[ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="8_tlwjb"]
+[ext_resource type="Texture2D" uid="uid://ie037o4g7voh" path="res://assets/interactive objects/childs/rubik.png" id="9_524ck"]
+[ext_resource type="Texture2D" uid="uid://dimq1i2lv1xxp" path="res://assets/interactive objects/childs/puzzle.png" id="10_uuvyv"]
+[ext_resource type="Texture2D" uid="uid://b8gndnfqc8s8b" path="res://assets/interactive objects/childs/car.png" id="11_olxxm"]
+[ext_resource type="Texture2D" uid="uid://cjndma47e4w6s" path="res://assets/interactive objects/important objects/symbol_code.png" id="12_bhgx0"]
+[ext_resource type="Texture2D" uid="uid://dxki2js6dfvrn" path="res://assets/interactive objects/childs/teddy_bear.png" id="13_68g88"]
+[ext_resource type="Texture2D" uid="uid://d1r8vge30pdou" path="res://assets/interactive objects/childs/nintendo.png" id="14_l5yuo"]
+[ext_resource type="Texture2D" uid="uid://byqb3ud1dvjq2" path="res://assets/interactive objects/childs/blocks.png" id="15_urx2w"]
+[ext_resource type="Texture2D" uid="uid://dglpphxqh82e2" path="res://assets/interactive objects/childs/case.png" id="16_wg0y3"]
 
 [node name="Kids" type="Sprite2D"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_66x24")
+
+[node name="Corridor" parent="." instance=ExtResource("2_nq4jn")]
+position = Vector2(841.667, 10)
+rotation = 0.645772
+scale = Vector2(3.805, 7.28)
+skew = -0.63879
+room_connection = 0
+
+[node name="Clock" parent="." instance=ExtResource("3_s51bh")]
+position = Vector2(527.146, -182.854)
+scale = Vector2(0.243935, 0.243935)
+
+[node name="Drawer" parent="." node_paths=PackedStringArray("children") instance=ExtResource("4_lo0t5")]
+position = Vector2(-46.6667, 314.167)
+scale = Vector2(0.433604, 0.441542)
+texture = ExtResource("5_ps7py")
+sprite_closed = ExtResource("6_mtlb2")
+sprite_open = ExtResource("5_ps7py")
+children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4")]
+required_item = "Kids' key"
+
+[node name="Slot" parent="Drawer" node_paths=PackedStringArray("parent") instance=ExtResource("7_p0w6c")]
+position = Vector2(-123, -24.5352)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Rubik\'s cube" parent="Drawer/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(0, -5.15)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("9_524ck")
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="Drawer" node_paths=PackedStringArray("parent") instance=ExtResource("7_p0w6c")]
+position = Vector2(76.875, 96.2535)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="1000 puzzle" parent="Drawer/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(0, -5.15)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("10_uuvyv")
+original_slot = NodePath("..")
+
+[node name="Slot3" parent="Drawer" node_paths=PackedStringArray("parent") instance=ExtResource("7_p0w6c")]
+position = Vector2(26.9062, -28.3099)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Car" parent="Drawer/Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(0, -5.15)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("11_olxxm")
+original_slot = NodePath("..")
+
+[node name="Slot4" parent="Drawer" node_paths=PackedStringArray("parent") instance=ExtResource("7_p0w6c")]
+position = Vector2(-57.6563, 88.7042)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Symbol code" parent="Drawer/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(0, -24.445)
+scale = Vector2(0.054, 0.054)
+texture = ExtResource("12_bhgx0")
+original_slot = NodePath("..")
+
+[node name="Drawer2" parent="." node_paths=PackedStringArray("children") instance=ExtResource("4_lo0t5")]
+position = Vector2(-372.5, 339.167)
+scale = Vector2(0.609756, 0.441542)
+texture = ExtResource("5_ps7py")
+sprite_closed = ExtResource("6_mtlb2")
+sprite_open = ExtResource("5_ps7py")
+children = [NodePath("Slot"), NodePath("Slot2")]
+
+[node name="Slot" parent="Drawer2" node_paths=PackedStringArray("parent") instance=ExtResource("7_p0w6c")]
+position = Vector2(-47.8333, -28.3099)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Teddy bear" parent="Drawer2/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(0, -23.29)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("13_68g88")
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="Drawer2" node_paths=PackedStringArray("parent") instance=ExtResource("7_p0w6c")]
+position = Vector2(94.3, 92.4789)
+parent = NodePath("..")
+metadata/_edit_group_ = true
+
+[node name="Nintendo" parent="Drawer2/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(0, -5.15)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("14_l5yuo")
+original_slot = NodePath("..")
+
+[node name="Slot" parent="." instance=ExtResource("7_p0w6c")]
+position = Vector2(616.667, 423.333)
+metadata/_edit_group_ = true
+
+[node name="Blocks" parent="Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(0, -6.9)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("15_urx2w")
+original_slot = NodePath("..")
+
+[node name="Slot2" parent="." instance=ExtResource("7_p0w6c")]
+position = Vector2(-41.6666, 183.333)
+metadata/_edit_group_ = true
+
+[node name="Pencil case" parent="Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_tlwjb")]
+position = Vector2(9.26, 2.395)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("16_wg0y3")
+original_slot = NodePath("..")

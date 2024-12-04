@@ -46,12 +46,13 @@ scale = Vector2(0.275204, 0.275204)
 position = Vector2(-587.59, 14.698)
 scale = Vector2(0.11078, 0.0964579)
 
-[node name="Cupboard" parent="." instance=ExtResource("5_l03hj")]
+[node name="Cupboard" parent="." node_paths=PackedStringArray("children") instance=ExtResource("5_l03hj")]
 position = Vector2(-393.333, 331.667)
 scale = Vector2(0.903342, 0.858209)
 texture = ExtResource("6_0khqw")
 sprite_closed = ExtResource("7_y303w")
 sprite_open = ExtResource("6_0khqw")
+children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5"), NodePath("Slot6"), NodePath("Slot7"), NodePath("Slot8"), NodePath("Slot9")]
 
 [node name="Slot" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
 position = Vector2(-127.305, -19.4203)
@@ -268,34 +269,38 @@ original_slot = NodePath("..")
 position = Vector2(3.33333, 105)
 metadata/_edit_group_ = true
 
-[node name="Soap" parent="Slot" instance=ExtResource("9_urtxf")]
+[node name="Soap" parent="Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 position = Vector2(0, -26.43)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("21_1jrcb")
+original_slot = NodePath("..")
 
 [node name="Slot2" parent="." instance=ExtResource("8_qyhs0")]
 position = Vector2(95, 108.333)
 metadata/_edit_group_ = true
 
-[node name="Sponge" parent="Slot2" instance=ExtResource("9_urtxf")]
+[node name="Sponge" parent="Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("23_vyupu")
+original_slot = NodePath("..")
 
 [node name="Slot3" parent="." instance=ExtResource("8_qyhs0")]
 position = Vector2(-131.667, 105)
 metadata/_edit_group_ = true
 
-[node name="Cassette" parent="Slot3" instance=ExtResource("9_urtxf")]
+[node name="Cassette" parent="Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 position = Vector2(0, -28.57)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("24_1be34")
+original_slot = NodePath("..")
 
 [node name="Slot4" parent="." instance=ExtResource("8_qyhs0")]
 position = Vector2(885, 301.667)
 metadata/_edit_group_ = true
 
-[node name="Orange flower pot" parent="Slot4" instance=ExtResource("9_urtxf")]
+[node name="Orange flower pot" parent="Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 self_modulate = Color(1, 0.74, 0.74, 1)
 position = Vector2(0, -33.24)
 scale = Vector2(0.27, 0.27)
 texture = ExtResource("25_2yfri")
+original_slot = NodePath("..")

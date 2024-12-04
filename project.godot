@@ -30,7 +30,7 @@ version_control/autoload_on_startup=true
 
 [global_group]
 
-items="al the items in the game"
+items="all the items in the game"
 Containers="Containers"
 
 [input]

@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cpjee808bspmg" path="res://assets/interactive objects/entrance/jacket_pocket.PNG" id="1_s74jt"]
 [ext_resource type="Script" path="res://scenes/JacketPocket/jacket_pocket.gd" id="2_tsp8v"]
 
-[node name="JacketPocket" type="Sprite2D"]
+[node name="JacketPocket" type="Sprite2D" groups=["items"]]
 texture = ExtResource("1_s74jt")
 script = ExtResource("2_tsp8v")
 
-[node name="Highlight" type="Sprite2D" parent="." groups=["items"]]
+[node name="Highlight" type="Sprite2D" parent="."]
 visible = false
 self_modulate = Color(100, 100, 100, 1)
 z_index = -1
