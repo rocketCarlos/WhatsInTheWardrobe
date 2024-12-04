@@ -15,6 +15,7 @@ Node that manages rooms
 @onready var moms = $Rooms/Moms
 @onready var day_timer = $DayTimer
 @onready var rooms = $Rooms
+@onready var background_music = $BackgroundMusic
 #endregion
 
 #region attributes
@@ -26,6 +27,7 @@ func _ready() -> void:
 	current_scene = kids 
 	current_scene.show()
 	day_timer.start(Globals.day_durations[Globals.current_day])
+	background_music.play()
 
 # called by doors to switch from room to room
 func switch_room(room: Globals.ROOMS) -> void:

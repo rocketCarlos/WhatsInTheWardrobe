@@ -94,3 +94,8 @@ room_connection = 3
 position = Vector2(456.667, -84.9999)
 scale = Vector2(6.35, 6.745)
 room_connection = 4
+
+[node name="Corridor" parent="." instance=ExtResource("12_jxvjg")]
+position = Vector2(863.333, 221.667)
+scale = Vector2(3.16, 5.155)
+room_connection = 0

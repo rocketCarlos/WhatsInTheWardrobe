@@ -10,16 +10,16 @@ Title screen and main menu
 @onready var play = $Play
 @onready var credits = $Credits
 @onready var quit = $Quit
+@onready var menu_music = $MenuMusic
+@onready var click = $Click
 #endregion
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var playing = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not playing and visible:
+		menu_music.play(3)
+		playing = true
 
 func restart() -> void:
 	play.disabled = false
@@ -28,6 +28,7 @@ func restart() -> void:
 
 #region signal functions
 func _on_play_button_up() -> void:
+	click.play(0.22)
 	# when pressed, show transition to the game
 	Globals.main.play()
 	play.disabled = true
@@ -38,6 +39,10 @@ func _on_play_button_up() -> void:
 	play.disabled = true
 	credits.disabled = true
 	quit.disabled = true
+	
+	menu_music.stop()
+	playing = false
+	
 
 func _on_credits_button_up() -> void:
 	Globals.main.show_card(Globals.CARDS.CREDITS)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgng0j4iyy1t0"]
+[gd_scene load_steps=5 format=3 uid="uid://cgng0j4iyy1t0"]
 
 [ext_resource type="Script" path="res://scenes/Inventory/inventory.gd" id="1_eh2o4"]
 [ext_resource type="Texture2D" uid="uid://hf5hirqexev6" path="res://assets/images/inventory.png" id="2_qan06"]
+[ext_resource type="AudioStream" uid="uid://b5knjpk1ncro" path="res://assets/sound effects/menu_hover.mp3" id="3_6726y"]
+[ext_resource type="AudioStream" uid="uid://dfe1ihwowk1oe" path="res://assets/sound effects/menu_click.mp3" id="4_d4vjy"]
 
 [node name="Inventory" type="Node2D"]
 z_index = -5
@@ -27,3 +29,9 @@ position = Vector2(818, 611)
 
 [node name="Slot5" type="Node2D" parent="."]
 position = Vector2(1040, 611)
+
+[node name="AddItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6726y")
+
+[node name="RetrieveItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_d4vjy")

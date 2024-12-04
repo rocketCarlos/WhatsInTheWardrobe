@@ -13,21 +13,31 @@ objects and they become inaccessible.
 @onready var hitbox = $Hitbox
 @onready var hitbox_shape_closed = $Hitbox/ShapeClosed
 @onready var hitbox_shape_open = $Hitbox/ShapeOpen
+
+@onready var closing = $closing
+@onready var opening = $opening
 #endregion
 
 #region attributes
 # represents the container's state. false->closed true->open
 # when set, the container's sprite is changed
+var only_once = true
 var open : bool:
 	set(value):
 		open = value
 		if open:
+			opening.play()
 			texture = sprite_open
 			highlight.texture = sprite_open
 			# when open, children are visible
 			for child in children:
 				child.show()
 		else:
+			if not only_once:
+				closing.play()
+			else:
+				only_once = false
+				
 			texture = sprite_closed
 			highlight.texture = sprite_closed
 			# when closed, children are not visible

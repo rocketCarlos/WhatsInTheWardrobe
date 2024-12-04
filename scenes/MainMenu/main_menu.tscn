@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvl4jnqdoaspy"]
+[gd_scene load_steps=14 format=3 uid="uid://dvl4jnqdoaspy"]
 
 [ext_resource type="Texture2D" uid="uid://dbjm6pxek2mln" path="res://assets/tittle screen/tittle_screen.png" id="1_7th2f"]
 [ext_resource type="Script" path="res://scenes/MainMenu/main_menu.gd" id="2_pr8fu"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dferrul1thmwp" path="res://assets/tittle screen/quit.png" id="9_a2ghe"]
 [ext_resource type="Texture2D" uid="uid://drhfxta2rjdp8" path="res://assets/tittle screen/quit_outline_pressed.png" id="10_gti1l"]
 [ext_resource type="Texture2D" uid="uid://jvs5kqxta44e" path="res://assets/tittle screen/quit_outline.png" id="11_mhic2"]
+[ext_resource type="AudioStream" uid="uid://dbxijuyns5ik7" path="res://assets/music/intro.mp3" id="12_reb6l"]
+[ext_resource type="AudioStream" uid="uid://dfe1ihwowk1oe" path="res://assets/sound effects/menu_click.mp3" id="13_iasm8"]
 
 [node name="MainMenu" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -47,6 +49,13 @@ scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("9_a2ghe")
 texture_pressed = ExtResource("10_gti1l")
 texture_hover = ExtResource("11_mhic2")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_reb6l")
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_iasm8")
+volume_db = 12.0
 
 [connection signal="button_up" from="Play" to="." method="_on_play_button_up"]
 [connection signal="button_up" from="Credits" to="." method="_on_credits_button_up"]

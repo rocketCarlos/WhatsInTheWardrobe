@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhhcj2lu1qtoc"]
+[gd_scene load_steps=4 format=3 uid="uid://dhhcj2lu1qtoc"]
 
 [ext_resource type="Script" path="res://scenes/GenericContainer/generic_container.gd" id="1_5js1k"]
+[ext_resource type="AudioStream" uid="uid://dlub241nlupiv" path="res://assets/sound effects/open_drawer.mp3" id="2_5watx"]
+[ext_resource type="AudioStream" uid="uid://c5ts8hru85svb" path="res://assets/sound effects/close_drawer.mp3" id="3_gpkhu"]
 
 [node name="GenericContainer" type="Sprite2D" groups=["Containers"]]
 z_index = 1
@@ -17,6 +19,12 @@ scale = Vector2(1.05, 1.05)
 [node name="ShapeClosed" type="CollisionShape2D" parent="Hitbox"]
 
 [node name="ShapeOpen" type="CollisionShape2D" parent="Hitbox"]
+
+[node name="opening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5watx")
+
+[node name="closing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gpkhu")
 
 [connection signal="mouse_shape_entered" from="Hitbox" to="." method="_on_hitbox_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Hitbox" to="." method="_on_hitbox_mouse_shape_exited"]

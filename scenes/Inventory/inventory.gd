@@ -12,6 +12,8 @@ Node that defines the inventory system.
 @onready var slot_3 = $Slot3
 @onready var slot_4 = $Slot4
 @onready var slot_5 = $Slot5
+@onready var add_item = $AddItem
+@onready var substract_item = $RetrieveItem
 #endregion
 
 #region attributes
@@ -67,6 +69,7 @@ func to_inventory(item: Node) -> Dictionary:
 		inventory_items[stored] = item
 		var position = inventory_positions[stored]
 		stored += 1
+		add_item.play()
 		return { "status": Globals.item_manager.INVENTORY_STATUS.ACCEPTED, "position": position, "idx": stored-1 }
 	else: # there is no room for the item
 		Globals.item_manager.inventory_full()
@@ -82,5 +85,6 @@ func retrieve_item(idx: int) -> void:
 		inventory_items[i-1] = inventory_items[i]
 		
 	stored -= 1
+	substract_item.play()
 	
 #endregion

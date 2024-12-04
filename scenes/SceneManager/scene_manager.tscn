@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://beo6jx2hl01b8"]
+[gd_scene load_steps=8 format=3 uid="uid://beo6jx2hl01b8"]
 
 [ext_resource type="Script" path="res://scenes/SceneManager/scene_manager.gd" id="1_06xxf"]
 [ext_resource type="PackedScene" uid="uid://dfsatt0oldpee" path="res://scenes/MockScene/mock_scene.tscn" id="2_44h6k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ciaom6rcv73pr" path="res://scenes/Entrance/Entrance.tscn" id="3_tlv1e"]
 [ext_resource type="PackedScene" uid="uid://fj25kbbpgmja" path="res://scenes/Kitchen/kitchen.tscn" id="4_8oqw2"]
 [ext_resource type="PackedScene" uid="uid://wnophxxe1xci" path="res://scenes/Kids/kids.tscn" id="5_sro5s"]
+[ext_resource type="AudioStream" uid="uid://bqf5iag4itooc" path="res://assets/music/background.mp3" id="7_frgpo"]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_06xxf")
@@ -18,17 +19,18 @@ visible = false
 
 [node name="Entrance" parent="Rooms" instance=ExtResource("3_tlv1e")]
 visible = false
-position = Vector2(576, 367.764)
-scale = Vector2(0.6, 0.681044)
+position = Vector2(576, 322.928)
+scale = Vector2(0.6, 0.598016)
 
 [node name="Kitchen" parent="Rooms" instance=ExtResource("4_8oqw2")]
 visible = false
-position = Vector2(576, 367.764)
-scale = Vector2(0.6, 0.681044)
+position = Vector2(576, 323.496)
+scale = Vector2(0.6, 0.599067)
 
 [node name="Kids" parent="Rooms" instance=ExtResource("5_sro5s")]
-position = Vector2(576, 367.764)
-scale = Vector2(0.6, 0.681044)
+visible = false
+position = Vector2(576, 324.064)
+scale = Vector2(0.6, 0.600118)
 
 [node name="Living" parent="Rooms" instance=ExtResource("2_44h6k")]
 visible = false
@@ -39,5 +41,9 @@ visible = false
 [node name="DayTimer" type="Timer" parent="."]
 
 [node name="ItemManager" parent="." instance=ExtResource("3_3inxy")]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_frgpo")
+volume_db = -12.0
 
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
