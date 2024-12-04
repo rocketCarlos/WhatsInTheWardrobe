@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfsatt0oldpee"]
+[gd_scene load_steps=21 format=3 uid="uid://dfsatt0oldpee"]
 
 [ext_resource type="PackedScene" uid="uid://bb6p32llodf5c" path="res://scenes/GenericItem/generic_item.tscn" id="1_oymsc"]
 [ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_xkuf5"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://cllw0ujujphgr" path="res://scenes/Calendar/calendar.tscn" id="16_mlf5q"]
 [ext_resource type="PackedScene" uid="uid://2pi0o2n51n3m" path="res://scenes/Clock/clock.tscn" id="17_hy3sm"]
 [ext_resource type="PackedScene" uid="uid://pofoslgok3xo" path="res://scenes/Wardrobe/final_wardrobe.tscn" id="18_8bwng"]
+[ext_resource type="Texture2D" uid="uid://blh5dajxavo3a" path="res://assets/interactive objects/moms/clothes.png" id="19_hg4tr"]
+[ext_resource type="Texture2D" uid="uid://doqke3qistbvg" path="res://assets/interactive objects/moms/clothes_moved.PNG" id="20_6vhud"]
 
 [node name="MockScene" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -100,21 +102,31 @@ original_slot = NodePath("..")
 position = Vector2(-909.782, 78.578)
 scale = Vector2(1.66, 6.88)
 
-[node name="SecurityBox" parent="." node_paths=PackedStringArray("children") instance=ExtResource("12_1psss")]
-position = Vector2(40, 213.333)
-scale = Vector2(0.733372, 0.607143)
+[node name="GenericContainer2" parent="." node_paths=PackedStringArray("children") instance=ExtResource("3_psku0")]
+position = Vector2(-103.333, 96.6666)
+texture = ExtResource("19_hg4tr")
+centered = false
+offset = Vector2(0, -227.955)
+sprite_closed = ExtResource("19_hg4tr")
+sprite_open = ExtResource("20_6vhud")
+children = [NodePath("SecurityBox")]
+
+[node name="SecurityBox" parent="GenericContainer2" node_paths=PackedStringArray("parent", "children") instance=ExtResource("12_1psss")]
+position = Vector2(111.667, -6.66666)
+scale = Vector2(0.34123, 0.352361)
 texture = ExtResource("13_m43lk")
 centered = false
 sprite_closed = ExtResource("14_8q2i8")
 sprite_open = ExtResource("13_m43lk")
+parent = NodePath("..")
 children = [NodePath("Slot")]
 
-[node name="Slot" parent="SecurityBox" node_paths=PackedStringArray("parent") instance=ExtResource("2_834jm")]
+[node name="Slot" parent="GenericContainer2/SecurityBox" node_paths=PackedStringArray("parent") instance=ExtResource("2_834jm")]
 position = Vector2(345.436, 280)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
-[node name="GenericItem" parent="SecurityBox/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
+[node name="GenericItem" parent="GenericContainer2/SecurityBox/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("1_oymsc")]
 scale = Vector2(0.0802845, 0.0926115)
 texture = ExtResource("15_nglrw")
 original_slot = NodePath("..")
