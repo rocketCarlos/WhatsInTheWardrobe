@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc1kyru41ydnk"]
+
+[ext_resource type="Texture2D" uid="uid://cpjee808bspmg" path="res://assets/interactive objects/entrance/jacket_pocket.PNG" id="1_s74jt"]
+[ext_resource type="Script" path="res://scenes/JacketPocket/jacket_pocket.gd" id="2_tsp8v"]
+
+[node name="JacketPocket" type="Sprite2D"]
+texture = ExtResource("1_s74jt")
+script = ExtResource("2_tsp8v")
+
+[node name="Highlight" type="Sprite2D" parent="." groups=["items"]]
+visible = false
+self_modulate = Color(100, 100, 100, 1)
+z_index = -1
+scale = Vector2(1.1, 1.1)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+
+[connection signal="mouse_entered" from="Hitbox" to="." method="_on_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="_on_hitbox_mouse_exited"]
