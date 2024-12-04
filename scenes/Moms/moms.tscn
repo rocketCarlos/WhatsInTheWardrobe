@@ -36,16 +36,18 @@ sprite_closed = ExtResource("4_7kbmm")
 sprite_open = ExtResource("3_lb8i4")
 children = [NodePath("drawer2"), NodePath("SecurityBox"), NodePath("Clothes")]
 
-[node name="drawer2" parent="drawer" node_paths=PackedStringArray("children") instance=ExtResource("2_3vhxk")]
+[node name="drawer2" parent="drawer" node_paths=PackedStringArray("parent", "children") instance=ExtResource("2_3vhxk")]
 position = Vector2(208.267, 340.86)
 scale = Vector2(1.0238, 1.0468)
 texture = ExtResource("5_anphp")
 sprite_closed = ExtResource("6_tvcjv")
 sprite_open = ExtResource("5_anphp")
+parent = NodePath("..")
 children = [NodePath("Slot4")]
 
-[node name="Slot4" parent="drawer/drawer2" instance=ExtResource("7_ylv55")]
+[node name="Slot4" parent="drawer/drawer2" node_paths=PackedStringArray("parent") instance=ExtResource("7_ylv55")]
 position = Vector2(-110.244, -18.09)
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Jewelry boxx" parent="drawer/drawer2/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
@@ -55,16 +57,18 @@ scale = Vector2(0.16032, 0.204504)
 texture = ExtResource("9_i0rey")
 original_slot = NodePath("..")
 
-[node name="SecurityBox" parent="drawer" node_paths=PackedStringArray("children") instance=ExtResource("10_7ujhc")]
+[node name="SecurityBox" parent="drawer" node_paths=PackedStringArray("parent", "children") instance=ExtResource("10_7ujhc")]
 position = Vector2(227.078, 56.8101)
 scale = Vector2(0.533055, 0.528597)
 texture = ExtResource("11_bhlg6")
 sprite_closed = ExtResource("12_i5pgl")
 sprite_open = ExtResource("11_bhlg6")
+parent = NodePath("..")
 children = [NodePath("Slot4")]
 
-[node name="Slot4" parent="drawer/SecurityBox" instance=ExtResource("7_ylv55")]
+[node name="Slot4" parent="drawer/SecurityBox" node_paths=PackedStringArray("parent") instance=ExtResource("7_ylv55")]
 position = Vector2(-85.7028, 71.6488)
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Wardrobe\'s key" parent="drawer/SecurityBox/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
@@ -74,7 +78,7 @@ scale = Vector2(0.0599345, 0.0667878)
 texture = ExtResource("13_akuu1")
 original_slot = NodePath("..")
 
-[node name="Clothes" parent="drawer" instance=ExtResource("2_3vhxk")]
+[node name="Clothes" parent="drawer" node_paths=PackedStringArray("parent") instance=ExtResource("2_3vhxk")]
 position = Vector2(-262.013, -110.915)
 scale = Vector2(2.4651, 1.24921)
 texture = ExtResource("14_8duvf")
@@ -82,6 +86,7 @@ centered = false
 offset = Vector2(0, -227.89)
 sprite_closed = ExtResource("14_8duvf")
 sprite_open = ExtResource("15_s0nfo")
+parent = NodePath("..")
 
 [node name="Slot" parent="." instance=ExtResource("7_ylv55")]
 position = Vector2(-546.667, -95)
@@ -131,8 +136,9 @@ sprite_closed = ExtResource("6_tvcjv")
 sprite_open = ExtResource("5_anphp")
 children = [NodePath("Slot"), NodePath("Slot2")]
 
-[node name="Slot" parent="drawer3" instance=ExtResource("7_ylv55")]
+[node name="Slot" parent="drawer3" node_paths=PackedStringArray("parent") instance=ExtResource("7_ylv55")]
 position = Vector2(-546.667, -95)
+parent = NodePath("..")
 
 [node name="Camera" parent="drawer3/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
 position = Vector2(455.18, 53.476)
@@ -140,8 +146,9 @@ scale = Vector2(0.269849, 0.284772)
 texture = ExtResource("20_xdj4v")
 original_slot = NodePath("..")
 
-[node name="Slot2" parent="drawer3" instance=ExtResource("7_ylv55")]
+[node name="Slot2" parent="drawer3" node_paths=PackedStringArray("parent") instance=ExtResource("7_ylv55")]
 position = Vector2(-546.667, -95)
+parent = NodePath("..")
 
 [node name="Book" parent="drawer3/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
 position = Vector2(537.885, 186.79)

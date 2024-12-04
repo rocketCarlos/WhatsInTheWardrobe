@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cevg0uur2tnx2"]
+[gd_scene load_steps=12 format=3 uid="uid://cevg0uur2tnx2"]
 
 [ext_resource type="Texture2D" uid="uid://bnt6ojg0rmtqr" path="res://assets/rooms/living.png" id="1_ihhm4"]
 [ext_resource type="PackedScene" uid="uid://dhhcj2lu1qtoc" path="res://scenes/GenericContainer/generic_container.tscn" id="2_brebv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://2pi0o2n51n3m" path="res://scenes/Clock/clock.tscn" id="8_istfv"]
 [ext_resource type="Texture2D" uid="uid://i3cepxt1i65r" path="res://assets/interactive objects/living/controller.png" id="8_n4dtn"]
 [ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="10_5jfcx"]
+[ext_resource type="PackedScene" uid="uid://pofoslgok3xo" path="res://scenes/Wardrobe/final_wardrobe.tscn" id="11_xqqxt"]
 
 [node name="Living" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -24,23 +25,27 @@ sprite_closed = ExtResource("4_q7m1b")
 sprite_open = ExtResource("3_0ub2g")
 children = [NodePath("Slot"), NodePath("Slot2")]
 
-[node name="Slot" parent="GenericContainer" instance=ExtResource("5_pykg2")]
+[node name="Slot" parent="GenericContainer" node_paths=PackedStringArray("parent") instance=ExtResource("5_pykg2")]
 position = Vector2(-103.784, -27.6267)
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
-[node name="Passcode" parent="GenericContainer/Slot" instance=ExtResource("6_0ap0g")]
+[node name="Passcode" parent="GenericContainer/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("6_0ap0g")]
 position = Vector2(4.41634, -27.6267)
 scale = Vector2(0.0436082, 0.0494246)
 texture = ExtResource("7_0n4wy")
+original_slot = NodePath("..")
 
-[node name="Slot2" parent="GenericContainer" instance=ExtResource("5_pykg2")]
+[node name="Slot2" parent="GenericContainer" node_paths=PackedStringArray("parent") instance=ExtResource("5_pykg2")]
 position = Vector2(-22.0851, -22.1014)
+parent = NodePath("..")
 metadata/_edit_group_ = true
 
-[node name="TV" parent="GenericContainer/Slot2" instance=ExtResource("6_0ap0g")]
+[node name="TV" parent="GenericContainer/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("6_0ap0g")]
 position = Vector2(2.88775, -21.251)
 scale = Vector2(0.162946, 0.19556)
 texture = ExtResource("8_n4dtn")
+original_slot = NodePath("..")
 
 [node name="Clock" parent="." instance=ExtResource("8_istfv")]
 position = Vector2(-828.104, -640)
@@ -50,3 +55,8 @@ scale = Vector2(0.575746, 0.556711)
 position = Vector2(1682.92, -16.6667)
 scale = Vector2(6.145, 16.325)
 room_connection = 1
+
+[node name="FinalWardrobe" parent="." instance=ExtResource("11_xqqxt")]
+position = Vector2(252.104, 1.66664)
+scale = Vector2(3.07228, 3.07449)
+required = "TV"
