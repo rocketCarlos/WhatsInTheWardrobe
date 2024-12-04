@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bd8k60p2ata5t"
+path="res://.godot/imported/open_wardrobe.mp3-88cdced617c41b5c930c99bf8a4a5a3a.mp3str"
+
+[deps]
+
+source_file="res://assets/sound effects/open_wardrobe.mp3"
+dest_files=["res://.godot/imported/open_wardrobe.mp3-88cdced617c41b5c930c99bf8a4a5a3a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

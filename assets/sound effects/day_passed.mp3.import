@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dswsbrsqfvwkn"
+path="res://.godot/imported/day_passed.mp3-7984824209458b0729665d56352b0ed5.mp3str"
+
+[deps]
+
+source_file="res://assets/sound effects/day_passed.mp3"
+dest_files=["res://.godot/imported/day_passed.mp3-7984824209458b0729665d56352b0ed5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
