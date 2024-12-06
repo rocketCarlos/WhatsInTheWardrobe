@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b51pucytjhree"]
+[gd_scene load_steps=23 format=3 uid="uid://b51pucytjhree"]
 
 [ext_resource type="Texture2D" uid="uid://dw7dd8rbmlsjv" path="res://assets/cutscenes/GameOver/GameOver_bedroom/GameOver_bedroom_1.png" id="1_0kise"]
 [ext_resource type="Texture2D" uid="uid://dxfgerymj5hct" path="res://assets/cutscenes/GameOver/GameOver_bedroom/GameOver_bedroom_2.png" id="1_3mwm7"]
@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://kvemgwdjj4un" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_3.png" id="7_h0ci0"]
 [ext_resource type="FontFile" uid="uid://b5867v5unxs27" path="res://assets/font/dreaming-outloud-regular.otf" id="11_guv2r"]
 [ext_resource type="Texture2D" uid="uid://dbmr7hobtj1u4" path="res://assets/cutscenes/DayPassed/DayPassed_1.png" id="11_yixxr"]
+[ext_resource type="AudioStream" uid="uid://cphc3lxitjc10" path="res://assets/sound effects/open_door.mp3" id="17_yce87"]
+[ext_resource type="AudioStream" uid="uid://dfxg76d8fmysr" path="res://assets/sound effects/failed.mp3" id="18_n33ds"]
+[ext_resource type="AudioStream" uid="uid://dswsbrsqfvwkn" path="res://assets/sound effects/day_passed.mp3" id="19_aqik4"]
+[ext_resource type="AudioStream" uid="uid://3l6ffb0adcqe" path="res://assets/sound effects/mom_angry.wav" id="20_8sb7l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpg8x"]
 animations = [{
@@ -108,7 +112,7 @@ z_index = 25
 position = Vector2(575.5, 323.5)
 scale = Vector2(0.599479, 0.599074)
 sprite_frames = SubResource("SpriteFrames_kpg8x")
-animation = &"passed"
+animation = &"grandma"
 script = ExtResource("4_sycby")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -127,5 +131,17 @@ offset_bottom = -13.0
 label_settings = SubResource("LabelSettings_jjeny")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_yce87")
+
+[node name="Failed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_n33ds")
+
+[node name="Passed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_aqik4")
+
+[node name="Angry" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_8sb7l")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -55,6 +55,10 @@ func day_ended(result: Dictionary) -> void:
 	print("main says: day has ended ", result)
 	# delete the previous scene manager
 	scene_manager_reference.queue_free()
+	# delete the box panel if exists
+	if panel_reference:
+		panel_reference.queue_free()
+		panel_reference = null
 	# manage the next day
 	if Globals.current_day == 2: # after day 2, grandma comes
 		show_card(Globals.CARDS.GRANDMA)
@@ -86,9 +90,6 @@ func day_ended(result: Dictionary) -> void:
 		call_deferred(&"add_child", scene_manager_reference)
 		#TODO: transition to rooms
 		
-	if panel_reference:
-		panel_reference.queue_free()
-		panel_reference = null
 
 func end_game() -> void:
 	scene_manager_reference.queue_free()
@@ -140,4 +141,5 @@ func security_open() -> void:
 # called when the user leaves the close up look of the security box
 func security_cancel() -> void:
 	scene_manager_reference.rooms.show()
+	panel_reference = null
 #endregion

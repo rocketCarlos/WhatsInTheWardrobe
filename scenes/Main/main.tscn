@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://be5canebkj4u"]
+[gd_scene load_steps=27 format=3 uid="uid://be5canebkj4u"]
 
 [ext_resource type="Script" path="res://scenes/Main/main.gd" id="1_68s6r"]
 [ext_resource type="PackedScene" uid="uid://beo6jx2hl01b8" path="res://scenes/SceneManager/scene_manager.tscn" id="2_xtluj"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c6ulgnb5h3o6b" path="res://assets/cutscenes/GoodEnding/End_5.png" id="15_g62ap"]
 [ext_resource type="Texture2D" uid="uid://wacq8i1366ud" path="res://assets/cutscenes/GoodEnding/End_6.png" id="16_pe1im"]
 [ext_resource type="Texture2D" uid="uid://b3ud16una32pf" path="res://assets/cutscenes/GoodEnding/End_7.png" id="17_ob86x"]
+[ext_resource type="AudioStream" uid="uid://cmwaglndslt3d" path="res://assets/music/final.mp3" id="18_qqvwx"]
 
 [sub_resource type="Animation" id="Animation_0hrql"]
 length = 0.001
@@ -235,6 +236,20 @@ tracks/7/keys = {
 "method": &"restart"
 }]
 }
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("FinalMusic")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(19.7667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [4.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_pw0a6"]
 resource_name = "grandma_cutscene"
@@ -441,3 +456,9 @@ self_modulate = Color(0, 0, 0, 1)
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_we6xy")
+
+[node name="FinalMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_qqvwx")
+volume_db = -12.0
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="."]
