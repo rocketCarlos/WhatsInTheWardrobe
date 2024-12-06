@@ -89,10 +89,10 @@ sprite_open = ExtResource("15_s0nfo")
 parent = NodePath("..")
 
 [node name="Slot" parent="." instance=ExtResource("7_ylv55")]
-position = Vector2(-546.667, -95)
+position = Vector2(-546.667, -106.345)
+metadata/_edit_group_ = true
 
 [node name="Totebag" parent="Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
-position = Vector2(-5, -13.3333)
 scale = Vector2(0.473214, 0.490066)
 texture = ExtResource("16_xkkcy")
 original_slot = NodePath("..")
@@ -137,21 +137,21 @@ sprite_open = ExtResource("5_anphp")
 children = [NodePath("Slot"), NodePath("Slot2")]
 
 [node name="Slot" parent="drawer3" node_paths=PackedStringArray("parent") instance=ExtResource("7_ylv55")]
-position = Vector2(-546.667, -95)
+position = Vector2(84.8956, -37.3961)
 parent = NodePath("..")
+metadata/_edit_group_ = true
 
 [node name="Camera" parent="drawer3/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
-position = Vector2(455.18, 53.476)
 scale = Vector2(0.269849, 0.284772)
 texture = ExtResource("20_xdj4v")
 original_slot = NodePath("..")
 
 [node name="Slot2" parent="drawer3" node_paths=PackedStringArray("parent") instance=ExtResource("7_ylv55")]
-position = Vector2(-546.667, -95)
+position = Vector2(-87.8229, 74.792)
 parent = NodePath("..")
+metadata/_edit_group_ = true
 
 [node name="Book" parent="drawer3/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
-position = Vector2(537.885, 186.79)
 scale = Vector2(0.177, 0.217)
 skew = 0.0174533
 texture = ExtResource("21_yjubo")

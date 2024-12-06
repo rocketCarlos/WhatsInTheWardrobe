@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/Slot/slot.gd" id="1_yt1gv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_whccf"]
-radius = 12.0416
+radius = 40.0
 
 [node name="Slot" type="Node2D"]
 z_index = 1

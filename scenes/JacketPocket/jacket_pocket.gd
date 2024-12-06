@@ -23,11 +23,13 @@ var in_inventory : bool:
 		
 		if in_inventory:
 			texture = key_sprite
-			scale = Vector2(0.1,0.1)
+			scale = Vector2(0.1,0.1) 
 		else:
-			texture = pocket_sprite
-			scale = Vector2(1,1)
+			if current_slot == original_slot:
+				texture = pocket_sprite
+				scale = Vector2(1,1)
 			
+		
 		# initi textures again xd
 		# the hitbox is a box that fits the item
 		var collider = RectangleShape2D.new()
@@ -93,8 +95,8 @@ func _process(delta: float) -> void:
 					#if item had a parent, enable it again
 					if parent:
 						parent.disabled = false
-					in_inventory = true
 					reparent(Globals.item_manager)
+					in_inventory = true
 					global_position = response.position
 					inventory_index = response.idx
 					if current_slot:
@@ -144,9 +146,9 @@ func _init_zoom() -> void:
 #region slot and inventory interactions
 # function called when the object is required to go to a slot
 func go_to_slot(slot: Node) -> void:
-	in_inventory = false
-	inventory_index = -1
 	current_slot = slot
+	inventory_index = -1
+	in_inventory = false
 
 # called by the inventory when it is rearranged
 func update_inventory(pos: Vector2, idx: int) -> void:

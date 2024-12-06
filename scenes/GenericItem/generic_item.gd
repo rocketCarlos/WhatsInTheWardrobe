@@ -16,8 +16,14 @@ by the end of the day to pass to the next day.
 #endregion
 
 #region attributes
+var original_scale: Vector2
 var mouse_in_collider : bool
-var in_inventory : bool
+var in_inventory : bool:
+	set(value):
+		in_inventory = value
+		if value:
+			pass
+			
 # the index used by the item in the inventory
 var inventory_index: int
 
@@ -53,9 +59,11 @@ func restart() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	original_scale = scale
 	restart()
 	_init_textures()
 	_init_zoom()
+	
 	# if this node has a parent, show this node above its parent
 	if parent:
 		z_index += 1

@@ -12,7 +12,7 @@ original rooms.
 '''
 
 #region scene nodes
-@onready var _inventory = $Inventory
+@onready var inventory = $Inventory
 @export var message_service: PackedScene
 #endregion
 
@@ -32,7 +32,7 @@ enum INVENTORY_STATUS {
 
 # function called by items to request being transferred into the inventory
 func to_inventory(item: Node) -> Dictionary:
-	return _inventory.to_inventory(item)
+	return inventory.to_inventory(item)
 
 #endregion
 
@@ -54,7 +54,7 @@ func container_locked() -> void:
 # called by slots when they're clicked while an item is selected
 # selected item ends up going from the inventory to the slot
 func request_item(slot: Node) -> void:
-	_inventory.retrieve_item(selected_item.inventory_index)
+	inventory.retrieve_item(selected_item.inventory_index)
 	selected_item.go_to_slot(slot)
 	selected_item = null
 

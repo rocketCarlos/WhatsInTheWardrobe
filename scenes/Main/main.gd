@@ -72,9 +72,9 @@ func day_ended(result: Dictionary) -> void:
 		call_deferred(&"add_child", scene_manager_reference)
 		#TODO: transition to rooms
 	else: # day not passed
-		if result.detectedItem == "KidsBedroom":
+		if result.detectedItem == "KidsRoom":
 			show_card(Globals.CARDS.BUSTED_ROOM)
-		if result.detectedItem == "container": # a container was left open
+		elif result.detectedItem == "container": # a container was left open
 			show_card(Globals.CARDS.BUSTED_CONTAINER)
 		else: # an item was moved from its original position
 			busted_item = result.detectedItem

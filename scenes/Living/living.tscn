@@ -38,7 +38,7 @@ texture = ExtResource("7_0n4wy")
 original_slot = NodePath("..")
 
 [node name="Slot2" parent="GenericContainer" node_paths=PackedStringArray("parent") instance=ExtResource("5_pykg2")]
-position = Vector2(-22.0851, -22.1014)
+position = Vector2(28.7029, -19.3387)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
