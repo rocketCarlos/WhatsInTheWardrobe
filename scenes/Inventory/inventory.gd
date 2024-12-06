@@ -14,6 +14,7 @@ Node that defines the inventory system.
 @onready var slot_5 = $Slot5
 @onready var add_item = $AddItem
 @onready var substract_item = $RetrieveItem
+@onready var sprite = $Sprite2D
 #endregion
 
 #region attributes

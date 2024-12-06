@@ -160,7 +160,7 @@ scale = Vector2(0.887534, 0.845771)
 texture = ExtResource("6_0khqw")
 sprite_closed = ExtResource("7_y303w")
 sprite_open = ExtResource("6_0khqw")
-children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5"), NodePath("Slot6"), NodePath("Slot8"), NodePath("Slot9"), NodePath("Slot10")]
+children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5"), NodePath("Slot6"), NodePath("Slot9"), NodePath("Slot10")]
 
 [node name="Slot" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
 position = Vector2(-117.836, -19.7058)
@@ -198,7 +198,7 @@ texture = ExtResource("11_hpg6l")
 original_slot = NodePath("..")
 
 [node name="Slot4" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(111.263, 96.5588)
+position = Vector2(-48.3546, 94.5879)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
@@ -231,20 +231,8 @@ scale = Vector2(0.19, 0.19)
 texture = ExtResource("14_25tcs")
 original_slot = NodePath("..")
 
-[node name="Slot8" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-40.8435, 90.647)
-parent = NodePath("..")
-metadata/_edit_group_ = true
-
-[node name="Cleaning product" parent="Cupboard2/Slot8" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-self_modulate = Color(1, 0.637, 0.34, 1)
-position = Vector2(0, -22.695)
-scale = Vector2(0.19, 0.19)
-texture = ExtResource("21_1jrcb")
-original_slot = NodePath("..")
-
 [node name="Slot9" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(32.3931, 96.5589)
+position = Vector2(39.9049, 96.5584)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
@@ -256,7 +244,7 @@ texture = ExtResource("17_pxn2v")
 original_slot = NodePath("..")
 
 [node name="Slot10" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-85.9122, 98.5294)
+position = Vector2(124.409, 88.6761)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 

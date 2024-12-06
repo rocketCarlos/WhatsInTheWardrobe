@@ -22,8 +22,11 @@ var in_inventory : bool:
 	set(value):
 		in_inventory = value
 		if value:
-			pass
-			
+			var desired_height = Globals.item_manager.inventory.sprite.texture.get_height() * Globals.item_manager.inventory.sprite.scale.y
+			scale = Vector2(desired_height/texture.get_height(), desired_height/texture.get_height())
+			#scale = scale * Vector2(original_scale.x, original_scale.x)
+		else:
+			global_scale = original_scale
 # the index used by the item in the inventory
 var inventory_index: int
 
@@ -59,7 +62,7 @@ func restart() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	original_scale = scale
+	original_scale = global_scale
 	restart()
 	_init_textures()
 	_init_zoom()
