@@ -154,12 +154,13 @@ scale = Vector2(0.19, 0.19)
 texture = ExtResource("17_pxn2v")
 original_slot = NodePath("..")
 
-[node name="Cupboard2" parent="." instance=ExtResource("5_l03hj")]
+[node name="Cupboard2" parent="." node_paths=PackedStringArray("children") instance=ExtResource("5_l03hj")]
 position = Vector2(199.583, 331.667)
 scale = Vector2(0.887534, 0.845771)
 texture = ExtResource("6_0khqw")
 sprite_closed = ExtResource("7_y303w")
 sprite_open = ExtResource("6_0khqw")
+children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5"), NodePath("Slot6"), NodePath("Slot8"), NodePath("Slot9"), NodePath("Slot10")]
 
 [node name="Slot" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
 position = Vector2(-117.836, -19.7058)

@@ -40,6 +40,6 @@ enum CARDS {
 
 func _ready() -> void:
 	if debug:
-		day_durations = [5, 5, 5]
+		day_durations = [60, 60, 60]
 	else:
-		day_durations = [360, 360, 180]
+		day_durations = [240, 240, 120]

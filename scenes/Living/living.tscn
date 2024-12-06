@@ -24,6 +24,7 @@ texture = ExtResource("3_0ub2g")
 sprite_closed = ExtResource("4_q7m1b")
 sprite_open = ExtResource("3_0ub2g")
 children = [NodePath("Slot"), NodePath("Slot2")]
+required_item = "Living's key"
 
 [node name="Slot" parent="GenericContainer" node_paths=PackedStringArray("parent") instance=ExtResource("5_pykg2")]
 position = Vector2(-103.784, -27.6267)
@@ -59,4 +60,4 @@ room_connection = 1
 [node name="FinalWardrobe" parent="." instance=ExtResource("11_xqqxt")]
 position = Vector2(252.104, 1.66664)
 scale = Vector2(3.07228, 3.07449)
-required = "TV"
+required = "Wardrobe's key"

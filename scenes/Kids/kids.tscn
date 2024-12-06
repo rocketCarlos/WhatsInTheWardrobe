@@ -40,7 +40,7 @@ texture = ExtResource("5_ps7py")
 sprite_closed = ExtResource("6_mtlb2")
 sprite_open = ExtResource("5_ps7py")
 children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4")]
-required_item = "Kids' key"
+required_item = "Kid's key"
 
 [node name="Slot" parent="Drawer" node_paths=PackedStringArray("parent") instance=ExtResource("7_p0w6c")]
 position = Vector2(-123, -24.5352)
