@@ -20,8 +20,6 @@ var mouse_in_collider : bool
 var in_inventory : bool
 # the index used by the item in the inventory
 var inventory_index: int
-# used to store a previous position if needed
-var prev_position: Vector2
 
 # when current_slot is set:
 # - item's position will match slot's position

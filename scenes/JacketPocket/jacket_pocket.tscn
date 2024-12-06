@@ -17,5 +17,7 @@ scale = Vector2(1.1, 1.1)
 
 [node name="Shape" type="CollisionShape2D" parent="Hitbox"]
 
+[node name="Zoom" type="Sprite2D" parent="."]
+
 [connection signal="mouse_entered" from="Hitbox" to="." method="_on_hitbox_mouse_entered"]
 [connection signal="mouse_exited" from="Hitbox" to="." method="_on_hitbox_mouse_exited"]

@@ -31,12 +31,12 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_av4o2")
 
-[node name="Living" parent="." instance=ExtResource("2_rasyk")]
+[node name="Entrance" parent="." instance=ExtResource("2_rasyk")]
 position = Vector2(-906.667, 43.3333)
 rotation = -0.698132
 scale = Vector2(2.395, 7.56)
 skew = 0.706858
-room_connection = 4
+room_connection = 1
 
 [node name="Clock" parent="." instance=ExtResource("3_0of1h")]
 position = Vector2(876.667, -310)

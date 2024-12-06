@@ -36,9 +36,6 @@ func _on_play_button_up() -> void:
 	quit.disabled = true
 	# after the transition is finished, the buttons are enabled again but the main scene hides the menu
 	await Globals.main.animation_player.animation_finished
-	play.disabled = true
-	credits.disabled = true
-	quit.disabled = true
 	
 	menu_music.stop()
 	playing = false
