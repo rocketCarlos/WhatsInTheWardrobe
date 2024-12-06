@@ -12,6 +12,7 @@ by the end of the day to pass to the next day.
 @onready var highlight = $Highlight
 @onready var hitbox = $Hitbox
 @onready var hitbox_shape = $Hitbox/Shape
+@onready var zoom = $Zoomed
 #endregion
 
 #region attributes
@@ -19,6 +20,8 @@ var mouse_in_collider : bool
 var in_inventory : bool
 # the index used by the item in the inventory
 var inventory_index: int
+# used to store a previous position if needed
+var prev_position: Vector2
 
 # when current_slot is set:
 # - item's position will match slot's position
@@ -54,6 +57,7 @@ func restart() -> void:
 func _ready() -> void:
 	restart()
 	_init_textures()
+	_init_zoom()
 	# if this node has a parent, show this node above its parent
 	if parent:
 		z_index += 1
@@ -104,6 +108,18 @@ func _init_textures() -> void:
 	hitbox_shape.shape = collider
 	highlight.texture = texture
 
+# function to initialize the zoomed version of the item
+func _init_zoom() -> void:
+	zoom.hide()
+	zoom.texture = texture 
+	zoom.global_position = get_viewport().get_visible_rect().get_center()
+	# we want the zoomed version to occupy 1 vertical fifth of the screen
+	var desired_height = get_tree().root.size.y / 5.0
+	zoom.scale = Vector2(desired_height / texture.get_height(), desired_height / texture.get_height())
+	# bypass the parent's scale
+	zoom.scale = zoom.scale / scale
+	# we want the zoom a little bit transparent
+	zoom.modulate = Color(1, 1, 1, 0.75)
 #endregion
 
 #region slot and inventory interactions
@@ -128,6 +144,11 @@ func _on_hitbox_mouse_entered() -> void:
 	# disable parent if not in inventory
 	if not in_inventory and parent:
 		parent.disabled = true
+	
+	if in_inventory:
+		_init_zoom()
+		zoom.show()
+		
 
 
 func _on_hitbox_mouse_exited() -> void:
@@ -139,5 +160,8 @@ func _on_hitbox_mouse_exited() -> void:
 	# enable parent
 	if parent:
 		parent.disabled = false
+		
+	if in_inventory:
+		zoom.hide()
 	
 #endregion
