@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://fj25kbbpgmja"]
+[gd_scene load_steps=27 format=3 uid="uid://fj25kbbpgmja"]
 
 [ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_av4o2"]
 [ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="2_rasyk"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://sfikqckeis12" path="res://assets/interactive objects/kitchen/sponge.png" id="23_vyupu"]
 [ext_resource type="Texture2D" uid="uid://bnyxb3b3umrcr" path="res://assets/interactive objects/entrance/radio.png" id="24_1be34"]
 [ext_resource type="Texture2D" uid="uid://f1liq24gmgp8" path="res://assets/interactive objects/living/flowers.png" id="25_2yfri"]
+[ext_resource type="Texture2D" uid="uid://cddtd1alrfdx1" path="res://assets/images/window_view.png" id="26_6mp41"]
 
 [node name="Kitchen" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -295,3 +296,9 @@ position = Vector2(0, -33.24)
 scale = Vector2(0.27, 0.27)
 texture = ExtResource("25_2yfri")
 original_slot = NodePath("..")
+
+[node name="WindowView" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-90.8333, -125)
+scale = Vector2(0.25434, 0.268518)
+texture = ExtResource("26_6mp41")

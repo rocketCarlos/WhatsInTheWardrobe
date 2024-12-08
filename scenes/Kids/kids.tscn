@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wnophxxe1xci"]
+[gd_scene load_steps=18 format=3 uid="uid://wnophxxe1xci"]
 
 [ext_resource type="Texture2D" uid="uid://d4imx1sr13ltu" path="res://assets/rooms/child_bedroom.png" id="1_66x24"]
 [ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="2_nq4jn"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://d1r8vge30pdou" path="res://assets/interactive objects/childs/nintendo.png" id="14_l5yuo"]
 [ext_resource type="Texture2D" uid="uid://byqb3ud1dvjq2" path="res://assets/interactive objects/childs/blocks.png" id="15_urx2w"]
 [ext_resource type="Texture2D" uid="uid://dglpphxqh82e2" path="res://assets/interactive objects/childs/case.png" id="16_wg0y3"]
+[ext_resource type="Texture2D" uid="uid://cddtd1alrfdx1" path="res://assets/images/window_view.png" id="17_cg2c6"]
 
 [node name="Kids" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -135,3 +136,9 @@ position = Vector2(9.26, 2.395)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("16_wg0y3")
 original_slot = NodePath("..")
+
+[node name="Window" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(14.1667, -120)
+scale = Vector2(0.249132, 0.265432)
+texture = ExtResource("17_cg2c6")
