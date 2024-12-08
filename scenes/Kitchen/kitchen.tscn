@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://fj25kbbpgmja"]
+[gd_scene load_steps=30 format=3 uid="uid://fj25kbbpgmja"]
 
 [ext_resource type="Texture2D" uid="uid://crs0xf0xxqwx1" path="res://assets/rooms/kitchen.png" id="1_av4o2"]
 [ext_resource type="PackedScene" uid="uid://dgilq21f8qrh3" path="res://scenes/Door/door.tscn" id="2_rasyk"]
@@ -26,6 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://bnyxb3b3umrcr" path="res://assets/interactive objects/entrance/radio.png" id="24_1be34"]
 [ext_resource type="Texture2D" uid="uid://f1liq24gmgp8" path="res://assets/interactive objects/living/flowers.png" id="25_2yfri"]
 [ext_resource type="Texture2D" uid="uid://cddtd1alrfdx1" path="res://assets/images/window_view.png" id="26_6mp41"]
+[ext_resource type="PackedScene" uid="uid://bvrw51eirvnqp" path="res://scenes/HovereableItem/hovereable_item.tscn" id="27_kwglr"]
+[ext_resource type="Texture2D" uid="uid://dgd4v1a62u6yo" path="res://assets/images/weekly_planner.png" id="28_lnh7m"]
+[ext_resource type="Texture2D" uid="uid://4xewa74tlpfs" path="res://assets/images/shopping_list.png" id="29_sdjqh"]
 
 [node name="Kitchen" type="Sprite2D"]
 position = Vector2(576, 324)
@@ -302,3 +305,13 @@ z_index = -1
 position = Vector2(-90.8333, -125)
 scale = Vector2(0.25434, 0.268518)
 texture = ExtResource("26_6mp41")
+
+[node name="Schedule" parent="." instance=ExtResource("27_kwglr")]
+position = Vector2(600.833, -155.833)
+scale = Vector2(0.0884017, 0.0839391)
+texture = ExtResource("28_lnh7m")
+
+[node name="List" parent="." instance=ExtResource("27_kwglr")]
+position = Vector2(560.417, 124.697)
+scale = Vector2(0.0359499, 0.0419696)
+texture = ExtResource("29_sdjqh")

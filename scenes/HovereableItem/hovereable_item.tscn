@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvrw51eirvnqp"]
+
+[ext_resource type="Script" path="res://scenes/HovereableItem/hovereable_item.gd" id="1_lruwb"]
+
+[node name="HovereableItem" type="Sprite2D"]
+script = ExtResource("1_lruwb")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+
+[node name="Zoom" type="Sprite2D" parent="."]
+z_index = 10
+
+[connection signal="mouse_entered" from="Hitbox" to="." method="_on_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="_on_hitbox_mouse_exited"]
