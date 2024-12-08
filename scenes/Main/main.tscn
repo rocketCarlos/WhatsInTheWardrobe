@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://be5canebkj4u"]
+[gd_scene load_steps=29 format=3 uid="uid://be5canebkj4u"]
 
 [ext_resource type="Script" path="res://scenes/Main/main.gd" id="1_68s6r"]
 [ext_resource type="PackedScene" uid="uid://beo6jx2hl01b8" path="res://scenes/SceneManager/scene_manager.tscn" id="2_xtluj"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://wacq8i1366ud" path="res://assets/cutscenes/GoodEnding/End_6.png" id="16_pe1im"]
 [ext_resource type="Texture2D" uid="uid://b3ud16una32pf" path="res://assets/cutscenes/GoodEnding/End_7.png" id="17_ob86x"]
 [ext_resource type="AudioStream" uid="uid://cmwaglndslt3d" path="res://assets/music/final.mp3" id="18_qqvwx"]
+[ext_resource type="AudioStream" uid="uid://3l6ffb0adcqe" path="res://assets/sound effects/mom_angry.wav" id="19_qr2v1"]
+[ext_resource type="AudioStream" uid="uid://cphc3lxitjc10" path="res://assets/sound effects/open_door.mp3" id="19_uurll"]
 
 [sub_resource type="Animation" id="Animation_0hrql"]
 length = 0.001
@@ -250,6 +252,37 @@ tracks/8/keys = {
 "method": &"play"
 }]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DoorOpening")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(5.26667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Angry")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(15.2333, 19.7667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_pw0a6"]
 resource_name = "grandma_cutscene"
@@ -462,3 +495,7 @@ stream = ExtResource("18_qqvwx")
 volume_db = -12.0
 
 [node name="DoorOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_uurll")
+
+[node name="Angry" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_qr2v1")

@@ -18,7 +18,8 @@ var playing = false
 
 func _process(delta: float) -> void:
 	if not playing and visible:
-		menu_music.play(3)
+		if not Globals.main.final_music.playing:
+			menu_music.play(3)
 		playing = true
 
 func restart() -> void:
@@ -42,9 +43,11 @@ func _on_play_button_up() -> void:
 	
 
 func _on_credits_button_up() -> void:
+	click.play(0.22)
 	Globals.main.show_card(Globals.CARDS.CREDITS)
 
 
 func _on_quit_button_up() -> void:
+	click.play(0.22)
 	get_tree().quit()
 #endregion

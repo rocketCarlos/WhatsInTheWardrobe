@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cik4mbdl61cvl" path="res://assets/cutscenes/GameOver/GameOver_open/GameOver_open1.png" id="3_sxw5k"]
 [ext_resource type="Texture2D" uid="uid://43dolrn8ok1h" path="res://assets/cutscenes/GameOver/GameOver_open/GameOver_open2.png" id="4_7rar4"]
 [ext_resource type="Script" path="res://scenes/Card/card.gd" id="4_sycby"]
-[ext_resource type="Texture2D" uid="uid://dgd4v1a62u6yo" path="res://assets/images/weekly_planner.png" id="4_y5iey"]
 [ext_resource type="Texture2D" uid="uid://dbpol6mhxf86m" path="res://assets/cutscenes/GameOver/GameOver_objects/GameOver_objects_1.png" id="5_kvvej"]
 [ext_resource type="Texture2D" uid="uid://dweqdk7fwfeju" path="res://assets/buttons/continue_arrow.png" id="5_s7832"]
 [ext_resource type="Texture2D" uid="uid://dl8r2i5ub6w32" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_1.png" id="5_xq4e4"]
 [ext_resource type="Texture2D" uid="uid://tift5lmmrshk" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_2.png" id="6_tpah4"]
 [ext_resource type="Texture2D" uid="uid://kvemgwdjj4un" path="res://assets/cutscenes/GameOver/GameOver_gradma/GameOver_grandma_3.png" id="7_h0ci0"]
+[ext_resource type="Texture2D" uid="uid://cd4q7hwut61p8" path="res://assets/images/credits.png" id="8_i8a4u"]
 [ext_resource type="FontFile" uid="uid://b5867v5unxs27" path="res://assets/font/dreaming-outloud-regular.otf" id="11_guv2r"]
 [ext_resource type="Texture2D" uid="uid://dbmr7hobtj1u4" path="res://assets/cutscenes/DayPassed/DayPassed_1.png" id="11_yixxr"]
 [ext_resource type="AudioStream" uid="uid://cphc3lxitjc10" path="res://assets/sound effects/open_door.mp3" id="17_yce87"]
@@ -67,7 +67,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_y5iey")
+"texture": ExtResource("8_i8a4u")
 }],
 "loop": false,
 "name": &"credits",
@@ -112,7 +112,7 @@ z_index = 25
 position = Vector2(575.5, 323.5)
 scale = Vector2(0.599479, 0.599074)
 sprite_frames = SubResource("SpriteFrames_kpg8x")
-animation = &"grandma"
+animation = &"credits"
 script = ExtResource("4_sycby")
 
 [node name="TextureButton" type="TextureButton" parent="."]

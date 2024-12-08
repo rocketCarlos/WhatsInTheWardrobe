@@ -9,6 +9,7 @@ Main scene that controlls the game
 #region scene nodes
 @onready var main_menu = $MainMenu
 @onready var animation_player = $AnimationPlayer
+@onready var final_music = $FinalMusic
 #endregion
 
 #region attributes
@@ -49,6 +50,7 @@ func play() -> void:
 	animation_player.play(&"start_game")
 	scene_manager_reference = scene_manager.instantiate()
 	add_child(scene_manager_reference)
+	final_music.stop()
 
 # checks the result of the ended day and loads the next one
 func day_ended(result: Dictionary) -> void:
@@ -101,7 +103,6 @@ func end_game() -> void:
 # called when showing a card
 func show_card(card_type: Globals.CARDS) -> void:
 	card_reference = card.instantiate()
-	add_child(card_reference)
 	
 	match card_type:
 		Globals.CARDS.CREDITS:
@@ -119,6 +120,8 @@ func show_card(card_type: Globals.CARDS) -> void:
 			card_reference.animation = &"grandma"
 		_:
 			push_error("INVALID CARD TYPE")
+			
+	add_child(card_reference)
 
 # called when closing a card
 func card_closed() -> void:

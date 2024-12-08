@@ -110,11 +110,10 @@ offset = Vector2(0, -121.86)
 original_slot = NodePath("..")
 
 [node name="Slot3" parent="." instance=ExtResource("7_ylv55")]
-position = Vector2(-533.333, 280)
+position = Vector2(-528.333, 246.667)
 metadata/_edit_group_ = true
 
 [node name="Shopping bag" parent="Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("8_pvysm")]
-position = Vector2(3.675, -49.839)
 scale = Vector2(0.546551, 0.439713)
 texture = ExtResource("18_vvlme")
 original_slot = NodePath("..")

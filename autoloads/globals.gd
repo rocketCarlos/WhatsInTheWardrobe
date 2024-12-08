@@ -4,7 +4,7 @@ extends Node
 Autoloaded script that provides access to global variables
 '''
 
-var debug: bool = true
+var debug: bool = false
 
 # reference to the scene_manager scene
 var scene_manager: Node
