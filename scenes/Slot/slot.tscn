@@ -10,7 +10,7 @@ z_index = 1
 script = ExtResource("1_yt1gv")
 
 [node name="Highlight" type="Sprite2D" parent="."]
-self_modulate = Color(100, 100, 0, 0.384)
+self_modulate = Color(0, 1, 0, 0.384314)
 
 [node name="Hitbox" type="Area2D" parent="."]
 

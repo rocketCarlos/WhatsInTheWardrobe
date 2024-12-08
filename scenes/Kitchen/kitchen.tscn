@@ -55,37 +55,40 @@ sprite_open = ExtResource("6_0khqw")
 children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5"), NodePath("Slot6"), NodePath("Slot7"), NodePath("Slot8"), NodePath("Slot9")]
 
 [node name="Slot" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-127.305, -19.4203)
+position = Vector2(-127.305, -39.715)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Blender" parent="Cupboard/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -37.855)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("10_10o55")
+centered = false
+offset = Vector2(-133.29, -368.42)
 original_slot = NodePath("..")
 
 [node name="Slot2" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-59.04, -23.3043)
+position = Vector2(-59.04, -35.089)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Green bottle" parent="Cupboard/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -30.045)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("11_hpg6l")
+centered = false
+offset = Vector2(-77.115, -345.35)
 original_slot = NodePath("..")
 
 [node name="Slot3" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(16.6047, -23.3047)
+position = Vector2(16.605, -30.61)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Red bottle" parent="Cupboard/Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 self_modulate = Color(1, 0.38, 0.38, 1)
-position = Vector2(0, -30.045)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("11_hpg6l")
+centered = false
+offset = Vector2(-85.185, -373.755)
 original_slot = NodePath("..")
 
 [node name="Slot4" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
@@ -94,29 +97,27 @@ parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Bowl" parent="Cupboard/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -5.61)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("12_nnqgc")
+offset = Vector2(0, -8.605)
 original_slot = NodePath("..")
 
 [node name="Slot5" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(99.6297, -21.3627)
+position = Vector2(99.63, -27.953)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Tray" parent="Cupboard/Slot5" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -5.61)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("13_u2kem")
 original_slot = NodePath("..")
 
 [node name="Slot6" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-134.685, 97.1014)
+position = Vector2(-134.685, 88.041)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Glass" parent="Cupboard/Slot6" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -5.61)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("14_25tcs")
 original_slot = NodePath("..")
@@ -127,9 +128,9 @@ parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Jar" parent="Cupboard/Slot7" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -9.925)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("15_6epr2")
+offset = Vector2(0, -13.185)
 original_slot = NodePath("..")
 
 [node name="Slot8" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
@@ -138,9 +139,9 @@ parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Kettle" parent="Cupboard/Slot8" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -9.925)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("16_kyerf")
+offset = Vector2(0, -34.065)
 original_slot = NodePath("..")
 
 [node name="Slot9" parent="Cupboard" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
@@ -149,9 +150,9 @@ parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Plates" parent="Cupboard/Slot9" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, 1.96)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("17_pxn2v")
+offset = Vector2(0, 21.645)
 original_slot = NodePath("..")
 
 [node name="Cupboard2" parent="." node_paths=PackedStringArray("children") instance=ExtResource("5_l03hj")]
@@ -163,76 +164,76 @@ sprite_open = ExtResource("6_0khqw")
 children = [NodePath("Slot"), NodePath("Slot2"), NodePath("Slot3"), NodePath("Slot4"), NodePath("Slot5"), NodePath("Slot6"), NodePath("Slot9"), NodePath("Slot10")]
 
 [node name="Slot" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-117.836, -19.7058)
+position = Vector2(-123.126, -29.286)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Meassuring cup" parent="Cupboard2/Slot" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -9.32)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("18_mihyo")
+offset = Vector2(0, 4.65)
 original_slot = NodePath("..")
 
 [node name="Slot2" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-48.3547, -23.6474)
+position = Vector2(-48.355, -27.377)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Yellow bottle" parent="Cupboard2/Slot2" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 self_modulate = Color(1, 0.716667, 0, 1)
-position = Vector2(0, -30.045)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("11_hpg6l")
+offset = Vector2(0, -148.11)
 original_slot = NodePath("..")
 
 [node name="Slot3" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-134.737, 94.5882)
+position = Vector2(-123.469, 88.6761)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Blue bottle" parent="Cupboard2/Slot3" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 self_modulate = Color(0.38, 0.69, 1, 1)
-position = Vector2(0, -30.045)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("11_hpg6l")
+offset = Vector2(0, -128.22)
 original_slot = NodePath("..")
 
 [node name="Slot4" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(-48.3546, 94.5879)
+position = Vector2(-46.4767, 92.6173)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Pot" parent="Cupboard2/Slot4" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, -12.06)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("19_ewojo")
+offset = Vector2(0, -35.55)
 original_slot = NodePath("..")
 
 [node name="Slot5" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(98.1187, -21.6768)
+position = Vector2(101.874, -25.618)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Roller" parent="Cupboard2/Slot5" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
-position = Vector2(0, 2.355)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("20_fjv2v")
+offset = Vector2(0, 36.98)
 original_slot = NodePath("..")
 
 [node name="Slot6" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(17.3706, -19.7063)
+position = Vector2(17.371, -27.246)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Redish glass" parent="Cupboard2/Slot6" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
 self_modulate = Color(1, 0.56, 0.56, 1)
-position = Vector2(0, -5.61)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("14_25tcs")
+offset = Vector2(0, -4.5)
 original_slot = NodePath("..")
 
 [node name="Slot9" parent="Cupboard2" node_paths=PackedStringArray("parent") instance=ExtResource("8_qyhs0")]
-position = Vector2(39.9049, 96.5584)
+position = Vector2(38.027, 92.6173)
 parent = NodePath("..")
 metadata/_edit_group_ = true
 
@@ -249,8 +250,9 @@ parent = NodePath("..")
 metadata/_edit_group_ = true
 
 [node name="Living\'s key" parent="Cupboard2/Slot10" node_paths=PackedStringArray("original_slot") instance=ExtResource("9_urtxf")]
+self_modulate = Color(1, 0.988667, 0.32, 1)
 position = Vector2(0, 1.96)
-scale = Vector2(0.025, 0.025)
+scale = Vector2(0.045, 0.045)
 texture = ExtResource("22_yrt80")
 original_slot = NodePath("..")
 

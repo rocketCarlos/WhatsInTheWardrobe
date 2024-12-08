@@ -11,24 +11,45 @@ script = ExtResource("1_eh2o4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.612488, 0.871094, 0.846849, 1)
-position = Vector2(576, 609.5)
-scale = Vector2(0.322492, 0.125184)
+position = Vector2(290.84, 609.5)
+scale = Vector2(0.161, 0.125)
+texture = ExtResource("2_qan06")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.612488, 0.871094, 0.846849, 1)
+position = Vector2(862.5, 609.5)
+scale = Vector2(0.161, 0.125)
 texture = ExtResource("2_qan06")
 
 [node name="Slot1" type="Node2D" parent="."]
-position = Vector2(104, 611)
+position = Vector2(65, 611)
 
 [node name="Slot2" type="Node2D" parent="."]
-position = Vector2(349, 611)
+position = Vector2(178.015, 611)
 
 [node name="Slot3" type="Node2D" parent="."]
-position = Vector2(575, 611)
+position = Vector2(295.015, 611)
 
 [node name="Slot4" type="Node2D" parent="."]
-position = Vector2(818, 611)
+position = Vector2(414.595, 611)
 
 [node name="Slot5" type="Node2D" parent="."]
-position = Vector2(1040, 611)
+position = Vector2(523.72, 611)
+
+[node name="Slot6" type="Node2D" parent="."]
+position = Vector2(633, 611)
+
+[node name="Slot7" type="Node2D" parent="."]
+position = Vector2(746.015, 611)
+
+[node name="Slot8" type="Node2D" parent="."]
+position = Vector2(863.015, 611)
+
+[node name="Slot9" type="Node2D" parent="."]
+position = Vector2(982.595, 611)
+
+[node name="Slot10" type="Node2D" parent="."]
+position = Vector2(1091.72, 611)
 
 [node name="AddItem" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6726y")

@@ -65,7 +65,7 @@ func _on_hitbox_mouse_entered() -> void:
 		if Globals.item_manager.selected_item:
 			highlight.texture = Globals.item_manager.selected_item.texture
 			highlight.rotation = Globals.item_manager.selected_item.rotation
-			highlight.scale = Globals.item_manager.selected_item.scale
+			highlight.global_scale = Globals.item_manager.selected_item.original_scale
 			if parent:
 				parent.disabled = true
 		else:

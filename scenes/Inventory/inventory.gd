@@ -12,6 +12,11 @@ Node that defines the inventory system.
 @onready var slot_3 = $Slot3
 @onready var slot_4 = $Slot4
 @onready var slot_5 = $Slot5
+@onready var slot_6 = $Slot6
+@onready var slot_7 = $Slot7
+@onready var slot_8 = $Slot8
+@onready var slot_9 = $Slot9
+@onready var slot_10 = $Slot10
 @onready var add_item = $AddItem
 @onready var substract_item = $RetrieveItem
 @onready var sprite = $Sprite2D
@@ -19,7 +24,7 @@ Node that defines the inventory system.
 
 #region attributes
 # inventory's size
-const MAX_INVENTORY = 5
+const MAX_INVENTORY = 10
 # number of items already in the inventory
 var stored = 0:
 	set(value):
@@ -53,6 +58,11 @@ func _ready() -> void:
 	inventory_positions.push_back(slot_3.global_position)
 	inventory_positions.push_back(slot_4.global_position)
 	inventory_positions.push_back(slot_5.global_position)
+	inventory_positions.push_back(slot_6.global_position)
+	inventory_positions.push_back(slot_7.global_position)
+	inventory_positions.push_back(slot_8.global_position)
+	inventory_positions.push_back(slot_9.global_position)
+	inventory_positions.push_back(slot_10.global_position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
