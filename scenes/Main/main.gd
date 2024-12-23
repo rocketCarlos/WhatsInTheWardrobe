@@ -139,6 +139,7 @@ func show_security_box(box: Node) -> void:
 # called when the security code is correct
 func security_open() -> void:
 	box_reference.open = true
+	panel_reference = null
 	scene_manager_reference.rooms.show()
 
 # called when the user leaves the close up look of the security box
